@@ -1,0 +1,79 @@
+.TH TITS 1 2018\-08\-06 Linux "User Manuals"
+.SH NAME
+.PP
+\fB\fCtits\fR \- Prints the title of the currently open sublime window.
+
+.SH SYNOPSIS
+.PP
+\fB\fCtits\fR [\fB\fC\-v\fR|\fB\fC\-h\fR]
+\fB\fCtits\fR [\fB\fC\-f\fR][\fB\fC\-p\fR][\fB\fC\-s\fR]
+
+.SH DESCRIPTION
+.PP
+\fB\fCtits\fR uses \fB\fCxdotool\fR to get the title of the window with the
+class name \fBSublime\_text\fP\&. The title looks different depending
+on the status of the file, if Sublime is registered and if a project
+is open. Below are the different title variations:
+
+.PP
+.RS
+
+.nf
+# FILR (PROJECT) \- Sublime Text
+\~/git/lab/budlime/scripts/tits/tits.sh (budlime) \- Sublime Text
+
+# FILE DIRTY (PROJECT) \- Sublime Text
+\~/git/lab/budlime/scripts/tits/tits.sh • (budlime) \- Sublime Text
+
+# FILE \- Sublime Text
+\~/git/lab/budlime/scripts/tits/tits.sh \- Sublime Text
+
+# FILE DIRTY \- Sublime Text
+\~/git/lab/budlime/scripts/tits/tits.sh • \- Sublime Text
+
+.fi
+.RE
+
+.PP
+If \fB\fCtits\fR is executed without any arguments, the filename is printed.
+
+.SH OPTIONS
+.PP
+\fB\fC\-v\fR
+.br
+Show version and exit.
+
+.PP
+\fB\fC\-h\fR
+.br
+Show help and exit.
+
+.PP
+\fB\fC\-f\fR
+Prints the filename.
+
+.PP
+\fB\fC\-s\fR
+.br
+Prints the status (dirty|clean). dirty means that the file is not saved.
+
+.PP
+\fB\fC\-p\fR
+.br
+Prints the project name.
+
+.SH DEPENDENCIES
+.PP
+Sublime Text
+xdotool
+
+.SH AUTHOR
+.PP
+budRich 
+\[la]robstenklippa@gmail.com\[ra]
+
+\[la]https://budrich.github.io\[ra]
+
+.SH SEE ALSO
+.PP
+xdotool(1)

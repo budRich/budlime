@@ -1,0 +1,1 @@
+`tits` - Prints the title of the currently open sublime window.
