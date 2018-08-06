@@ -63,8 +63,8 @@ about='`tits` - Prints the title of the currently open sublime window.
 SYNOPSIS
 --------
 
-`tits` [`-v`|`-h`]
-`tits` [`-f`][`-p`][`-s`]
+`tits` [`-v`|`-h`]  
+`tits` [`-f`][`-p`][`-s`][`-d`]  
 
 DESCRIPTION
 -----------
@@ -100,10 +100,10 @@ Show version and exit.
 `-h`  
 Show help and exit.
 
-`-f`
+`-f`  
 Prints the filename of the currently open file.
 
-`-d`
+`-d`  
 Prints the directory of the currently open file.
 
 `-s`  
@@ -116,8 +116,8 @@ Prints the project name.
 DEPENDENCIES
 ------------
 
-Sublime Text
-xdotool
+Sublime Text  
+xdotool  
 '
 
 bouthead="
