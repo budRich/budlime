@@ -1,0 +1,128 @@
+.TH SUBEXTRACT 1 2018\-08\-05 Linux "User Manuals"
+.SH NAME
+.PP
+\fB\fCsubextract\fR \- Creates a settings project as an alternative to the default sublime settings system.
+
+.SH SYNOPSIS
+.PP
+\fB\fCsubextract\fR [\fB\fC\-v\fR|\fB\fC\-h\fR]
+
+.SH DESCRIPTION
+.PP
+\fB\fCsubextract\fR extracts files from installed packages and creates a project file
+that is intended to be a better alternative to sublimes default settings system.
+
+.PP
+\fB\fCsubextract\fR will extract all \fIreadme.md\fP files from all installed packages, and
+move the readme to the directory $USR\_DIR/dox/packages, where the files will be renamed
+to: \fIpackage\-name.md\fP\&. Any \fIsublime\-settings\fP,\fIsublime\-keymap\fP and \fIsublime\-mousemap\fP files
+found in the archived packages will get moved and renamed (\fIif needed\fP) to \fI$USR\_DIR/dox/packages\fP\&.
+
+.PP
+\fIsublime\-settings\fP will also get copied to $USR\_DIR if the file doesn't already exist there.
+
+.PP
+\fB\fCsubextract\fR will also create a directory with the package name inside $PKG\_DIR .
+(\fIfiles in this directory will overwrite the same files in the \fBpacked\fP version of the package.\fP).
+\fB\fCsubextract\fR will add blank \fIsublime\-settings\fP, in these directories.
+
+.PP
+The thought of this is to only have one settings file (\fIuser\fP) as opposed to two (read\-only default and user),
+as is the default behaviour of sublime. One advantage of this is that it is easier to
+f.i. disable a default keybinding. And all default settings are backed up as described above,
+in case something breaks.
+
+.PP
+\fB\fCsubextract\fR will also do this with the \fIDefault\fP \fBcore\fP package (\fI/opt/sublime\_text/Packages/Default.sublime\-package\fP),
+and put the \fIuser\fP settings inside the directory: \fI$PKG\_DIR/zublime\fP\&. The reason for this is
+that sublime removes all comments and empty lines and auto sort, \fI$PKG\_DIR/User/default.sublime\-settings\fP,
+when the settings are updated (when f.i. the user changes the theme from the command palette.).
+
+.PP
+\fB\fCsubextract\fR will clone two GitHub repositories that contain the unofficial sublime documentation
+and \fB\fCSublimeLinter\fRs documentation, and copy the documentation to \fI$USR\_DIR/dox/wiki\fP\&.
+
+.PP
+\fB\fCsubextract\fR will also create a \fIsublime.sublime\-project\fP file.
+
+.SH OPTIONS
+.PP
+\fB\fC\-v\fR
+.br
+Show version and exit.
+
+.PP
+\fB\fC\-h\fR
+.br
+Show help and exit.
+
+.SH FILES
+.PP
+SUB\_DIR \- sublimes config directory.
+.br
+defaults to: \fI$HOME/.config/sublime\-text\-3\fP
+
+.PP
+TMP\_DIR \- temporary directory where package files get extracted to.
+.br
+defaults to: \fI/tmp/subextract\fP
+
+.PP
+ZIP\_DIR \- installed (\fIpacked\fP) packages directory.
+.br
+defaults to: \fI$SUB\_DIR/Installed Packages\fP
+
+.PP
+PKG\_DIR \- (\fIunpacked\fP) packages directory.
+.br
+defaults to: \fI$SUB\_DIR/Packages\fP
+
+.PP
+USR\_DIR \- User package directory.
+.br
+defaults to: \fI$PKG\_DIR/User\fP
+
+.PP
+DOC\_DIR \- directory where readmes and wikis are stored.
+.br
+defaults to: \fI$USR\_DIR/dox\fP
+
+.PP
+DEF\_DIR \- directory where default config files are backed up.
+.br
+defaults to: \fI$DOC\_DIR/defaults\fP
+
+.PP
+WIK\_DIR \- directory where the documentation from the cloned repos will be stored.
+.br
+defaults to: \fI$DOC\_DIR/wiki\fP
+
+.PP
+OPT\_DIR \- core package directory
+defaults to: \fI/opt/sublime\_text/Packages\fP
+
+.PP
+GIT\_DIR \- where to store the cloned repos.
+defaults to: \fI$HOME/git/dox\fP
+
+.PP
+$USR\_DIR/projects/\fIsublime.sublime\-project\fP
+.br
+project file.
+
+.SH DEPENDENCIES
+.PP
+unzip
+.br
+Sublime Text
+
+.SH AUTHOR
+.PP
+budRich 
+\[la]robstenklippa@gmail.com\[ra]
+
+\[la]https://budrich.github.io\[ra]
+
+.SH SEE ALSO
+.PP
+unzip(1)
