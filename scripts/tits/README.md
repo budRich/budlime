@@ -41,7 +41,10 @@ Show version and exit.
 Show help and exit.
 
 `-f`
-Prints the filename.
+Prints the filename of the currently open file.
+
+`-d`
+Prints the directory of the currently open file.
 
 `-s`  
 Prints the status (dirty|clean). dirty means that the file is not saved.

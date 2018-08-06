@@ -11,7 +11,7 @@ main(){
 
   declare -A tits
 
-  eval "$(wmctrl -lx | awk '
+  eval "$(wmctrl -lx | awk -v home="${HOME}" '
     $3 ~ /Sublime_text$/ {
       $1=$2=$3=$4=""
       sub(/^[[:space:]]*/,"",$0)
@@ -32,13 +32,17 @@ main(){
         }
         else if ($0 ~ /[^)]$/) {print "tits[s]=\"clean\""}
       }
-      print "tits[f]=\"" $0 "\""
+      file=$0
+      sub(/~/,home,file)
+      print "tits[f]=\"" file "\""
+      sub("/?[^/]*/?$","",file)
+      print "tits[d]=\"" file "\""
     }
   ')"
 
-  while getopts :vhspf option; do
+  while getopts :vhspfd option; do
     case "${option}" in
-      s|p|f) [[ -n ${tits[$option]} ]] && echo ${tits[$option]} ;;
+      s|p|f|d) [[ -n ${tits[$option]} ]] && echo ${tits[$option]} ;;
 
       v) printf '%s\n' \
            "$NAME - version: $VERSION" \
@@ -97,7 +101,10 @@ Show version and exit.
 Show help and exit.
 
 `-f`
-Prints the filename.
+Prints the filename of the currently open file.
+
+`-d`
+Prints the directory of the currently open file.
 
 `-s`  
 Prints the status (dirty|clean). dirty means that the file is not saved.
