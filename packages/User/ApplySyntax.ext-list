@@ -1,4 +1,12 @@
 {
+	"Bash":
+	[
+		"bash"
+	],
+	"HTML":
+	[
+		"cshtml"
+	],
 	"HTML (Rails)":
 	[
 		"html.erb"
@@ -41,7 +49,6 @@
 	],
 	"Shell-Unix-Generic":
 	[
-		"bash",
 		"sh",
 		"zsh"
 	],

@@ -7,7 +7,7 @@ CONTACT='robstenklippa@gmail.com'
 CREATED="2018-08-05"
 UPDATED="2018-08-05"
 
-SUB_DIR="$HOME/.config/sublime-text-3-test"
+SUB_DIR="$HOME/.config/sublime-text-3"
 TMP_DIR="/tmp/subextract"
 ZIP_DIR="$SUB_DIR/Installed Packages"
 PKG_DIR="$SUB_DIR/Packages"
@@ -320,8 +320,8 @@ extractdefaults(){
       }
 
       # create blank keymap file in zublime
-      [[ -f ${PKG_DIR}/zublime/Default.sublime-keymap ]] \
-        || echo -e "{\n\n}" > ${PKG_DIR}/zublime/Default.sublime-keymap
+      # [[ -f ${PKG_DIR}/zublime/Default.sublime-keymap ]] \
+      #   || echo -e "{\n\n}" > ${PKG_DIR}/zublime/Default.sublime-keymap
     )
 }
 

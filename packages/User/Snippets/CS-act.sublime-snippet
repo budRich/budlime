@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+public IActionResult ${1:Index}()
+{
+	ViewData["Title"] = "${0:${1} Page}";
+
+	return View();
+}
+]]></content>
+<tabTrigger>act</tabTrigger>
+<description>IActionResult method</description>
+<scope>source.cs, meta.namespace.cs, meta.block.cs, meta.class.body.cs, meta.block.cs, storage.modifier.access.cs</scope>
+</snippet>

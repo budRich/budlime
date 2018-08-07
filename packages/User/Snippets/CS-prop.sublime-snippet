@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+public ${1:int} ${0:Id} { get; set; }
+]]></content>
+<tabTrigger>prop</tabTrigger>
+<description>Property</description>
+<scope>source.cs, meta.namespace.cs, meta.block.cs, meta.class.body.cs, meta.block.cs, storage.modifier.access.cs</scope>
+</snippet>

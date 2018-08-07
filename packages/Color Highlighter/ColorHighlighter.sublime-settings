@@ -1,4 +1,3 @@
-// jjjj
 {
     "search_colors_in": {
         "selection": {
@@ -23,11 +22,11 @@
             "enabled": true,
             "color_highlighters": {
                 "color_scheme": {
-                    "enabled": true,
-                    "highlight_style": "text"
+                    "enabled": false,
+                    "highlight_style": "filled"
                 },
                 "gutter_icons": {
-                    "enabled": true,
+                    "enabled": false,
                     "icon_style": "circle"
                 },
                 "phantoms": {
@@ -57,7 +56,7 @@
         }
     },
     "default_keybindings": true,
-    "file_extensions": [".css", ".less", ".scss", ".sass", ".styl"],
+    "file_extensions": [".css", ".less", ".scss", ".sass", ".styl", ".tmTheme", "all"],
     "icon_factory": {
         "convert_command": "convert",
         "convert_timeout": 5
@@ -85,18 +84,18 @@
                 "white": "#FFFFFF",
                 "after": "sharp8"
             },
-            "sharp4": {
-                "description": "Hex #RGBA color format",
-                "regex": "#(?P<R>hex)(?P<G>hex)(?P<B>hex)(?P<A>hex)",
-                "white": "#FFFF",
-                "after": "sharp6"
-            },
-            "sharp3": {
-                "description": "Hex #RGB color format",
-                "regex": "#(?P<R>hex)(?P<G>hex)(?P<B>hex)",
-                "white": "#FFF",
-                "after": "sharp4"
-            },
+            // "sharp4": {
+            //     "description": "Hex #RGBA color format",
+            //     "regex": "#(?P<R>hex)(?P<G>hex)(?P<B>hex)(?P<A>hex)",
+            //     "white": "#FFFF",
+            //     "after": "sharp6"
+            // },
+            // "sharp3": {
+            //     "description": "Hex #RGB color format",
+            //     "regex": "#(?P<R>hex)(?P<G>hex)(?P<B>hex)",
+            //     "white": "#FFF",
+            //     "after": "sharp4"
+            // },
             "rgba": {
                 "description": "rgba(255,255,100%,1) color format",
                 "regex": "rgba[(][ ]*(?P<R>dec|perc)[ ]*[,][ ]*(?P<G>dec|perc)[ ]*[,][ ]*(?P<B>dec|perc)[ ]*[,][ ]*(?P<A>float)[ ]*[)]",
@@ -130,7 +129,7 @@
         }
     },
     "experimental": {
-        "asynchronosly_update_color_scheme": false
+        "asynchronosly_update_color_scheme": true
     },
     "debug": false
 }

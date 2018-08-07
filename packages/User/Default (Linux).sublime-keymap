@@ -1,0 +1,391 @@
+[
+  /* custom Sublime Text 3 keymap
+     curated by budRich since 2014
+     
+     Optimized for use with Vintage enabled
+
+     Broken       | Fixed         | command
+     ----------------------------------------------------
+     ctrl+shift+i | ctrl+shift+j  | expand_to_indentation
+     ctrl+r       | ctrl+shift+p  | goto_symbol
+     ctrl+shift+p | commandmode-: | command palette
+     ctrl+d       | ctrl+.        | find_under_expand
+     ctrl+e       | f3            | slurp_find_string
+     ctrl+w       | ctrl+w+w      | close tab
+     ctrl+y       | ctrl+r        | redo_or_repeat
+     ctrl+f       | commandmode-/ | find panel(replace panel)
+     ctrl+h       | commandmode-/ | replace panel
+     ctrl+shift+h | ctrl+h        | replace next
+     f3           | commandmode-n | find next
+     shift+f3     | commandmode-N | find previous
+
+     Friend       | Fixed         | command
+     ------------------------------------
+     ctrl+shift+d | ctrl+shift+.  | find_under_expand_skip
+     ctrl+shift+e | shift+f3      | slurp_replace_string
+     
+     all the ctrl+* commands enabled with: 
+     `setting.vintage_ctrl_keys` 
+     are set to only work in commandmode by default. 
+     I found this extremely annoying, so I removed:
+     '{"key": "setting.command_mode"}'
+     from the context to make the keys global.
+
+     Dependencies:
+     Origami, Chain of Command
+
+     Custom default keymaps with disabled keys used:
+     default.sublime-keymap
+     vintage.sublime-keymap
+     origami.sublime-keymap
+
+     Disabled defaults, up for grabs:
+     "keys": ["ctrl+k", "ctrl+d"]
+     "keys": ["ctrl+shift+enter"]
+     "keys": ["shift+f4"]
+     "keys": ["alt+o"]
+     "keys": ["ctrl+f3"]
+     "keys": ["ctrl+shift+f3"]
+     "keys": ["ctrl+q"]
+     "keys": ["ctrl+f4"]
+     "keys": ["ctrl+shift+h"]
+     "keys": ["ctrl+shift+e"]
+     "keys": ["f4"]
+     "keys": ["f6"]
+     "keys": ["ctrl+shift+up"]
+     "keys": ["ctrl+shift+down"]
+     "keys": ["ctrl+shift+w"]
+     "keys": ["alt+-"]
+     "keys": ["alt+shift+-"]
+     "keys": ["alt+keypad_minus"]
+     "keys": ["alt+shift+keypad_minus"]
+     "keys": ["alt+/"]
+     "keys": ["alt+/"]
+     
+     ------------------------------------------------ */  
+
+  // testkey
+
+  { "keys": ["ctrl+5"], "command": "chain", 
+    "args": {
+      "commands": [
+        ["toggle_side_bar"],
+        ["focus_group", { "group": 0 }]
+      ]
+    }
+    , "context": [ {"key": "control", "operator": "equal", "operand": "sidebar_tree"} ]
+  },
+
+  // select lines before reindent? 
+  { "keys": ["ctrl+alt+["], "command": "reindent", "args": {"single_line": false}},
+
+  // >> ColorHighlighter
+  {
+    "keys": ["ctrl+shift+,"],
+    "command": "color_highlighter_next_color",
+    "context": [
+      {
+        "key": "color_highlighter.color_highlighter_next_color"
+      }
+    ]
+  },
+  {
+    "keys": ["ctrl+shift+c"],
+    "command": "color_highlighter_pick_color",
+    "context": [
+      {
+        "key": "color_highlighter.color_highlighter_pick_color"
+      }
+    ]
+  },
+  
+  // >> Plain Notes
+  { "keys": ["ctrl+n"],   "command": "notes_list"   },
+  { "keys": ["ctrl+shift+n"], "command": "notes_new"    },
+  { "keys": ["ctrl+f4"],  "command": "notes_buffer" },
+  { "keys": ["f1"],       "command": "jotter"       },
+
+  // Note Extra Features: TODO and HEADING FOLDING
+  { "keys": ["ctrl+shift+["], "command": "note_smart_folding", "context":
+    [{ "key": "selector", "operator": "equal", "operand": "(markup.heading.1.markdown.note | markup.heading.2.markdown.note | markup.heading.3.markdown.note| markup.heading.4.markdown.note| markup.heading.5.markdown.note| markup.heading.6.markdown.note)" }]
+  },
+  { "keys": ["ctrl+k", "ctrl+j"], "command": "note_global_folding", "context":
+    [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" } ]
+  },
+
+  { "keys": ["ctrl+k", "ctrl+t"],  "command": "note_todo_pending", "context":
+    [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" }]
+  },
+
+  { "keys": ["ctrl+k", "ctrl+y"],  "command": "note_todo_done", "context":
+    [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" }]
+  },
+
+  { "keys": ["ctrl+k", "ctrl+u"],  "command": "note_todo_cancel", "context":
+    [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" }]
+  },
+
+  { "keys": ["enter"], "command": "note_open_url", "context":
+    [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note meta.link.inline.markdown | text.html.markdown.note meta.link.inet.markdown | text.html.markdown.note meta.link.reference.def.markdown" }]
+  },
+
+  { "keys": ["enter"], "command": "note_preview_image", "context":
+    [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown.note meta.image.inline.markdown" }]
+  },
+
+  // >> Sublime Linter
+  { "keys": ["ctrl+k", "l"], "command": "sublimelinter_lint" },
+  { "keys": ["ctrl+k", "n"], "command": "sublimelinter_goto_error", "args": {"direction": "next"} },
+  { "keys": ["ctrl+k", "p"], "command": "sublimelinter_goto_error", "args": {"direction": "previous"} },
+  { "keys": ["ctrl+k", "a"], "command": "sublimelinter_show_all_errors" },
+  { "keys": ["ctrl+k", "t"], "command": "sublimelinter_toggle_linter", "args": {"which": "all"}},
+
+
+  // >> File Rename
+  { "keys": ["f2"], "command": "file_rename" },
+
+  // >> Clickable URLs
+  { "keys": ["ctrl+enter"], "command": "open_url_under_cursor" },
+
+  // >> TwoFont & TwoFace
+  { "keys": ["ctrl+0"], "command": "two_font" },
+  { "keys": ["ctrl+9"], "command": "two_face" },
+
+  // >> Spellcheck
+  { "keys": ["shift+f6"], "command": "toggle_setting", 
+    "args": {"setting": "spell_check"} },
+
+  // >> Toggle UI
+  { "keys": ["ctrl+alt+m"], "command": "toggle_menu" },
+  { "keys": ["ctrl+alt+b"], "command": "toggle_tabs" },
+  { "keys": ["ctrl+alt+i"], "command": "toggle_minimap" },
+  
+  // >> Sidebar
+  // focus current file if not visible, else focus document
+  // Hide Sidebar When not focused package active
+  // focus file on sidebar package used.
+  // packages dependencies not needed if 'chain of command' is used...
+  { "keys": ["ctrl+alt+s"], "command": "chain", 
+    "args": {
+      "commands": [
+        ["toggle_side_bar"],
+        ["reveal_in_side_bar"],
+        ["focus_side_bar"]
+      ]
+    }
+    , "context": [ {"key": "control", "operator": "not_equal", "operand": "sidebar_tree"} ]
+  },
+
+  { "keys": ["ctrl+alt+s"], "command": "chain", 
+    "args": {
+      "commands": [
+        ["toggle_side_bar"],
+        ["focus_group", { "group": 0 }]
+      ]
+    }
+    , "context": [ {"key": "control", "operator": "equal", "operand": "sidebar_tree"} ]
+  },
+  // >> Vi-bindings for sidebar
+  // wishlist, goto parent in side bar on left/h, create issue on github?
+  { "keys": ["h"], "command": "move", "args": {"by": "characters", "forward": false}, "context":
+      [ {"key": "control", "operand": "sidebar_tree"} ] },
+  { "keys": ["j"], "command": "move", "args": {"by": "lines", "forward": true}, "context":
+      [ {"key": "control", "operand": "sidebar_tree"} ] },
+  { "keys": ["k"], "command": "move", "args": {"by": "lines", "forward": false}, "context":
+      [ {"key": "control", "operand": "sidebar_tree"} ] },
+  { "keys": ["l"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
+      [ {"key": "control", "operand": "sidebar_tree"} ] },
+
+  // >> Tabswitching
+  // switched ctrl+page[up/down] with ctrl+[shift+]tab
+  { "keys": ["ctrl+tab"], "command": "next_view" },
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+  { "keys": ["ctrl+pagedown"], "command": "next_view" },
+  { "keys": ["ctrl+pageup"], "command": "prev_view" },
+  { "keys": ["ctrl+l"], "command": "next_view" },
+  { "keys": ["ctrl+h"], "command": "prev_view" },
+  // { "keys": ["J"], "command": "next_view", 
+  //   "context": [{"key": "setting.command_mode"}] },
+  // { "keys": ["K"], "command": "prev_view", 
+  //   "context": [{"key": "setting.command_mode"}] },
+ 
+  // >> Vintage bonus:
+  // breaks expand_selection_to_indentation -> ctrl+shift+i
+  { "keys": ["ctrl+shift+j"], "command": "swap_line_down" },
+  { "keys": ["ctrl+shift+k"], "command": "swap_line_up" },
+
+  { "keys": ["alt+shift+k"], "command": "select_lines", 
+    "args": {"forward": false} },
+  { "keys": ["alt+shift+j"], "command": "select_lines", 
+    "args": {"forward": true} },
+
+  // true UNIX shift+insert
+  { "keys": ["shift+insert"], "command": "paste", 
+    "args": {"clipboard": "selection"} },
+ 
+  // >> break fixes:
+  { "keys": ["ctrl+shift+i"], "command": "expand_selection", 
+    "args": {"to": "indentation"} },
+  { "keys": ["ctrl+shift+p"], "command": "show_overlay", 
+    "args": {"overlay": "goto", "text": "@"} },
+  { "keys": ["ctrl+."], "command": "find_under_expand" },
+  { "keys": ["ctrl+shift+."], "command": "find_under_expand_skip" },
+  // { "keys": ["ctrl+h"], "command": "replace_next" },
+
+
+  // >> Find Panel Hack:
+  // Find always opens replace panel.
+  // Auto slurp to find field.
+  // Panel stays on enter, but document gets focus.
+
+  { "keys": ["/"], "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", 
+                        "reverse": "false", 
+                        "select_text": "false"}],
+        ["slurp_find_string"]
+      ]
+    },
+    "context": [{"key": "setting.command_mode"}]
+  }, 
+  { "keys": ["?"], "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", 
+                        "reverse": "true", 
+                        "select_text": "false"}],
+        ["slurp_find_string"]
+      ]
+    },
+    "context": [{"key": "setting.command_mode"}]
+  },
+  { "keys": ["enter"], "command": "focus_group", "args": {"group": 0 }, "context":
+      [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+  },
+  {
+    "keys": ["f3"], 
+    "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", "reverse": false}],
+        ["focus_group", { "group": 0 }],
+        ["slurp_find_string"]
+      ]
+    },
+    "context":
+    [
+      { "key": "panel", "operator": "equal", "operand": "replace" }
+    ]
+  },
+  {
+    "keys": ["shift+f3"], 
+    "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", "reverse": false}],
+        ["focus_group", { "group": 0 }],
+        ["slurp_replace_string"]
+      ]
+    }
+  },
+
+  // : opens command palette, without prefilled stupid `:`
+  { "keys": [":"], "command": "show_overlay", "args": {"overlay": "command_palette"},
+    "context": [{"key": "setting.command_mode"}]
+  },
+
+  // >> Disable normal arrowkey movement
+  { "keys": ["up"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["down"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["left"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["right"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+
+  { "keys": ["ctrl+up"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+down"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+left"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+right"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },  
+
+  { "keys": ["ctrl+shift+up"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+shift+down"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+shift+left"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+shift+right"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  
+
+  // redo_or_repeat: `ctrl+r`
+  { "keys": ["ctrl+y"], "command": "redo_or_repeat" },
+  { "keys": ["ctrl+y"], "command": "scroll_lines", "args": {"amount": 1.0 },
+    "context": [{"key": "setting.vintage_ctrl_keys"}] },
+
+  // open find panel with `/` in command mode
+  { "keys": ["ctrl+f"], "command": "show_panel", 
+    "args": {"panel": "find", "reverse": false} },
+  { "keys": ["ctrl+f"], "command": "set_motion", "args": {
+    "motion": "move",
+    "motion_args": {"by": "pages", "forward": true, "extend": true }},
+    "context": [{"key": "setting.vintage_ctrl_keys"}]
+  },
+
+  // build: no new key set.
+  { "keys": ["ctrl+b"], "command": "build" },
+  { "keys": ["ctrl+b"], "command": "set_motion", "args": {
+    "motion": "move",
+    "motion_args": {"by": "pages", "forward": false, "extend": true }},
+    "context": [{"key": "setting.vintage_ctrl_keys"}]
+  },
+
+  // soft_undo: replace by `u` in command mode
+  { "keys": ["ctrl+u"], "command": "soft_undo" },
+  { "keys": ["ctrl+u"], "command": "vi_scroll_lines",
+      "args": {"forward": false},
+      "context": [{"key": "setting.vintage_ctrl_keys"}]
+  },
+
+  // added soft_undo as command for u.
+  { "keys": ["u"], "command": "soft_undo", 
+    "context": [{"key": "setting.command_mode"}] },
+  { "keys": ["U"], "command": "undo", 
+    "context": [{"key": "setting.command_mode"}] },
+
+  // find_under_expand: new key `ctrl+.`
+  // find_under_expand_skip: new key `ctrl+shif+.`
+  { "keys": ["ctrl+d"], "command": "find_under_expand" },
+  { "keys": ["ctrl+d"], "command": "vi_scroll_lines",
+      "args": {"forward": true},
+      "context": [{"key": "setting.vintage_ctrl_keys"}]
+  },
+
+  // goto-symbol changed to `ctrl+shift+p`
+  // command pallette available from `:` in command mode.
+  { "keys": ["ctrl+r"], "command": "show_overlay", 
+    "args": {"overlay": "goto", "text": "@"} },
+  
+  // changed to redo_or_repeat from default redo, 
+  // so it fully replaces ctrl+y
+  { "keys": ["ctrl+r"], "command": "redo_or_repeat",
+    "context": [{"key": "setting.vintage_ctrl_keys"}] },
+  
+  // slurping is done with `[shift+]F3`  
+  { "keys": ["ctrl+e"], "command": "slurp_find_string" },
+  // { "keys": ["ctrl+shift+e"], "command": "slurp_replace_string" },
+  { "keys": ["ctrl+e"], "command": "scroll_lines", "args": {"amount": -1.0 },
+    "context": [{"key": "setting.vintage_ctrl_keys"}]},
+
+  // default ctrl+w needs to be disabled otherwise it is very easy
+  // to close tabs by mistake when manipulating windows.
+  { "keys": ["ctrl+w"], "command": "close" }
+]
+
+// syntax:ssDslash
