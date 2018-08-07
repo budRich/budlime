@@ -1,0 +1,934 @@
+{
+  // Note, these settings affect only color schemes those support
+  // DA UI engine.
+
+  // It's highly recommended to check the official Sublime Text
+  // color scheme docs before doing some advanced customization:
+  // https://www.sublimetext.com/docs/3/color_schemes.html
+
+  // 1. Global
+  //   1.1. Skins
+  //   1.2. Variables
+  //   1.3. Functions
+  //   1.4. Base
+  //   1.5. Accents
+  //   1.6. CSS
+  //   1.7. Gutter
+  //   1.8. Selection
+  //   1.9. Find
+  //   1.10. Guides
+  //   1.11. Brackets
+  //   1.12. Tags
+  //   1.13. Shadows
+  // 2. Scopes
+  //   2.1. Common
+  //   2.2. Package-Specific
+
+
+
+  // 1. Global
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+  // 1.1. Skins
+  // ===============================================================
+
+  // DA UI comes with a number of built in skins which can get
+  // you started. Just run `DA UI: Select Skin` command and select
+  // one which fits your needs.
+  // JFYI:
+  //  - All skins are compatible with amazing `Skins` package.
+  //  - Skins also activate themes for next packages provided by
+  //    Sublime Text community:
+  //      + GitGutter,
+  //      + SublimeLinter.
+  //  - The code of all built in skins can be found in `DA UI.skins`
+  //    file. Use `PackageResourceViewer` to open it.
+
+  // This setting contains all color scheme specific settings
+  // applied by an active skin.
+  // Note:
+  // - It will be overwritten if you run `DA UI: Select Skin`.
+  // - Skin settings override default and user settings. Because of
+  //   this, if you want to do some advanced customization of your
+  //   favorite skin: cut its settings and paste them at the bottom
+  //   of your user settings file.
+  "skin": {
+    "id": "origin",
+    "settings": {}
+  },
+
+
+
+  // 1.2. Variables
+  // ===============================================================
+
+  // DA UI engine provides a bunch of variables to improve your
+  // experience with color scheme customizing.
+
+  // Almost every option may be used as `variable`, just prefix its
+  // name with `$`.
+
+
+
+  // 1.3. Functions
+  // ===============================================================
+
+  // We use a special syntax for function calls. A function call may
+  // be specified by creating an array, with the first being the
+  // name of the function and the others being its arguments.
+  // E.g. ["darken", "$background_color", 0.25].
+
+  // Note: the list of functions supported by theme engine and the
+  // list of functions supported by color scheme engine are varied.
+  // That's because in color schemes we deal with real colors only,
+  // however themes also support `derived` colors.
+
+  // css()
+  // Convert JSON to CSS string. Used only in "popupCss" and
+  // "phantomCss" settings.
+  //
+  // Parameters:
+  //  - css: JSON CSS.
+
+  // rgb()
+  // Create an opaque color object from decimal red, green and
+  // blue (RGB) values.
+  //
+  // Parameters:
+  //  - red: An integer 0–255.
+  //  - green: An integer 0–255.
+  //  - blue: An integer 0–255.
+  //
+  // Example: ["rgb", 90, 130, 30].
+
+  // rgba()
+  // Create a transparent color object from decimal red, green,
+  // blue and alpha (RGBA) values.
+  //
+  // Parameters:
+  //  - red: An integer 0–255.
+  //  - green: An integer 0–255.
+  //  - blue: An integer 0–255.
+  //  - alpha: A number 0–1.
+  //
+  // Example: ["rgba", 90, 130, 30, 0.5].
+
+  // hsl()
+  // Create an opaque color object from hue, saturation and
+  // lightness (HSL) values.
+  //
+  // Parameters:
+  //  - hue: An integer 0–360 representing degrees.
+  //  - saturation: An integer 0–100 representing a percentage.
+  //  - lightness: An integer 0–100 representing a percentage.
+  //
+  // Example: ["hsl", 90, 100, 50].
+
+  // hsla()
+  // Create a transparent color object from hue, saturation,
+  // lightness and alpha (HSLA) values.
+  //
+  // Parameters:
+  //  - hue: An integer 0–360 representing degrees.
+  //  - saturation: An integer 0–100 representing a percentage.
+  //  - lightness: An integer 0–100 representing a percentage.
+  //  - alpha: A number 0–1.
+  //
+  // Example: ["hsla", 90, 100, 50, 0.25].
+
+  // opacity()
+  // Change the opacity of the provided color.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - amount: A number 0–1.
+  //
+  // Example: ["opacity", "$foreground_color", 0.9].
+
+  // hue()
+  // Change the hue of the provided color in the HSL color space.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - hue: An integer 0–360 representing a degrees.
+  //
+  // Example: ["hue", "#f0f", 50].
+
+  // saturation()
+  // Change the saturation level of the provided color in
+  // the HSL color space.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - saturation: An integer 0–100 representing a percentage.
+  //
+  // Example: ["saturation", "#fff", 50].
+
+  // lightness()
+  // Change the lightness level of the provided color in
+  // the HSL color space.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - lightness: An integer 0–100 representing a percentage.
+  //
+  // Example: ["lightness", "#000", 25].
+
+  // mix()
+  // Mix two colors together in variable proportion. Opacity is not
+  // included in the calculations.
+  //
+  // Parameters:
+  // - first_color: A color object.
+  // - second_color: A color object.
+  // - weight: A number 0–1 representing a percentage balance point
+  //           between the two colors.
+  //
+  // Example: ["mix", "#ff0000", "#0000ff", 0.5].
+
+  // tint()
+  // Mix color with white in variable proportion. It is the same as
+  // calling `["mix", "$color", "#ffffff", "$weight"]`.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - weight: A number 0–1 representing a percentage balance point
+  //            between the color and white.
+  //
+  // Example: ["tint", "#007fff", 0.5].
+
+  // shade()
+  // Mix color with black in variable proportion. It is the same as
+  // calling `["mix", "$color", "#000000", "$weight"]`.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - weight: A number 0–1 representing a percentage balance point
+  //            between the color and black.
+  //
+  // Example: ["shade", "#007fff", 0.5].
+
+  // lighten()
+  // Increase the lightness of a color in the HSL color space by
+  // an absolute amount.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - amount: An integer 0–100.
+  //
+  // Example: ["lighten", ["rgba", 0, 0, 0, 1.0], 50].
+
+  // darken()
+  // Decrease the lightness of a color in the HSL color space by
+  // an absolute amount.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - amount: An integer 0–100.
+  //
+  // Example: ["darken", ["hsl", 200, 50, 20], 10].
+
+  // specify()
+  // Use different colors for dark & light color schemes. The first
+  // argument is used for dark color schemes, while the second is
+  // used for light color schemes.
+  //
+  // Parameters:
+  // - dark: A color object.
+  // - light: A color object.
+  //
+  // Example: ["specify", "$red", "$blue"] -> `$blue` will be used
+  //          if the color scheme is light, `$red` will be used
+  //          otherwise.
+
+
+
+  // 1.4. Base
+  // ===============================================================
+
+  // DA UI color scheme engine support next color formats:
+  // HEX RGB(A), RGB(A), HSL(A), X11 and WEB named.
+
+  // Usage:
+  //  - "black",
+  //  - "#fff",
+  //  - ["rgb", 163, 194, 116],
+  //  - ["hsla", 84, 40, 76, 0.5],
+  //  - "$greenish_color".
+
+  // See the links below for more details about color formats
+  // supported by Sublime Text:
+  //  - https://www.sublimetext.com/docs/3/color_schemes.html#colors
+  //  - https://www.sublimetext.com/docs/3/themes.html#color_values
+
+  // Note, we obtain all base colors from `DA Color.sublime-settings`
+  // file on a per color scheme basis by default.
+
+  // Valid values for font style settings:
+  //  - "" (do not add font style setting for scope),
+  //  - "normal",
+  //  - "bold",
+  //  - "italic",
+  //  - "bold italic".
+
+  // The default background color.
+  "background_color": "$scheme_background_color",
+
+  // The default color for text.
+  "foreground_color": "$scheme_foreground_color",
+
+  // Accent color is used more subtly throughout the UI, to call
+  // attention to key elements.
+  // Note, DA UI comes with a number of built in accent colors which
+  // can get you started. Just run `DA UI: Select Accent` command
+  // and select one which fits your needs.
+  "accent_color": "$scheme_accent_color",
+
+  // A set of six basic colors.
+  "redish_color": "$scheme_redish_color",
+  "orangish_color": "$scheme_orangish_color",
+  "yellowish_color": "$scheme_yellowish_color",
+  "greenish_color": "$scheme_greenish_color",
+  "bluish_color": "$scheme_bluish_color",
+  "purplish_color": "$scheme_purplish_color",
+
+
+
+  // 1.5. Accents
+  // ===============================================================
+
+  // The color of the caret.
+  "caret_color": "$accent_color",
+
+  // The background color of the line containing the caret. Only
+  // used when the ST's "highlight_line" setting is enabled.
+  "line_highlight_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.05],
+    ["rgba", 0, 0, 0, 0.05]
+  ],
+
+  // The color to use for the squiggly underline drawn under
+  // misspelled words.
+  "misspelling_color": "$redish_color",
+
+  // The color of the border drawn around the viewport area of the
+  // minimap when the ST's setting "draw_minimap_border" is enabled.
+  "minimap_border_color": "",
+
+
+
+  // 1.6. CSS
+  // ===============================================================
+
+  // Note:
+  //  - "popup_css" and "phantom_css" settings support only color
+  //    our variables and of course everything described in
+  //    https://www.sublimetext.com/docs/3/minihtml.html.
+  //  - Currently ST doesn't apply some CSS styles, see:
+  //    https://github.com/SublimeTextIssues/Core/issues/1890
+  //  - If you want to change some styles you need to copy
+  //    the entire "style sheet" to your user settings and than
+  //    modify them there.
+
+  // CSS passed to popups.
+  "popup_css": ["css", [
+    {
+      "html": {
+        "--background": "$background_color",
+        "--foreground": "$foreground_color",
+        "--redish": "$redish_color",
+        "--orangish": "$orangish_color",
+        "--yellowish": "$yellowish_color",
+        "--greenish": "$greenish_color",
+        "--bluish": "$bluish_color",
+        "--purplish": "$purplish_color",
+        "background-color": "color(var(--background) blend(#fff 95%))",
+        "color": "var(--foreground)"
+      }
+    },
+    {
+      "html.light": {
+        "background-color": "color(var(--background) blend(#000 95%))"
+      },
+      "a": {
+        "color": "var(--bluish)"
+      }
+    },
+    {
+      "#show-scope": {
+        "padding": "0.5rem"
+      },
+      "#show-scope a": {
+        "font-size": "1rem"
+      }
+    }
+  ]],
+
+  // CSS passed to phantoms.
+  "phantom_css": ["css", [
+    {
+      "html": {
+        "--background": "$background_color",
+        "--foreground": "$foreground_color",
+        "--redish": "$redish_color",
+        "--orangish": "$orangish_color",
+        "--yellowish": "$yellowish_color",
+        "--greenish": "$greenish_color",
+        "--bluish": "$bluish_color",
+        "--purplish": "$purplish_color",
+        "background-color": "transparent",
+        "color": "var(--foreground)"
+      }
+    },
+    {
+      "a": {
+        "color": "var(--bluish)"
+      }
+    },
+    {
+      "#inline-error .error-arrow": {
+        "border-left-color": "color(var(--redish) blend(var(--background) 30%))"
+      },
+      "#inline-error .error": {
+        "background-color": "color(var(--redish) blend(var(--background) 30%))"
+      },
+      "#inline-error .error a": {
+        "background-color": "color(var(--redish) blend(var(--background) 30%))",
+        "color": "var(--foreground)",
+        "font-size": "1.1rem",
+        "font-weight": "normal"
+      }
+    }
+  ]],
+
+
+
+  // 1.7. Gutter
+  // ===============================================================
+
+  // The background color of the gutter.
+  "gutter_background_color": "$background_color",
+
+  // The color of line numbers in the gutter.
+  "gutter_foreground_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.20],
+    ["rgba", 0, 0, 0, 0.20],
+  ],
+
+
+
+  // 1.8. Selection
+  // ===============================================================
+
+  // The background color of selected text.
+  "selection_background_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.085],
+    ["rgba", 0, 0, 0, 0.085]
+  ],
+
+  // A color that will override the scope-based text color of
+  // the selection.
+  "selection_foreground_color": "",
+
+  // The color for the border of the selection.
+  "selection_border_color": "$selection_background_color",
+
+  // The background color of a selection in a view that is not
+  // currently focused.
+  "inactive_selection_background_color": "$selection_background_color",
+
+  // A color that will override the scope-based text color of
+  // the selection in a view that is not currently focused.
+  "inactive_selection_foreground_color": "",
+
+
+
+  // 1.9. Find
+  // ===============================================================
+
+  // The background color of text matched by the Find panel.
+  "find_hightlight_background_color": [
+    "hue", ["lightness", "$yellowish_color", 75], 45
+  ],
+
+  // A color that will override the scope-based text color of text
+  // matched by the Find panel.
+  "find_hightlight_foreground_color": "black",
+
+  // The border color for "other" matches when the Highlight matches
+  // option is selected in the Find panel. Also used to highlight
+  // matches in Find in Files results.
+  "find_hightlight_border_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.25],
+    ["rgba", 0, 0, 0, 0.25]
+  ],
+
+
+
+  // 1.10. Guides
+  // ===============================================================
+
+  // The color used to draw indent guides. Only used if the option
+  // "draw_normal" is present in the setting `indent_guide_options`.
+  "default_guide_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.10],
+    ["rgba", 0, 0, 0, 0.10]
+  ],
+
+  // The color used to draw the indent guides for the indentation
+  // levels containing the caret. Only used if the option
+  // "draw_active" is present in the setting `indent_guide_options`.
+  "active_guide_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.20],
+    ["rgba", 0, 0, 0, 0.20]
+  ],
+
+  // The color used to draw the indent guides for the parent
+  // indentation levels of the indentation level containing the
+  // caret. Only used if the option "draw_active" is present in
+  // the setting `indent_guide_options`.
+  "stack_guide_color": "$default_guide_color",
+
+
+
+  // 1.11. Brackets
+  // ===============================================================
+
+  // How brackets are highlighted when the caret is next to one.
+  // Accepts a space-separated list from the following:
+  //  - underline,
+  //  - stippled_underline,
+  //  - squiggly_underline,
+  //  - foreground.
+  "default_bracket_style": "underline",
+
+  // The color to use when drawing the style specified
+  // by "default_bracket_style".
+  "default_bracket_color": "$bluish_color",
+
+  // How brackets are highlighted when the caret is positioned in
+  // between a pair of brackets. Accepts a space-separated list
+  // from the following:
+  //  - underline,
+  //  - stippled_underline,
+  //  - squiggly_underline,
+  //  - foreground.
+  "contents_bracket_style": "$default_bracket_style",
+
+  // The color to use when drawing the style specified
+  // by "contents_bracket_style".
+  "contents_bracket_color": "$default_bracket_color",
+
+
+
+  // 1.12. Tags
+  // ===============================================================
+
+  // How tags are highlighted when the caret is inside of one.
+  // Accepts a space-separated list from the following:
+  //  - underline,
+  //  - stippled_underline,
+  //  - squiggly_underline,
+  //  - foreground.
+  "tag_style": "stippled_underline",
+
+  // The color to use when drawing the style specified
+  // by "tags_style".
+  "tag_color": "$greenish_color",
+
+
+
+  // 1.13. Shadows
+  // ===============================================================
+
+  // The color of the shadow used to show when a text area can be
+  // horizontally scrolled.
+  "shadow_color": ["rgba", 0, 0, 0, 0.20],
+
+  // The width of the shadow in device-independent pixels.
+  // Set to 0 to use default width. Set to 1 to disable shadow.
+  "shadow_width": 5,
+
+
+
+  // 2. Scopes
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+  // 2.1. Common
+  // ===============================================================
+
+
+  // 2.1.1. Comments
+  // ---------------------------------------------------------------
+
+  "comment_foreground_color": "$scheme_comment_color",
+  "comment_font_style": "italic",
+
+
+  // 2.1.2. Punctuation
+  // ---------------------------------------------------------------
+
+  // Note you can disable special punctuation highlighting by
+  // setting punctuation foreground color to "". In this case parent
+  // scope will be used for color highlighting.
+
+  "definition_punctuation_foreground_color": [
+    "specify",
+    ["lighten", "$comment_foreground_color", 10],
+    ["darken", "$comment_foreground_color", 10]
+  ],
+  "definition_punctuation_font_style": "",
+
+  "comment_punctuation_foreground_color": "$comment_foreground_color",
+  "comment_punctuation_font_style": "$comment_font_style",
+
+  "annotation_punctuation_foreground_color": "$definition_punctuation_foreground_color",
+  "annotation_punctuation_font_style": "$definition_punctuation_font_style",
+
+  "heading_punctuation_foreground_color": "$definition_punctuation_foreground_color",
+  "heading_punctuation_font_style": "$definition_punctuation_font_style",
+
+  "list_punctuation_foreground_color": "$definition_punctuation_foreground_color",
+  "list_punctuation_font_style": "$definition_punctuation_font_style",
+
+  "fontstyle_punctuation_foreground_color": "$definition_punctuation_foreground_color",
+
+  "thematic_break_punctuation_background_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.05],
+    ["rgba", 0, 0, 0, 0.05]
+  ],
+  "thematic_break_punctuation_foreground_color": "$definition_punctuation_foreground_color",
+  "thematic_break_punctuation_font_style": "$definition_punctuation_font_style",
+
+  "blockquote_punctuation_background_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.075],
+    ["rgba", 0, 0, 0, 0.075]
+  ],
+  "blockquote_punctuation_foreground_color": "$blockquote_punctuation_background_color",
+  "blockquote_punctuation_font_style": "",
+
+  "separator_punctuation_foreground_color": "$definition_punctuation_foreground_color",
+  "separator_punctuation_font_style": "$definition_punctuation_font_style",
+
+  "terminator_punctuation_foreground_color": "$definition_punctuation_foreground_color",
+  "terminator_punctuation_font_style": "$definition_punctuation_font_style",
+
+  "accessor_punctuation_foreground_color": "$definition_punctuation_foreground_color",
+  "accessor_punctuation_font_style": "$definition_punctuation_font_style",
+
+  "section_punctuation_foreground_color": "$definition_punctuation_foreground_color",
+  "section_punctuation_font_style": "$definition_punctuation_font_style",
+
+
+  // 2.1.3. Strings
+  // ---------------------------------------------------------------
+
+  "string_foreground_color": "$greenish_color",
+  "string_font_style": "",
+
+
+  // 2.1.4. Numbers
+  // ---------------------------------------------------------------
+
+  "number_foreground_color": "$orangish_color",
+  "number_font_style": "",
+
+  "line_number_foreground_color": "$gutter_foreground_color",
+  "line_number_font_style": "",
+
+  "line_number_matched_foreground_color": "$yellowish_color",
+  "line_number_matched_font_style": "",
+
+
+  // 2.1.5. Constants
+  // ---------------------------------------------------------------
+
+  "built_in_constant_foreground_color": "$redish_color",
+  "user_defined_constant_foreground_color": "$purplish_color",
+
+  "built_in_constant_font_style": "italic",
+  "user_defined_constant_font_style": "",
+
+
+  // 2.1.6. Variables
+  // ---------------------------------------------------------------
+
+  "member_variable_foreground_color": "$redish_color",
+  "member_variable_font_style": "",
+
+  "parameter_variable_foreground_color": "$foreground_color",
+  "parameter_variable_font_style": "",
+
+  "language_variable_foreground_color": "$redish_color",
+  "language_variable_font_style": "italic",
+
+  "function_variable_foreground_color": "$bluish_color",
+  "function_variable_font_style": "",
+
+  "annotation_variable_foreground_color": "$bluish_color",
+  "annotation_variable_font_style": "",
+
+
+  // 2.1.7. Keywords
+  // ---------------------------------------------------------------
+
+  "keyword_foreground_color": "$purplish_color",
+  "keyword_font_style": "",
+
+  "operator_foreground_color": [
+    "mix", "$yellowish_color", "$orangish_color", 0.40
+  ],
+  "operator_font_style": "$keyword_font_style",
+
+
+  // 2.1.8. Storage
+  // ---------------------------------------------------------------
+
+  "storage_foreground_color": "$redish_color",
+  "storage_font_style": "",
+
+  "storage_type_foreground_color": "$purplish_color",
+  "storage_type_font_style": "italic",
+
+
+  // 2.1.9. Entities
+  // ---------------------------------------------------------------
+
+  "entity_foreground_color": "$yellowish_color",
+  "entity_font_style": "",
+
+  "function_foreground_color": "$bluish_color",
+  "function_font_style": "",
+
+  "label_foreground_color": "$bluish_color",
+  "label_font_style": "",
+
+  "inherited_class_foreground_color": "$greenish_color",
+  "inherited_class_font_style": "italic",
+
+  "tag_name_foreground_color": "$redish_color",
+  "tag_name_font_style": "",
+
+  "tag_attribute_foreground_color": "$purplish_color",
+  "tag_attribute_font_style": "italic",
+
+
+  // 2.1.10. Support
+  // ---------------------------------------------------------------
+
+  "support_function_foreground_color": "$function_foreground_color",
+  "support_function_font_style": "italic",
+
+  "support_macro_foreground_color": "$support_function_foreground_color",
+  "support_macro_font_style": "$support_function_font_style",
+
+  "support_constant_foreground_color": "$orangish_color",
+  "support_constant_font_style": "italic",
+
+  "support_type_foreground_color": "$bluish_color",
+  "support_type_font_style": "italic",
+
+  "support_class_foreground_color": "$bluish_color",
+  "support_class_font_style": "italic",
+
+
+  // 2.1.11. Invalid
+  // ---------------------------------------------------------------
+
+  "invalid_background_color": [
+    "mix", "$background_color", "$redish_color", 0.25
+  ],
+  "invalid_foreground_color": [
+    "specify",
+    ["tint", "$redish_color", 0.25],
+    ["shade", "$redish_color", 0.25]
+  ],
+  "invalid_font_style": "",
+
+  "invalid_deprecated_background_color": [
+    "mix", "$background_color", "$orangish_color", 0.25
+  ],
+  "invalid_deprecated_foreground_color": [
+    "specify",
+    ["tint", "$orangish_color", 0.25],
+    ["shade", "$orangish_color", 0.25]
+  ],
+  "invalid_deprecated_font_style": "",
+
+
+  // 2.1.12. Markup
+  // ---------------------------------------------------------------
+
+  "markup_error_foreground_color": "$redish_color",
+  "markup_error_font_style": "",
+
+  "markup_warning_foreground_color": "$yellowish_color",
+  "markup_warning_font_style": "",
+
+  "markup_info_foreground_color": "$bluish_color",
+  "markup_info_font_style": "",
+
+  "markup_deleted_foreground_color": "$redish_color",
+  "markup_deleted_font_style": "",
+
+  "markup_inserted_foreground_color": "$greenish_color",
+  "markup_inserted_font_style": "",
+
+  "markup_changed_foreground_color": "$bluish_color",
+  "markup_changed_font_style": "",
+
+  "markup_ignored_foreground_color": [
+    "specify",
+    ["darken", "$comment_foreground_color", 5],
+    ["lighten", "$comment_foreground_color", 5]
+  ],
+  "markup_ignored_font_style": "",
+
+  "markup_untracked_foreground_color": "$markup_ignored_foreground_color",
+  "markup_untracked_font_style": "$markup_ignored_font_style",
+
+  "markup_heading_foreground_color": "$redish_color",
+  "markup_heading_font_style": "bold",
+
+  "markup_link_foreground_color": "$bluish_color",
+  "markup_link_font_style": "",
+
+  "markup_description_foreground_color": "$greenish_color",
+  "markup_description_font_style": "",
+
+  "markup_bullet_foreground_color": [
+    "specify",
+    ["lighten", "$comment_foreground_color", 10],
+    ["darken", "$comment_foreground_color", 10]
+  ],
+  "markup_bullet_font_style": "",
+
+  "markup_quote_foreground_color": [
+    "specify",
+    ["lighten", "$comment_foreground_color", 15],
+    ["darken", "$comment_foreground_color", 15]
+  ],
+  "markup_quote_font_style": "",
+
+  "markup_block_code_background_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.05],
+    ["rgba", 0, 0, 0, 0.05]
+  ],
+  "markup_inline_code_background_color": "$markup_block_code_background_color",
+
+  "markup_table_background_color": "$markup_block_code_background_color",
+
+
+
+  // 2.2. Package-Specific
+  // ===============================================================
+
+
+  // 2.2.1. CSS
+  // ---------------------------------------------------------------
+
+  "css_property_name_foreground_color": "$foreground_color",
+  "css_property_name_font_style": "normal",
+
+  "css_custom_property_name_foreground_color": "$css_property_name_foreground_color",
+  "css_custom_property_name_font_style": "$css_property_name_font_style",
+
+  "css_class_foreground_color": "$purplish_color",
+  "css_class_font_style": "normal",
+
+  "css_id_foreground_color": "$yellowish_color",
+  "css_id_font_style": "normal",
+
+  "css_important_foreground_color": "$redish_color",
+  "css_important_font_style": "",
+
+  "css_vendor_prefix_foreground_color": [
+    "specify",
+    ["lighten", "$comment_foreground_color", 10],
+    ["darken", "$comment_foreground_color", 10]
+  ],
+
+  "css_vendor_prefix_font_style": "",
+
+  "css_pseudo_class_foreground_color": [
+    "specify",
+    ["lighten", "$css_vendor_prefix_foreground_color", 15],
+    ["darken", "$css_vendor_prefix_foreground_color", 15]
+  ],
+  "css_pseudo_class_font_style": "",
+
+  "css_pseudo_element_foreground_color": "$css_pseudo_class_foreground_color",
+  "css_pseudo_element_font_style": "",
+
+
+  // 2.2.2. JSON
+  // ---------------------------------------------------------------
+
+  // Set to 0 to disable JSON level highlighting.
+  // Valid values are numbers between 0 and 9.
+  "json_levels_number": 9,
+
+
+  // 2.2.3. Bracket Highlighter
+  // ---------------------------------------------------------------
+
+  "bracket_highlighter_default_color": "$foreground_color",
+  "bracket_highlighter_unmatched_color": "$redish_color",
+  "bracket_highlighter_quote_color": "$greenish_color",
+  "bracket_highlighter_curly_color": "$purplish_color",
+  "bracket_highlighter_round_color": "$yellowish_color",
+  "bracket_highlighter_square_color": "$bluish_color",
+  "bracket_highlighter_angle_color": "$orangish_color",
+  "bracket_highlighter_tag_color": "$greenish_color",
+
+
+  // 2.2.4. Anaconda
+  // ---------------------------------------------------------------
+
+  // The color of error lines.
+  "anaconda_illegal_outline_color": [
+    "opacity", "$markup_error_foreground_color", 0.50
+  ],
+  "anaconda_illegal_underline_color": "$markup_error_foreground_color",
+
+  // The color of warning lines.
+  "anaconda_warning_outline_color": [
+    "opacity", "$markup_warning_foreground_color", 0.50
+  ],
+  "anaconda_warning_underline_color": "$markup_warning_foreground_color",
+
+  // The color of violation lines.
+  "anaconda_violation_outline_color": [
+    "opacity", "$markup_info_foreground_color", 0.50
+  ],
+  "anaconda_violation_underline_color": "$markup_info_foreground_color",
+
+
+  // 2.2.5. Sublime Linter
+  // ---------------------------------------------------------------
+
+  // Note:
+  //  - Sublime Linter settings work only if your gutter theme
+  //    supports colorization.
+  //  - Due to implementation reason these color settings override
+  //    colors provided by `SublimeLinter.sublime-settings` file.
+
+  // The color of error marks.
+  "sublime_linter_error_mark_color": "$markup_error_foreground_color",
+
+  // The color of warning marks.
+  "sublime_linter_warning_mark_color": "$markup_warning_foreground_color"
+}

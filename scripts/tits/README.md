@@ -41,7 +41,10 @@ Show version and exit.
 Show help and exit.
 
 `-f`  
-Prints the filename of the currently open file.
+Prints the full path of the currently open file.
+
+`-l`  
+Same as `-f` but with `~` instead of `$HOME`.
 
 `-d`  
 Prints the directory of the currently open file.
@@ -52,6 +55,13 @@ Prints the status (dirty|clean). dirty means that the file is not saved.
 `-p`  
 Prints the project name.
 
+EXAMPLES
+--------
+
+Goto the same directory as the currently open file:  
+`$ cd "$(tits -d)"`  
+
+`$ alias cds=''cd "$(tits -d)"''`  
 
 DEPENDENCIES
 ------------

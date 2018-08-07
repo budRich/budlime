@@ -1,0 +1,50 @@
+[
+  {
+    "caption": "DA UI: Color Scheme Settings",
+    "command": "edit_settings",
+    "args": {
+      "base_file": "${packages}/DA UI/DA Scheme.sublime-settings",
+      "default": "{\n$0\n}\n"
+    }
+  },
+  {
+    "caption": "DA UI: General Settings",
+    "command": "edit_settings",
+    "args": {
+      "base_file": "${packages}/DA UI/DA General.sublime-settings",
+      "default": "{\n$0\n}\n"
+    }
+  },
+  {
+    "caption": "DA UI: Re-apply Settings",
+    "command": "daui_reapply_settings"
+  },
+  {
+    "caption": "DA UI: Report an Issue",
+    "command": "daui_report_issue"
+  },
+  {
+    "caption": "DA UI: Select Accent",
+    "command": "daui_select_accent"
+  },
+  {
+    "caption": "DA UI: Select Skin",
+    "command": "daui_select_skin"
+  },
+  {
+    "caption": "DA UI: Theme Settings",
+    "command": "edit_settings",
+    "args": {
+      "base_file": "${packages}/DA UI/DA Theme.sublime-settings",
+      "default": "{\n$0\n}\n"
+    }
+  },
+  {
+    "caption": "DA UI: Widget Settings",
+    "command": "edit_settings",
+    "args": {
+      "base_file": "${packages}/DA UI/Widget - DA.sublime-settings",
+      "default": "{\n$0\n}\n"
+    }
+  }
+]

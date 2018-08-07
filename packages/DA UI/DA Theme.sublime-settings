@@ -1,0 +1,1453 @@
+{
+  // Note, sometimes Sublime Text doesn't reload some assets after
+  // changing theme settings: just restart it.
+
+  // These settings are pretty advanced, please read every comment
+  // carefully. We highly recommend you to use `DA UI: Select Skin`
+  // command and then just tweak some options for your needs.
+
+  // Also it's highly recommended to check the official Sublime Text
+  // theming documentation before doing some advanced customization:
+  // https://www.sublimetext.com/docs/3/themes.html
+
+  // 1. Global
+  //   1.1. Skins
+  //   1.2. Variables
+  //   1.3. Functions
+  //   1.4. Colors
+  //   1.5. Sizes
+  //   1.6. Typography
+  //   1.7. Animation
+  //   1.8. Shadows
+  // 2. Elements
+  //   2.1. Labels
+  //   2.2. Buttons
+  //   2.3. Icons
+  //   2.4. Inputs
+  //   2.5. Scroll Bars
+  //   2.6. Status Bar
+  //   2.7. Panels
+  //   2.8. Tabs
+  //   2.9. Side Bar
+  //   2.10. Views
+  //   2.11. Tool Tips
+  //   2.12. Windows
+
+
+
+  // 1. Global
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // Global settings enable you to control some aspects of UI
+  // appearance at once.
+
+
+
+  // 1.1. Skins
+  // ===============================================================
+
+  // DA UI comes with a number of built in skins which can get
+  // you started. Just run `DA UI: Select Skin` command and select
+  // one which fits your needs.
+  // JFYI:
+  //  - All skins are compatible with amazing `Skins` package.
+  //  - Skins also activate themes for next packages provided by
+  //    Sublime Text community:
+  //      + GitGutter,
+  //      + SublimeLinter.
+  //  - The code of all built in skins can be found in `DA UI.skins`
+  //    file. Use `PackageResourceViewer` to open it.
+
+  // This setting contains all theme-specific settings applied by
+  // an active skin.
+  // Note:
+  // - It will be overwritten if you run `DA UI: Select Skin`.
+  // - Skin settings override default and user settings. Because of
+  //   this, if you want to do some advanced customization of your
+  //   favorite skin: cut its settings and paste them at the bottom
+  //   of your user settings file.
+  "skin": {
+    "id": "origin",
+    "settings": {}
+  },
+
+
+
+  // 1.2. Variables
+  // ===============================================================
+
+  // DA UI engine provides a bunch of variables to improve your
+  // experience with theming.
+
+  // Almost every option may be used as `variable`, just prefix its
+  // name with `$`.
+
+  // E.g. if you want to use "foreground_color" value for
+  // `label_control` — you can set "label_foreground_color"
+  // setting to "$foreground_color".
+
+
+
+  // 1.3. Functions
+  // ===============================================================
+
+  // We use a special syntax for function calls. A function call may
+  // be specified by creating an array, with the first being the
+  // name of the function and the others being its arguments.
+  // E.g. ["rgba", 90, 130, 30, 0.5].
+
+  // Note: the list of functions supported by theme engine and the
+  // list of functions supported by color scheme engine are varied.
+  // That's because in color schemes we deal with real colors only,
+  // however themes also support `derived` colors (for more details
+  // see "1.3.1 Color Formats").
+
+
+  // 1.3.1. Number Functions
+  // ---------------------------------------------------------------
+
+  // add()
+  // Add two numbers.
+  //
+  // Parameters:
+  //  - first_number: A number.
+  //  - second_number: A number.
+  //
+  // Example: ["add", 14, 1.5] -> 15.5.
+
+  // subtract()
+  // Subtract two numbers.
+  //
+  // Parameters:
+  //  - first_number: A number.
+  //  - second_number: A number.
+  //
+  // Example: ["subtract", 16, 2] -> 14.
+
+  // multiply()
+  // Multiply two numbers.
+  //
+  // Parameters:
+  //  - first_number: A number.
+  //  - second_number: A number.
+  //
+  // Example: ["multiply", 10, 2] -> 20.
+
+  // divide()
+  // Divide two numbers.
+  //
+  // Parameters:
+  //  - first_number: A number.
+  //  - second_number: A number.
+  //
+  // Example: ["divide", 24, 2] -> 12.
+
+
+  // 1.3.2. Color Functions
+  // ---------------------------------------------------------------
+
+  // Note that the color functions do not support nesting within
+  // each other if you use 'derived' colors as arguments (See
+  // https://github.com/SublimeTextIssues/Core/issues/1695 for
+  // details). That's why it's highly recommended to use these
+  // functions with colors or variables those contain colors only.
+  // See "Color Formats" section for the list of supported formats.
+
+  // E.g. `["opacity", ["tint", "$scheme_accent_color", 0.25], 0.5]`
+  // function will return an invalid value that can break the theme,
+  // however `["opacity", ["tint", "#000", 0.25], 0.5]` works
+  // as expected.
+
+  // rgb()
+  // Create an opaque color object from decimal red, green and
+  // blue (RGB) values.
+  //
+  // Parameters:
+  //  - red: An integer 0–255.
+  //  - green: An integer 0–255.
+  //  - blue: An integer 0–255.
+  //
+  // Example: ["rgb", 90, 130, 30].
+
+  // rgba()
+  // Create a transparent color object from decimal red, green,
+  // blue and alpha (RGBA) values.
+  //
+  // Parameters:
+  //  - red: An integer 0–255.
+  //  - green: An integer 0–255.
+  //  - blue: An integer 0–255.
+  //  - alpha: A number 0–1.
+  //
+  // Example: ["rgba", 90, 130, 30, 0.5].
+
+  // hsl()
+  // Create an opaque color object from hue, saturation and
+  // lightness (HSL) values.
+  //
+  // Parameters:
+  //  - hue: An integer 0–360 representing degrees.
+  //  - saturation: An integer 0–100 representing a percentage.
+  //  - lightness: An integer 0–100 representing a percentage.
+  //
+  // Example: ["hsl", 90, 100, 50].
+
+  // hsla()
+  // Create a transparent color object from hue, saturation,
+  // lightness and alpha (HSLA) values.
+  //
+  // Parameters:
+  //  - hue: An integer 0–360 representing degrees.
+  //  - saturation: An integer 0–100 representing a percentage.
+  //  - lightness: An integer 0–100 representing a percentage.
+  //  - alpha: A number 0–1.
+  //
+  // Example: ["hsla", 90, 100, 50, 0.25].
+
+  // opacity()
+  // Change the opacity of the provided color.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - amount: A number 0–1.
+  //
+  // Example: ["opacity", "$foreground_color", 0.9].
+
+  // mix()
+  // Mix two colors together in variable proportion. Opacity is not
+  // included in the calculations.
+  //
+  // Parameters:
+  // - first_color: A color object.
+  // - second_color: A color object.
+  // - weight: A number 0–1 representing a percentage balance point
+  //           between the two colors.
+  //
+  // Example: ["mix", "#ff0000", "#0000ff", 0.5].
+
+  // tint()
+  // Mix color with white in variable proportion. It is the same as
+  // calling `["mix", "$color", "#ffffff", "$weight"]`.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - weight: A number 0–1 representing a percentage balance point
+  //            between the color and white.
+  //
+  // Example: ["tint", "#007fff", 0.5].
+
+  // shade()
+  // Mix color with black in variable proportion. It is the same as
+  // calling `["mix", "$color", "#000000", "$weight"]`.
+  //
+  // Parameters:
+  //  - color: A color object.
+  //  - weight: A number 0–1 representing a percentage balance point
+  //            between the color and black.
+  //
+  // Example: ["shade", "#007fff", 0.5].
+
+  // specify()
+  // Use different colors for dark & light color schemes. The first
+  // argument is used for dark color schemes, while the second is
+  // used for light color schemes.
+  //
+  // Parameters:
+  // - dark: A color object.
+  // - light: A color object.
+  //
+  // Example: ["specify", "$red", "$blue"] -> `$blue` will be used
+  //          if the global color scheme is light, `$red` will be
+  //          used otherwise.
+
+
+
+  // 1.4. Colors
+  // ===============================================================
+
+
+  // 1.4.1. Color Formats
+  // ---------------------------------------------------------------
+
+  // DA Theme supports next color formats: HEX RGB(A), RGB(A),
+  // HSL(A), X11 and WEB named.
+
+  // It is possible to use next colors from the current global color
+  // scheme: "$scheme_foreground_color", "$scheme_background_color"
+  // and "$scheme_accent_color". These colors are abstraction over
+  // https://www.sublimetext.com/docs/3/themes.html#colors-derived
+  // and in terms of Sublime Text we call them `derived` colors too.
+
+  // Note, we recommend you to use next base colors for the same
+  // purposes: "$background_color", "foreground_color" and
+  // "$accent_color". This helps you to adjust the result colors
+  // if you don't like colors provided by the global color scheme
+  // or if you want to disable UI adaptiveness.
+
+  // Also certain view-specific UI controls support next colors:
+  // "$view_background_color" and "$view_foreground_color". These
+  // colors are obtained from the view-specific color scheme.
+  // Next UI elements support "$view_background_color":
+  //  - tabs (default & selected),
+  //  - tab set line,
+  //  - auto complete.
+  // Currently "$view_foreground_color" is supported only by auto
+  // complete. See the link below for more details:
+  // https://github.com/SublimeTextIssues/Core/issues/1802.
+
+  // Usage:
+  //  - "Dark Salmon",
+  //  - "#fff",
+  //  - ["rgb", 163, 194, 116],
+  //  - ["hsla", 84, 40, 76, 0.5],
+  //  - "$accent_color".
+
+  // See the links below for more details about color formats
+  // supported by Sublime Text:
+  //  - https://www.sublimetext.com/docs/3/color_schemes.html#colors
+  //  - https://www.sublimetext.com/docs/3/themes.html#color_values
+
+
+  // 1.4.2. Base Colors
+  // ---------------------------------------------------------------
+
+  // We recommend you to use this setting as base for all colors
+  // of the UI elements. It is more reliable to tint or shade the
+  // background color to get the right foreground color than use
+  // a derived one from the color scheme. It equals the background
+  // color of the current global color scheme by default.
+  // Also this setting allows you to disable "adaptiveness" if you
+  // use it as base, just set it to any color other than `derived`.
+  "background_color": "$scheme_background_color",
+
+  // This setting equals foreground color of the current global
+  // color scheme by default.
+  // Note:
+  //  - Some color schemes use the hack to change a color of the
+  //    rulers which affects the `derived` foreground color:
+  //    https://github.com/SublimeTextIssues/Core/issues/1830.
+  //  - Another ones provide the foreground color that is well
+  //    suited for code, but looks bad with UI elements.
+  // Due to reasons described above we don't use this setting by
+  // default, however you can do that.
+  "foreground_color": "$scheme_foreground_color",
+
+  // Accent color is used more subtly throughout the UI, to call
+  // attention to key elements.
+  // Note, DA UI comes with a number of built in accent colors which
+  // can get you started. Just run `DA UI: Select Accent` command
+  // and select one which fits your needs.
+  "accent_color": "$scheme_accent_color",
+
+
+
+  // 1.5. Sizes
+  // ===============================================================
+
+  // Sublime Text uses a traditional box model for sizes, that means
+  // dimensions are calculated as, width = border + padding + width
+  // of the content, and height = border + padding + height of
+  // the content.
+
+  // Border width, padding and margin may be specified in one of
+  // three ways:
+  //  - A single integer value — the same value is applied to the
+  //    left, top, right and bottom.
+  //  - An array of two integers — the first value is applied to
+  //    the left and right, while the second value is applied to the
+  //    top and bottom.
+  //  - An array of four integers — the values are applied, in
+  //    order, to the left, top, right and bottom.
+  // Recommended values for border width are between 0 and 2. Some
+  // elements allow larger border width value, others doesn't.
+
+  // Minimum size throughout the controls those support it may be
+  // specified via an array of two integers — the first value is
+  // a minimum width, while the second value is a minimum height.
+
+  // Border radius throughout the controls those support it.
+  // Valid values are 0, 2 and 4.
+  "border_radius": 2,
+
+
+
+  // 1.6. Typography
+  // ===============================================================
+
+  // Sublime Text uses next font faces for UI by default:
+  //  - Lucida Grande on macOS (San Francisco on macOS 10.12+),
+  //  - Segoe UI on Windows,
+  //  - DejaVu Sans on Linux.
+  // This setting allows you to set custom font face throughout
+  // the UI. Note, text alignment may differ depending on the font
+  // face you want to use, so do this at your own risk.
+  "font_face": "",
+
+  // Set to a value between 11 and 14. Other values are not
+  // recommended.
+  "font_size": 12,
+
+  // Valid options are "bold" and "italic".
+  "font_style": "",
+
+
+
+  // 1.7. Animation
+  // ===============================================================
+
+  // The base animation speed throughout the UI.
+  "animation_speed": 4.5,
+
+  // The animation interpolation method throughout the UI. Valid
+  // options are "linear" and "smoothstep".
+  "animation_interpolation": "smoothstep",
+
+
+
+  // 1.8. Shadows
+  // ===============================================================
+
+  // This section allows you to modify global text shadow settings.
+  // Some UI elements support drop or inner shadows. However this
+  // feature is pretty limited due to Sublime Text layer number
+  // limitation.
+
+  // A color of the text shadow.
+  "text_shadow_color": [
+    "specify",
+    ["rgba", 0, 0, 0, 0.05],
+    ["rgba", 255, 255, 255, 0.05]
+  ],
+
+  // A text shadow offset throughout the UI may be specified via
+  // an array of two integers — the first value is an offset X,
+  // while the second value is an offset Y. "[]" disables it.
+  "text_shadow_offset": [0, 1],
+
+
+
+
+  // 2. Elements
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // Most elements inherit appearance settings from the global
+  // settings by default. Please check them out before changing
+  // per element settings.
+
+
+
+  // 2.1. Labels
+  // ===============================================================
+
+  // This section allows you to modify common label settings. If
+  // you want to change settings of the specific label — find its
+  // settings under the parent section. E.g.: Settings of the
+  // `status_label` can be found in the "Status Bar" section.
+
+
+  // 2.1.1. Foreground settings of the label controls
+  // ---------------------------------------------------------------
+
+  "label_foreground_color": [
+    "specify",
+    ["tint", "$background_color", 0.45],
+    ["shade", "$background_color", 0.45]
+  ],
+  "label_foreground_color_on_hover": [
+    "specify",
+    ["tint", "$background_color", 0.90],
+    ["shade", "$background_color", 0.90]
+  ],
+  "label_foreground_color_on_selected": "$label_foreground_color_on_hover",
+  "label_foreground_color_on_match": "$accent_color",
+
+
+  // 2.1.2. Font settings of the label controls
+  // ---------------------------------------------------------------
+
+  "label_font_size": "$font_size",
+  "label_font_style": "$font_style",
+
+
+  // 2.1.3. Shadow settings of the label controls
+  // ---------------------------------------------------------------
+
+  "label_text_shadow_color": "$text_shadow_color",
+  "label_text_shadow_offset": "$text_shadow_offset",
+
+
+
+  // 2.2. Buttons
+  // ===============================================================
+
+  // Sublime Text supports three types of the buttons: text buttons,
+  // icon buttons and toggle buttons.
+  //
+  // Text buttons are present in misc panels and dialogs. All text
+  // buttons have `button_control` class.
+  //
+  // Icon buttons are present throughout the UI. Every icon button
+  // has its own unique class. E.g. `panel_close_button`.
+  //
+  // Toggle buttons are present in `Find`, `Replace` and
+  // `Find in Files` panels. They consist of two elements with
+  // next classes:
+  // - `icon_button_control` — the button frame which may have the
+  //   same styles as `button_control`,
+  // - `icon_<...>` — the icon inside `icon_button_control`.
+  //
+  // This section allows you to modify common buttons settings. If
+  // you want to change settings of the specific button — find
+  // its settings under the parent section. E.g.: Settings of the
+  // `status_panel_button` can be found in the "Status Bar" section.
+
+
+  // 2.2.1. Dimension settings of the button controls
+  // ---------------------------------------------------------------
+
+  "button_padding": 8,
+  "button_min_size": [80, 0],
+
+
+  // 2.2.2. Background settings of the button controls
+  // ---------------------------------------------------------------
+
+  "button_background_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.05],
+    ["rgba", 0, 0, 0, 0.05]
+  ],
+  "button_background_color_on_hover": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.05],
+    ["rgba", 0, 0, 0, 0.05]
+  ],
+  "button_background_color_on_pressed": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.025],
+    ["rgba", 0, 0, 0, 0.025]
+  ],
+
+
+  // 2.2.3. Border settings of the button controls
+  // ---------------------------------------------------------------
+
+  "button_border_width": 0,
+  "button_border_radius": "$border_radius",
+
+  "button_border_color": "",
+  "button_border_color_on_hover": "$button_border_color",
+  "button_border_color_on_pressed": "$button_border_color",
+
+
+  // 2.2.4. Foreground settings of the button controls
+  // ---------------------------------------------------------------
+
+  "button_foreground_color": "$label_foreground_color",
+  "button_foreground_color_on_hover": "$label_foreground_color_on_hover",
+
+
+  // 2.2.5. Font settings of the button controls
+  // ---------------------------------------------------------------
+
+  "button_font_size": "$font_size",
+  "button_font_style": "$font_style",
+
+
+  // 2.2.6. Shadow settings of the button controls
+  // ---------------------------------------------------------------
+
+  "button_text_shadow_color": "$text_shadow_color",
+  "button_text_shadow_offset": "$text_shadow_offset",
+
+
+
+  // 2.3. Icons
+  // ===============================================================
+
+  // This section allows you to modify common icon settings. If
+  // you want to change settings of the specific icon — find its
+  // settings under the parent section. E.g.: Settings of the
+  // `panel_close_button` can be found in the "Panels" section.
+
+
+  // 2.3.1. Color settings of the icons
+  // ---------------------------------------------------------------
+
+  "icon_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.70],
+    ["rgba", 0, 0, 0, 0.70]
+  ],
+  "icon_color_on_hover": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.90],
+    ["rgba", 0, 0, 0, 0.90]
+  ],
+  "icon_color_on_selected": "$accent_color",
+
+
+  // 2.3.2. Opacity settings of the icons
+  // ---------------------------------------------------------------
+
+  "icon_opacity": 0.45,
+  "icon_opacity_on_hover": 0.70,
+  "icon_opacity_on_selected": 0.90,
+
+
+
+  // 2.4. Inputs
+  // ===============================================================
+
+  // This section allows you to modify common input settings. If
+  // you want to change settings of the specific input — find
+  // its settings under the parent section.
+
+  // Note, input font options are controlled by widget settings.
+
+
+  // 2.4.1. Dimension settings of the text input controls
+  // ---------------------------------------------------------------
+
+  "input_padding": 4,
+
+
+  // 2.4.2. Background settings of the text input controls
+  // ---------------------------------------------------------------
+
+  "input_background_color": "$background_color",
+
+
+  // 2.4.3. Border settings of the text input controls
+  // ---------------------------------------------------------------
+
+  "input_border_width": 1,
+  "input_border_radius": "$border_radius",
+  "input_border_color": [
+    "specify",
+    ["tint", "$background_color", 0.05],
+    ["shade", "$background_color", 0.10]
+  ],
+
+
+  // 2.4.4. Settings of the input dropdown button control
+  // ---------------------------------------------------------------
+
+  "input_dropdown_button_icon_color": "$icon_color",
+  "input_dropdown_button_icon_color_on_hover": "$icon_color_on_hover",
+
+  "input_dropdown_button_icon_opacity": "$icon_opacity",
+  "input_dropdown_button_icon_opacity_on_hover": "$icon_opacity_on_hover",
+
+
+
+  // 2.5. Scroll Bars
+  // ===============================================================
+
+  // Note, this setting can be overrided by per element ones.
+  "scrollbar_margin": 4,
+
+  // Valid options are 2, 4, 6, 8 and 10.
+  "scrollbar_width": 4,
+
+  // Valid options are "square" and "rounded".
+  "scrollbar_flavor": "rounded",
+
+  "scrollbar_track_background_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.05],
+    ["rgba", 0, 0, 0, 0.05],
+  ],
+
+  "scrollbar_puck_background_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.10],
+    ["rgba", 0, 0, 0, 0.10],
+  ],
+
+
+
+  // 2.6. Status Bar
+  // ===============================================================
+
+
+  // 2.6.1. Dimension settings of the status bar control
+  // ---------------------------------------------------------------
+
+  "status_bar_padding": [12, 8, 4, 7],
+
+
+  // 2.6.2. Background settings of the status bar control
+  // ---------------------------------------------------------------
+
+  "status_bar_background_color": [
+    "shade", "$background_color", 0.05
+  ],
+
+
+  // 2.6.3. Border settings of the status bar control
+  // ---------------------------------------------------------------
+
+  "status_bar_border_width": [0, 1, 0, 0],
+  "status_bar_border_width_on_visible_panel": 0,
+  "status_bar_border_color": [
+    "shade", "$background_color", 0.10
+  ],
+
+
+  // 2.6.4. Settings of the status container
+  // ---------------------------------------------------------------
+
+  // A padding of the status container. Note this setting is ignored
+  // if `status_panel_button` is hidden.
+  "status_container_padding": [8, 0],
+
+
+  // 2.6.5. Settings of the status labels
+  // ---------------------------------------------------------------
+
+  "status_label_foreground_color": "$label_foreground_color",
+  "status_label_foreground_color_on_hover": "$label_foreground_color_on_hover",
+
+  "status_label_font_size": "$label_font_size",
+  "status_label_font_style": "$label_font_style",
+
+  "status_label_text_shadow_color": "$label_text_shadow_color",
+  "status_label_text_shadow_offset": "$label_text_shadow_offset",
+
+
+  // 2.6.6. Settings of the status buttons
+  // ---------------------------------------------------------------
+
+  "status_button_padding": [12, 0],
+  "status_button_min_size": [80, 0],
+
+  "status_button_border_width": 0,
+  "status_button_border_color": "$status_bar_border_color",
+
+
+  // 2.6.7. Settings of the status panel button control
+  // ---------------------------------------------------------------
+
+  // Set to false to hide the panel button in the status bar.
+  "show_status_panel_button": false,
+
+  "status_panel_button_icon_color": "$icon_color",
+  "status_panel_button_icon_color_on_hover": "$icon_color_on_hover",
+
+  "status_panel_button_icon_opacity": "$icon_opacity",
+  "status_panel_button_icon_opacity_on_hover": "$icon_opacity_on_hover",
+
+
+
+  // 2.7. Panels
+  // ===============================================================
+
+
+  // 2.7.1. Dimension settings of the panels
+  // ---------------------------------------------------------------
+
+  "panel_padding": 12,
+
+
+  // 2.7.2. Background settings of the panels
+  // ---------------------------------------------------------------
+
+  "panel_background_color": "$status_bar_background_color",
+
+
+  // 2.7.3. Border settings of the panels
+  // ---------------------------------------------------------------
+
+  "panel_border_width": [0, 1, 0, 0],
+  "panel_border_color": "$status_bar_border_color",
+
+
+  // 2.7.4. Settings of the panel grid
+  // ---------------------------------------------------------------
+
+  "panel_grid_inside_spacing": 6,
+  "panel_grid_outside_hspacing": 0,
+  "panel_grid_outside_vspacing": 0,
+
+
+  // 2.7.5. Settings of the panel text output control
+  // ---------------------------------------------------------------
+
+  // Can be found in the next panels: `Console`, `Build`, etc.
+  "panel_text_output_background_color": "$panel_background_color",
+
+
+  // 2.7.6. Settings of the toggle button controls
+  // ---------------------------------------------------------------
+
+  "toggle_button_group_spacing": 6,
+
+  "toggle_button_padding": 8,
+
+  "toggle_button_background_color": "",
+  "toggle_button_background_color_on_hover": "",
+  "toggle_button_background_color_on_selected": "",
+
+  "toggle_button_border_color": "",
+  "toggle_button_border_color_on_hover": "",
+  "toggle_button_border_color_on_selected": "",
+
+  "toggle_button_border_width": 0,
+  "toggle_button_border_radius": "$button_border_radius",
+
+  "toggle_button_icon_color": "$icon_color",
+  "toggle_button_icon_color_on_hover": "$icon_color_on_hover",
+  "toggle_button_icon_color_on_selected": "$icon_color_on_selected",
+
+  "toggle_button_icon_opacity": "$icon_opacity",
+  "toggle_button_icon_opacity_on_hover": "$icon_opacity_on_hover",
+  "toggle_button_icon_opacity_on_selected": "$icon_opacity_on_selected",
+
+
+  // 2.7.7. Settings of the panel close button
+  // ---------------------------------------------------------------
+
+  // Set to true to show the panel close button.
+  "show_panel_close_button": false,
+
+  "panel_close_button_icon_color": "$icon_color",
+  "panel_close_button_icon_color_on_hover": "$icon_color_on_hover",
+
+  "panel_close_button_icon_opacity": "$icon_opacity",
+  "panel_close_button_icon_opacity_on_hover": "$icon_opacity_on_hover",
+
+
+  // 2.7.8. Settings of the `Find & Replace` panel
+  // ---------------------------------------------------------------
+
+  "find_n_replace_panel_padding": [6, 12, 6, 11],
+
+
+  // 2.7.9. Settings of the `Find in Files` panel
+  // ---------------------------------------------------------------
+
+  "find_in_files_panel_padding": [6, 12, 12, 11],
+
+
+  // 2.7.10. Settings of the `Input` panel
+  // ---------------------------------------------------------------
+
+  "input_panel_padding": "$panel_padding",
+
+
+  // 2.7.11. Settings of the `Output` panel
+  // ---------------------------------------------------------------
+
+  // Note, output panel font options are the same as in
+  // Preferences.sublime-settings.
+
+  "output_panel_padding": [0, 8],
+
+
+  // 2.7.12. Settings of the `Console` panel
+  // ---------------------------------------------------------------
+
+  // Note, console panel font options are controlled by widget
+  // settings.
+
+  "console_panel_padding": "$panel_padding",
+  "console_panel_scrollbar_margin": [4, 0, 0, 0],
+
+
+  // 2.7.13. Settings of the overlay control
+  // ---------------------------------------------------------------
+
+  // Info: Overlay control is the parent of the Quick Panel and
+  // Command Palette.
+
+  "overlay_padding": [0, 6],
+  "overlay_scrollbar_margin": [4, 0],
+
+  "overlay_background_color": [
+    "specify",
+    ["tint", "$background_color", 0.05],
+    ["shade", "$background_color", 0.05]
+  ],
+
+  "overlay_border_color": "",
+  "overlay_border_width": 0,
+  "overlay_border_radius": 4,
+
+  // Set to true to disable top left and top right border radius
+  // of the overlay. Works only if "overlay_top_offset" is 0.
+  "disable_overlay_top_radius": true,
+
+  // Valid values are 0, 10, 20 and 40.
+  "overlay_top_offset": 10,
+
+  // Set to 0.0 to hide overlay drop shadow.
+  "overlay_shadow_opacity": 1.0,
+
+  // Set to false to hide overlay input search icon.
+  "show_overlay_input_search_icon": true,
+
+  "overlay_input_search_icon_color": "$accent_color",
+
+  // Works only if "show_overlay_input_search_icon" is false.
+  "overlay_input_padding": [16, 8],
+
+  "overlay_input_background_color": "$overlay_background_color",
+  "overlay_input_border_width": 0,
+  "overlay_input_border_radius": "$input_border_radius",
+  "overlay_input_border_color": "$input_border_color",
+
+
+  // 2.7.14. Settings of the `Quick` panel
+  // ---------------------------------------------------------------
+
+  "quick_panel_background_color": "$overlay_background_color",
+
+  "quick_panel_row_padding": [17, 9],
+
+  "quick_panel_row_background_color": "",
+  "quick_panel_row_background_color_on_hover": "",
+  "quick_panel_row_background_color_on_selected": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.05],
+    ["rgba", 0, 0, 0, 0.05]
+  ],
+
+  "quick_panel_label_foreground_color": "$label_foreground_color",
+  "quick_panel_label_foreground_color_on_match": "$label_foreground_color_on_match",
+  "quick_panel_label_foreground_color_on_selected": "$label_foreground_color_on_selected",
+  "quick_panel_label_foreground_color_on_selected_match": "$label_foreground_color_on_match",
+
+  "quick_panel_label_font_size": ["add", "$font_size", 1],
+  "quick_panel_label_font_style": "$font_style",
+
+  "quick_panel_path_label_foreground_color": [
+    "specify",
+    ["tint", "$background_color", 0.30],
+    ["shade", "$background_color", 0.30]
+  ],
+  "quick_panel_path_label_foreground_color_on_match": "$label_foreground_color_on_match",
+  "quick_panel_path_label_foreground_color_on_selected": [
+    "specify",
+    ["tint", "$background_color", 0.45],
+    ["shade", "$background_color", 0.45]
+  ],
+  "quick_panel_path_label_foreground_color_on_selected_match": "$label_foreground_color_on_match",
+
+  "quick_panel_path_label_font_size": ["subtract", "$font_size", 1],
+  "quick_panel_path_label_font_style": "$font_style",
+
+
+  // 2.7.15. Settings of the `Switch Project` panel
+  // ---------------------------------------------------------------
+
+  "project_panel_padding": [0, 6],
+  "project_panel_scrollbar_margin": [4, 0, 4, 4],
+
+  "project_panel_background_color": "$overlay_background_color",
+  "project_panel_scrollbar_background_color": "$project_panel_background_color",
+
+  "show_project_panel_input_search_icon": "$show_overlay_input_search_icon",
+  "project_panel_input_search_icon_color": "$overlay_input_search_icon_color",
+
+  "project_panel_input_padding": "$overlay_input_padding",
+  "project_panel_input_background_color": "$overlay_input_background_color",
+  "project_panel_input_border_width": "$overlay_input_border_width",
+  "project_panel_input_border_radius": "$overlay_input_border_radius",
+  "project_panel_input_border_color": "$overlay_input_border_color",
+
+
+
+  // 2.8. Tabs
+  // ===============================================================
+
+
+  // 2.8.1. Dimension settings of the tabs
+  // ---------------------------------------------------------------
+
+  // These settings are heavily dependent on "tab_flavor" value.
+  // You should be quite attentive when changing them. It's
+  // highly recommended to use basic tuning command and then tweak
+  // it for your needs.
+  "tab_height": 43,
+  "tab_padding": [8, 12, 8, 13],
+  "tab_overlap": 0,
+
+  // Set "tab_width" to 0 to enable auto width.
+  "tab_width": 128,
+  "tab_min_width": 64,
+
+
+  // 2.8.2. Flavor settings of the tabs
+  // ---------------------------------------------------------------
+
+  // Valid options are "default", "sublime", "soda", "classic".
+  // Note: "default" with border radius, "sublime" and "classic"
+  // tab flavors need some extra top margin for better experience.
+  // You can set it by changing tab set top padding.
+  "tab_flavor": "default",
+
+  // Valid values are "prelined", "underlined", "overlined".
+  // Leave it empty to hide.
+  "tab_line_flavor": "underlined",
+
+
+  // 2.8.3. Background settings of the tabs
+  // ---------------------------------------------------------------
+
+  "tab_background_color": "$background_color",
+  "tab_background_color_on_hover": "",
+  "tab_background_color_on_selected": "",
+
+
+  // 2.8.4. Border settings of the tabs
+  // ---------------------------------------------------------------
+
+  // Valid values are 0, 1, 2.
+  "tab_border_width": 0,
+
+  // Works only if "tab_flavor" is "default".
+  "tab_border_radius": 0,
+
+  "tab_border_color": "",
+  "tab_border_color_on_hover": "",
+  "tab_border_color_on_selected": "",
+
+
+  // 2.8.5. Line settings of the tabs
+  // ---------------------------------------------------------------
+
+  // Usually tab line is used to call attention to active or dirty
+  // tabs. Most popular are `prelined` and `underlined` variations
+  // of the tabs. In essence, tab line is the tab border but with
+  // an other color and only the one side.
+
+  // Valid values are 0, 1, 2.
+  "tab_line_width": 1,
+
+  "tab_line_color_on_hover": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.20],
+    ["rgba", 0, 0, 0, 0.20]
+  ],
+  "tab_line_color_on_dirty": "",
+  "tab_line_color_on_dirty_hover": "$tab_line_color_on_hover",
+
+  "tab_line_color_on_selected": "$accent_color",
+  "tab_line_color_on_selected_hover": "$accent_color",
+  "tab_line_color_on_selected_dirty": "$accent_color",
+  "tab_line_color_on_selected_dirty_hover": "$accent_color",
+
+
+  // 2.8.6. Foreground settings of the tabs
+  // ---------------------------------------------------------------
+
+  "tab_foreground_color": "$label_foreground_color",
+  "tab_foreground_color_on_hover": "",
+  "tab_foreground_color_on_selected": "$label_foreground_color_on_selected",
+
+
+  // 2.8.7. Font settings of the tabs
+  // ---------------------------------------------------------------
+
+  "tab_font_size": "$font_size",
+  "tab_font_style": "$font_style",
+
+
+  // 2.8.8. Shadow settings of the tabs
+  // ---------------------------------------------------------------
+
+  "tab_text_shadow_color": "$text_shadow_color",
+  "tab_text_shadow_offset": "$text_shadow_offset",
+
+
+  // 2.8.9. Settings of the tab set
+  // ---------------------------------------------------------------
+
+  "tabset_padding": [12, 0, 0, 0],
+
+  "tabset_background_color": "$background_color",
+
+  "tabset_line_height": 6,
+  "tabset_line_background_color": "$background_color",
+  "tabset_line_border_width": "$tab_border_width",
+  "tabset_line_border_color": "$tab_border_color_on_selected",
+
+
+  // 2.8.10. Settings of the tab close button
+  // ---------------------------------------------------------------
+
+  // By default close button of the inactive tabs is visible on
+  // hover only, this option enables you to show it always.
+  "tab_close_button_always_visible": false,
+
+  "tab_close_button_icon_color": "$icon_color",
+  "tab_close_button_icon_color_on_hover": "$icon_color_on_hover",
+  "tab_close_button_icon_color_on_dirty": "",
+
+  "tab_close_button_icon_color_on_selected": "$tab_close_button_icon_color",
+  "tab_close_button_icon_color_on_selected_hover": "$tab_close_button_icon_color_on_hover",
+  "tab_close_button_icon_color_on_selected_dirty": "$accent_color",
+
+  "tab_close_button_icon_opacity": "$icon_opacity",
+  "tab_close_button_icon_opacity_on_hover": "$icon_opacity_on_hover",
+  "tab_close_button_icon_opacity_on_selected": "$icon_opacity_on_selected",
+  "tab_close_button_icon_opacity_on_selected_hover": "$icon_opacity_on_selected",
+
+
+  // 2.8.11. Settings of the tab dropdown button
+  // ---------------------------------------------------------------
+
+  // Set to false to hide the tab dropdown button.
+  "show_tab_dropdown_button": true,
+
+  "tab_dropdown_button_icon_color": "$icon_color",
+  "tab_dropdown_button_icon_color_on_hover": "$icon_color_on_hover",
+
+  "tab_dropdown_button_icon_opacity": "$icon_opacity",
+  "tab_dropdown_button_icon_opacity_on_hover": "$icon_opacity_on_hover",
+
+
+  // 2.8.12. Settings of the tab scroll buttons
+  // ---------------------------------------------------------------
+
+  // Set to false to hide the tab dropdown button.
+  "show_tab_scroll_buttons": false,
+
+  "tab_scroll_button_icon_color": "$icon_color",
+  "tab_scroll_button_icon_color_on_hover": "$icon_color_on_hover",
+
+  "tab_scroll_button_icon_opacity": "$icon_opacity",
+  "tab_scroll_button_icon_opacity_on_hover": "$icon_opacity_on_hover",
+
+
+
+  // 2.9. Side Bar
+  // ===============================================================
+
+
+  // 2.9.1. Dimension settings of the side bar
+  // ---------------------------------------------------------------
+
+  "sidebar_padding": [0, 0, 1, 0],
+
+  "sidebar_scroll_area_padding": [0, 8],
+  "sidebar_scrollbar_margin": "$scrollbar_margin",
+
+
+  // 2.9.2. Background settings of the side bar
+  // ---------------------------------------------------------------
+
+  "sidebar_background_color": "$status_bar_background_color",
+
+
+  // 2.9.3. Border settings of the side bar
+  // ---------------------------------------------------------------
+
+  "sidebar_border_width": [0, 0, 1, 0],
+  "sidebar_border_color": "$status_bar_border_color",
+
+
+  // 2.9.4. Settings of the side bar tree
+  // ---------------------------------------------------------------
+
+  "sidebar_tree_indent": 12,
+  "sidebar_tree_indent_offset": 14,
+  "sidebar_tree_indent_top_level": false,
+
+  "show_sidebar_tree_spacer_rows": true,
+
+  "sidebar_tree_row_padding": [18, 7],
+
+  "sidebar_tree_row_background_color_on_hover": "",
+  "sidebar_tree_row_background_color_on_selected": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.05],
+    ["rgba", 0, 0, 0, 0.05]
+  ],
+
+  // Valid values are 0, 1, 2.
+  "sidebar_tree_row_line_width": 0,
+
+  "sidebar_tree_row_line_color_on_hover": "",
+  "sidebar_tree_row_line_color_on_selected": "$accent_color",
+
+  "sidebar_tree_row_line_opacity_on_hover": 0.0,
+  "sidebar_tree_row_line_opacity_on_selected": 1.0,
+
+
+  // 2.9.5. Settings of the side bar heading
+  // ---------------------------------------------------------------
+
+  "sidebar_heading_foreground_color": [
+    "specify",
+    ["tint", "$background_color", 0.30],
+    ["shade", "$background_color", 0.30]
+  ],
+
+  "sidebar_heading_font_size": ["subtract", "$font_size", 1],
+  "sidebar_heading_font_style": "$font_style",
+
+  "sidebar_heading_text_shadow_color": "$text_shadow_color",
+  "sidebar_heading_text_shadow_offset": "$text_shadow_offset",
+
+
+  // 2.9.6. Settings of the side bar labels
+  // ---------------------------------------------------------------
+
+  "sidebar_label_foreground_color": "$label_foreground_color",
+  "sidebar_label_foreground_color_on_hover": "$label_foreground_color_on_hover",
+  "sidebar_label_foreground_color_on_expanded": "$label_foreground_color_on_selected",
+  "sidebar_label_foreground_color_on_selected": "$label_foreground_color_on_selected",
+
+  "sidebar_label_font_size": "$font_size",
+  "sidebar_label_font_style": "$font_style",
+
+  "sidebar_label_text_shadow_color": "$text_shadow_color",
+  "sidebar_label_text_shadow_offset": "$text_shadow_offset",
+
+
+  // 2.9.7. Settings of the open files section
+  // ---------------------------------------------------------------
+
+  // By default close button of the inactive files is visible on
+  // hover only, this option enables you to show it always.
+  "sidebar_close_button_always_visible": "$tab_close_button_always_visible",
+
+  "sidebar_close_button_icon_color": "$tab_close_button_icon_color",
+  "sidebar_close_button_icon_color_on_hover": "$tab_close_button_icon_color_on_hover",
+  "sidebar_close_button_icon_color_on_dirty": "$tab_close_button_icon_color_on_dirty",
+
+  "sidebar_close_button_icon_color_on_selected": "$tab_close_button_icon_color_on_selected",
+  "sidebar_close_button_icon_color_on_selected_hover": "$tab_close_button_icon_color_on_selected_hover",
+  "sidebar_close_button_icon_color_on_selected_dirty": "$tab_close_button_icon_color_on_selected_dirty",
+
+  "sidebar_close_button_icon_opacity": "$tab_close_button_icon_opacity",
+  "sidebar_close_button_icon_opacity_on_hover": "$tab_close_button_icon_opacity_on_hover",
+  "sidebar_close_button_icon_opacity_on_selected": "$tab_close_button_icon_opacity_on_selected",
+  "sidebar_close_button_icon_opacity_on_selected_hover": "$tab_close_button_icon_opacity_on_selected_hover",
+
+
+  // 2.9.8. Settings of the sidebar disclosure buttons
+  // ---------------------------------------------------------------
+
+  "show_sidebar_disclosure_button": true,
+
+  "sidebar_disclosure_button_icon_color": "$icon_color",
+  "sidebar_disclosure_button_icon_color_on_hover": "$icon_color_on_hover",
+  "sidebar_disclosure_button_icon_color_on_expanded": "$icon_color",
+  "sidebar_disclosure_button_icon_color_on_expanded_hover": "$icon_color_on_hover",
+  "sidebar_disclosure_button_icon_color_on_selected": "$icon_color_on_hover",
+
+  "sidebar_disclosure_button_icon_opacity": "$icon_opacity",
+  "sidebar_disclosure_button_icon_opacity_on_hover": "$icon_opacity_on_hover",
+  "sidebar_disclosure_button_icon_opacity_on_expanded": "$icon_opacity",
+  "sidebar_disclosure_button_icon_opacity_on_expanded_hover": "$icon_opacity_on_hover",
+  "sidebar_disclosure_button_icon_opacity_on_selected": "$icon_opacity_on_hover",
+
+
+  // 2.9.9. Settings of the sidebar folders
+  // ---------------------------------------------------------------
+
+  "show_sidebar_folder_icon": true,
+
+  "sidebar_folder_icon_margin_right": 1,
+
+  "sidebar_folder_icon_color": "$icon_color",
+  "sidebar_folder_icon_color_on_hover": "$icon_color_on_hover",
+  "sidebar_folder_icon_color_on_expanded": "$accent_color",
+  "sidebar_folder_icon_color_on_expanded_hover": "$accent_color",
+  "sidebar_folder_icon_color_on_selected": "$accent_color",
+
+  "sidebar_folder_icon_opacity": "$icon_opacity",
+  "sidebar_folder_icon_opacity_on_hover": "$icon_opacity_on_hover",
+  "sidebar_folder_icon_opacity_on_expanded": "$icon_opacity_on_selected",
+  "sidebar_folder_icon_opacity_on_expanded_hover": "$icon_opacity_on_selected",
+  "sidebar_folder_icon_opacity_on_selected": "$icon_opacity_on_selected",
+
+  "sidebar_folder_symlink_icon_color": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.75],
+    ["rgba", 0, 0, 0, 0.75]
+  ],
+  "sidebar_folder_symlink_icon_color_on_hover": [
+    "specify",
+    ["rgba", 0, 0, 0, 0.75],
+    ["rgba", 255, 255, 255, 0.75]
+  ],
+  "sidebar_folder_symlink_icon_color_on_selected": "$sidebar_folder_symlink_icon_color_on_hover",
+
+  "sidebar_folder_loading_icon_color": "$sidebar_folder_symlink_icon_color",
+  "sidebar_folder_loading_icon_color_on_hover": "$sidebar_folder_symlink_icon_color_on_hover",
+  "sidebar_folder_loading_icon_color_on_selected": "$sidebar_folder_symlink_icon_color_on_selected",
+
+
+  // 2.9.10. Settings of the sidebar file type icons
+  // ---------------------------------------------------------------
+
+  // We do not provide multi colored icons, if you really miss them
+  // just use "A File Icon" package as your icon provider.
+  // Note: if you use file type icons provided by `A File Icon`
+  // change their settings in `A File Icon.sublime-settings` file.
+
+  "show_sidebar_file_icons": true,
+
+  "sidebar_file_icon_margin_right": "$sidebar_folder_icon_margin_right",
+
+  "sidebar_file_icon_color": "$icon_color",
+  "sidebar_file_icon_color_on_hover": "$icon_color_on_hover",
+  "sidebar_file_icon_color_on_selected": "$icon_color_on_selected",
+
+  "sidebar_file_icon_opacity": "$icon_opacity",
+  "sidebar_file_icon_opacity_on_hover": "$icon_opacity_on_hover",
+  "sidebar_file_icon_opacity_on_selected": "$icon_opacity_on_selected",
+
+
+
+  // 2.10. Views
+  // ===============================================================
+
+
+  //  2.10.1. Settings of the fold buttons
+  // ---------------------------------------------------------------
+
+  "fold_button_icon_color": "$icon_color",
+  "fold_button_icon_color_on_hover": "$icon_color_on_hover",
+
+  "fold_button_icon_opacity": "$icon_opacity",
+  "fold_button_icon_opacity_on_hover": "$icon_opacity_on_hover",
+
+
+  //  2.10.2. Settings of the grid layout
+  // ---------------------------------------------------------------
+
+  // Valid values are numbers greater than or equal to 0.
+  "grid_layout_border_width": 1,
+
+  "grid_layout_border_color": "$sidebar_border_color",
+
+
+  //  2.10.3. Settings of the mini map
+  // ---------------------------------------------------------------
+
+  // Tips:
+  //  - add `"always_show_minimap_viewport": true,` to ST settings
+  //    if you want to make mini map always visible,
+  //  - add `"draw_minimap_border": true,` to ST settings if you
+  //    want to see the border of the mini map.
+
+  "minimap_background_color": "#808080",
+
+  "minimap_opacity": 0.15,
+  "minimap_opacity_on_hover": 0.25,
+
+
+  //  2.10.4. Settings of the popup controls
+  // ---------------------------------------------------------------
+
+  // Popup control is the primary container for the auto complete
+  // and HTML popups. Note:
+  //  - It's not possible to specify different colors for popup
+  //    control depending on the lightness of the color scheme.
+  //  - The background color of the popup content can be specified
+  //    via `auto_complete_background_color` for auto complete
+  //    popups and `popup_css` for HTML popups (can be found in the
+  //    color scheme settings).
+  "popup_background_color": "$background_color",
+  "popup_border_color": ["rgba", 128, 128, 128, 0.25],
+  "popup_border_width": 0,
+  "popup_padding": "$popup_border_width",
+
+
+  //  2.10.5. Settings of the auto complete elements
+  // ---------------------------------------------------------------
+
+  "auto_complete_background_color": [
+    "specify",
+    ["tint", "$view_background_color", 0.05],
+    ["shade", "$view_background_color", 0.05]
+  ],
+
+  "auto_complete_row_padding": [9, 6],
+
+  "auto_complete_row_background_color": "",
+  "auto_complete_row_background_color_on_hover": "",
+  "auto_complete_row_background_color_on_selected": [
+    "specify",
+    ["rgba", 255, 255, 255, 0.05],
+    ["rgba", 0, 0, 0, 0.05]
+  ],
+
+  // Note: ST may ignore opacity level of the auto complete labels
+  // https://github.com/SublimeTextIssues/Core/issues/1848.
+  "auto_complete_label_foreground_color": [
+    "opacity", "#808080", 0.45
+  ],
+  "auto_complete_label_foreground_color_on_match": "$label_foreground_color_on_match",
+  "auto_complete_label_foreground_color_on_selected": "$label_foreground_color_on_selected",
+  "auto_complete_label_foreground_color_on_selected_match": "$label_foreground_color_on_match",
+
+  "auto_complete_scrollbar_margin": "$scrollbar_margin",
+  "auto_complete_scrollbar_background_color": "$auto_complete_background_color",
+
+
+
+  // 2.11. Tool Tips
+  // ===============================================================
+
+  // Note: it's not possible to specify different colors for tool
+  // tips depending on the lightness of the global color scheme.
+
+  "tool_tip_padding": [8, 5],
+
+  "tool_tip_background_color": [
+    "mix", "$background_color", "#808080", 0.10
+  ],
+  "tool_tip_border_width": 1,
+  "tool_tip_border_color": [
+    "mix", "$background_color", "#808080", 0.20
+  ],
+
+  "tool_tip_label_foreground_color": [
+    "mix", "$foreground_color", "#808080", 0.95
+  ],
+
+  "tool_tip_label_font_size": ["subtract", "$font_size", 1],
+  "tool_tip_label_font_style": "$font_style",
+
+  "tool_tip_label_text_shadow_color": "",
+  "tool_tip_label_text_shadow_offset": [],
+
+
+
+  // 2.12. Windows
+  // ===============================================================
+
+
+  //  2.12.1. Settings of the dialog windows
+  // ---------------------------------------------------------------
+
+  "dialog_padding": "$panel_padding",
+  "dialog_background_color": "$panel_background_color",
+
+  "progress_bar_background_color": [
+    "opacity", "$accent_color", 0.05
+  ],
+  "progress_gauge_background_color": [
+    "opacity", "$accent_color", 1.0
+  ],
+
+
+  //  2.12.2. Settings of the title bars (macOS only)
+  // ---------------------------------------------------------------
+
+  // Set to false to disable custom color window title bars.
+  "enable_title_bar_styling": true,
+
+  "title_bar_background_color": "$sidebar_border_color",
+  "title_bar_foreground_color": [
+    "specify",
+    ["tint", "$background_color", 0.65],
+    ["shade", "$background_color", 0.65]
+  ]
+}

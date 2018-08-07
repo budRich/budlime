@@ -33,6 +33,7 @@ main(){
         else if ($0 ~ /[^)]$/) {print "tits[s]=\"clean\""}
       }
       file=$0
+      print "tits[l]=\"" file "\""
       sub(/~/,home,file)
       print "tits[f]=\"" file "\""
       sub("/?[^/]*/?$","",file)
@@ -40,9 +41,9 @@ main(){
     }
   ')"
 
-  while getopts :vhspfd option; do
+  while getopts :vhspfdl option; do
     case "${option}" in
-      s|p|f|d) [[ -n ${tits[$option]} ]] && echo ${tits[$option]} ;;
+      s|p|f|d|l) [[ -n ${tits[$option]} ]] && echo ${tits[$option]} ;;
 
       v) printf '%s\n' \
            "$NAME - version: $VERSION" \
@@ -101,7 +102,10 @@ Show version and exit.
 Show help and exit.
 
 `-f`  
-Prints the filename of the currently open file.
+Prints the full path of the currently open file.
+
+`-l`  
+Same as `-f` but with `~` instead of `$HOME`.
 
 `-d`  
 Prints the directory of the currently open file.
@@ -112,6 +116,13 @@ Prints the status (dirty|clean). dirty means that the file is not saved.
 `-p`  
 Prints the project name.
 
+EXAMPLES
+--------
+
+Goto the same directory as the currently open file:  
+`$ cd "$(tits -d)"`  
+
+`$ alias cds='"'"'cd "$(tits -d)"'"'"'`  
 
 DEPENDENCIES
 ------------
