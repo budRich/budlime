@@ -70,7 +70,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-`tits` uses `xdotool` to get the title of the window with the
+`tits` uses `wmctrl` to get the title of the window with the
 class name **Sublime_text**. The title looks different depending
 on the status of the file, if Sublime is registered and if a project
 is open. Below are the different title variations:  
@@ -128,7 +128,7 @@ DEPENDENCIES
 ------------
 
 Sublime Text  
-xdotool  
+wmctrl  
 '
 
 bouthead="
@@ -149,7 +149,7 @@ ${AUTHOR} <${CONTACT}>
 SEE ALSO
 --------
 
-xdotool(1)
+wmctrl(1)
 "
 
 

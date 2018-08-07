@@ -6,6 +6,8 @@
 .SH SYNOPSIS
 .PP
 \fB\fCsubextract\fR [\fB\fC\-v\fR|\fB\fC\-h\fR]
+.br
+\fB\fCsubextract\fR [\fB\fC\-c\fR] [\fB\fC\-d\fR] [\fB\fC\-e\fR] [\fB\fC\-p\fR PACKAGE\_DIRECTORY]
 
 .SH DESCRIPTION
 .PP
@@ -56,11 +58,92 @@ Show version and exit.
 .br
 Show help and exit.
 
+.PP
+\fB\fC\-c\fR
+.br
+Clean install. Move the current \fI$PKG\_DIR\fP to \fI$SUB\_DIR/backup\fP before any other operations.
+
+.PP
+\fB\fC\-p\fR PROJECT\_DIRECTORY
+.br
+Copy files withing \fIPROJECT\_DIRECTORY\fP before any other operations.
+.br
+Example:
+
+.PP
+.RS
+
+.nf
+\~/tmp/MyPacks
+  iOpener
+    iOpener.sublime\-settings
+    Default.sublime\-keymap
+    random.file
+    A\-dir/
+      picture.jpg
+  A File Icon
+    A File Icon.sublime\-settings
+    README.md
+
+.fi
+.RE
+
+.PP
+Executing the following command:
+.br
+\fB\fC$ subextract \-p \~/tmp/MyPacks\fR
+
+.PP
+Will result in this inside \fI$SUB\_DIR\fP
+
+.PP
+.RS
+
+.nf
+\~/.config/sublime\-text\-3/Packages
+  iOpener
+    Default.sublime\-keymap
+    random.file
+    A\-dir/
+      picture.jpg
+  User
+    iOpener.sublime\-settings
+    A File Icon.sublime\-settings
+
+.fi
+.RE
+
+.PP
+Conclusion: all *\&.sublime\-\&settings will get copied to \fI$USR\_DIR\fP and all other files,
+(\fIwith the exception for files named \fB\fCREADME.md\fR\fP), will be copied to \fI$PKG\_DIR\fP with
+retained directory structure. It will not overwrite any existing files.
+
+.ti 0
+\l'\n(.lu'
+
+.PP
+\fB\fC\-e\fR
+.br
+Extract packages default settingfiles to \fI$PKG\_DIR\fP
+
+.PP
+\fB\fC\-d\fR
+.br
+Blank extraced default files. (only have effect if \fB\fC\-e\fR is used)
+
 .SH FILES
 .PP
 SUB\_DIR \- sublimes config directory.
 .br
 defaults to: \fI$HOME/.config/sublime\-text\-3\fP
+
+.PP
+OPT\_DIR \- core package directory
+defaults to: \fI/opt/sublime\_text/Packages\fP
+
+.PP
+GIT\_DIR \- where to store the cloned repos.
+defaults to: \fI$HOME/git/dox\fP
 
 .PP
 TMP\_DIR \- temporary directory where package files get extracted to.
@@ -96,14 +179,6 @@ defaults to: \fI$DOC\_DIR/defaults\fP
 WIK\_DIR \- directory where the documentation from the cloned repos will be stored.
 .br
 defaults to: \fI$DOC\_DIR/wiki\fP
-
-.PP
-OPT\_DIR \- core package directory
-defaults to: \fI/opt/sublime\_text/Packages\fP
-
-.PP
-GIT\_DIR \- where to store the cloned repos.
-defaults to: \fI$HOME/git/dox\fP
 
 .PP
 $USR\_DIR/projects/\fIsublime.sublime\-project\fP

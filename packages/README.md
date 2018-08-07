@@ -3,6 +3,7 @@
 By populating the list *"installed_packages"* in: 
 `SUBLIME_DIR/Packages/User/Package Control.sublime-preferences`  , **Package Control** will install any missing packages when sublime starts.
 
+
 ``` JSON
 "installed_packages":
 [

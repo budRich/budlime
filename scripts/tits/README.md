@@ -9,7 +9,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-`tits` uses `xdotool` to get the title of the window with the
+`tits` uses `wmctrl` to get the title of the window with the
 class name **Sublime_text**. The title looks different depending
 on the status of the file, if Sublime is registered and if a project
 is open. Below are the different title variations:  
@@ -61,10 +61,10 @@ EXAMPLES
 Goto the same directory as the currently open file:  
 `$ cd "$(tits -d)"`  
 
-`$ alias cds=''cd "$(tits -d)"''`  
+`$ alias cds='cd "$(tits -d)"'`  
 
 DEPENDENCIES
 ------------
 
 Sublime Text  
-xdotool  
+wmctrl  

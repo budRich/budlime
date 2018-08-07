@@ -3,7 +3,8 @@
 SYNOPSIS
 --------
 
-`subextract` [`-v`|`-h`]
+`subextract` [`-v`|`-h`]  
+`subextract` [`-c`] [`-d`] [`-e`] [`-p` PACKAGE_DIRECTORY]  
 
 DESCRIPTION
 -----------
@@ -47,12 +48,67 @@ Show version and exit.
 `-h`  
 Show help and exit.
 
+`-c`  
+Clean install. Move the current *$PKG_DIR* to *$SUB_DIR/backup* before any other operations.  
+
+`-p` PROJECT_DIRECTORY  
+Copy files withing *PROJECT_DIRECTORY* before any other operations.  
+Example:  
+
+``` Text
+~/tmp/MyPacks
+  iOpener
+    iOpener.sublime-settings
+    Default.sublime-keymap
+    random.file
+    A-dir/
+      picture.jpg
+  A File Icon
+    A File Icon.sublime-settings
+    README.md
+```  
+
+Executing the following command:  
+`$ subextract -p ~/tmp/MyPacks`  
+
+Will result in this inside *$SUB_DIR*  
+
+``` text
+~/.config/sublime-text-3/Packages
+  iOpener
+    Default.sublime-keymap
+    random.file
+    A-dir/
+      picture.jpg
+  User
+    iOpener.sublime-settings
+    A File Icon.sublime-settings
+```
+
+Conclusion: all \*.sublime-settings will get copied to *$USR_DIR* and all other files,
+(*with the exception for files named `README.md`*), will be copied to *$PKG_DIR* with
+retained directory structure. It will not overwrite any existing files.
+
+- - -
+
+`-e`  
+Extract packages default settingfiles to *$PKG_DIR*
+
+`-d`  
+Blank extraced default files. (only have effect if `-e` is used)
+
 
 FILES
 -----
 
 SUB_DIR - sublimes config directory.  
 defaults to: *$HOME/.config/sublime-text-3*  
+
+OPT_DIR - core package directory
+defaults to: */opt/sublime_text/Packages*  
+
+GIT_DIR - where to store the cloned repos.
+defaults to: *$HOME/git/dox*  
 
 TMP_DIR - temporary directory where package files get extracted to.  
 defaults to: */tmp/subextract*  
@@ -74,12 +130,6 @@ defaults to: *$DOC_DIR/defaults*
 
 WIK_DIR - directory where the documentation from the cloned repos will be stored.   
 defaults to: *$DOC_DIR/wiki*  
-
-OPT_DIR - core package directory
-defaults to: */opt/sublime_text/Packages*  
-
-GIT_DIR - where to store the cloned repos.
-defaults to: *$HOME/git/dox*  
 
 $USR_DIR/projects/*sublime.sublime-project*  
 project file.  
