@@ -26,4 +26,4 @@ The article above describes the difference between *packed* and *unpacked* packa
 
 The biggest drawback with *packed* packages is that it some interesting files, (*such as readme.md and default settings*), are hard to find.  
 
-I have created a script `subextract(1)` that will extract move and rename all *interesting* files from the packed packages. `subextract` can be executed multiple times, and it will never overwrite `sublime-settings` files inside the **User** package.
+I have created a script `subextract(1)` that will extract move and rename all *interesting* files from the packed packages. `subextract` can be executed multiple times, and it will never overwrite existing `sublime-settings` files inside the **User** package.  
