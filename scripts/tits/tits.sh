@@ -16,28 +16,25 @@ main(){
       $1=$2=$3=$4=""
       sub(/^[[:space:]]*/,"",$0)
       sub(" - Sublime Text$","",$0)
-      if ($0 ~ /[•]$/) {
-          sub(/ [•].*$/,"",$0)
-          print "tits[s]=\"dirty\""
-        }
-      else if ($0 ~ /[^)]$/) {print "tits[s]=\"clean\""}
-      else {
+      if ($0 ~ /[)]$/) {
         project=$NF
         gsub(/[()]/,"",project)
+        sub("[[:space:]][(]" project "[)]","",$0)
         print "tits[p]=\"" project "\""
-        sub(/ [(].*$/,"",$0)
-        if ($0 ~ /[•]$/) {
-          sub(/ [•].*$/,"",$0)
-          print "tits[s]=\"dirty\""
-        }
-        else if ($0 ~ /[^)]$/) {print "tits[s]=\"clean\""}
       }
+
+      if ($0 ~ /[•]$/) {
+        sub(/ [•].*$/,"",$0)
+        print "tits[s]=\"dirty\""
+      } else {print "tits[s]=\"clean\""}
+
       file=$0
       print "tits[l]=\"" file "\""
       sub(/~/,home,file)
       print "tits[f]=\"" file "\""
       sub("/?[^/]*/?$","",file)
       print "tits[d]=\"" file "\""
+      
     }
   ')"
 

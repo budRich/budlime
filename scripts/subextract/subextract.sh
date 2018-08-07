@@ -69,7 +69,7 @@ loopsource(){
   # move settings to usr dir
   for f in "$1"/*; do
     [[ -d "$f" ]] && loopsource "$f" && continue
-    [[ $f =~ README.md$ ]] && continue
+    [[ ${f,,} =~ readme.md$ ]] && continue
     dirname="${f#$pkgsource\/}"
     dirname="${dirname%/*}"
     lastdir="${dirname##*/}"
