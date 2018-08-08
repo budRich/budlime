@@ -55,9 +55,8 @@ main(){
   [[ -d $pkgsource ]] && loopsource "$pkgsource"
   
   preparewikis
-  extractdefaults
   extractinstalled
-  createprojectfile
+  extractdefaults
 
   # remove TMP_DIR
   rm -rf "${TMP_DIR:?}"
@@ -74,76 +73,12 @@ loopsource(){
     dirname="${dirname%/*}"
     lastdir="${dirname##*/}"
 
-    if [[ $lastdir = Default ]];then
-      mkdir -p "${PKG_DIR}/zublime"
-      cp "$f" "${PKG_DIR}/zublime"
-    else
-
-      [[ $f =~ ${CNF_EXT}$ ]] && cp "$f" "$USR_DIR" && continue
-      
-      mkdir -p "${PKG_DIR}/$dirname"
-      cp "$f" "${PKG_DIR}/$dirname"
-    fi
+    [[ $f =~ ${CNF_EXT}$ ]] && [[ $lastdir != zublime ]] \
+      && cp "$f" "$USR_DIR" && continue
+    
+    mkdir -p "${PKG_DIR}/$dirname"
+    cp "$f" "${PKG_DIR}/$dirname"
   done
-}
-
-createprojectfile(){
-  projectfile="${USR_DIR}/Projects/sublime.sublime-project"
-
-  [[ -f $projectfile ]] || echo "{
-  \"folders\":
-  [
-    { 
-      \"path\": \"${PKG_DIR/$HOME/'~'}/zublime\",
-      \"name\": \"User - settings\"
-    },
-    { 
-      \"path\": \"${PKG_DIR/$HOME/'~'}/Default\",
-      \"name\": \"Default - settings\"
-    },
-    { 
-      \"path\": \"${USR_DIR/$HOME/'~'}\",
-      \"name\": \"Package - settings\",
-      \"folder_exclude_patterns\": [\"dox\",\"Package Control.cache\",\"Projects\"],
-      \"file_exclude_patterns\": [\"*.last-run\",\"*-ca-bundle\"],
-    },
-    { 
-      \"path\": \"${PKG_DIR/$HOME/'~'}/DA UI\",
-      \"name\": \"UI - settings\",
-      \"folder_exclude_patterns\": [\"*\"],
-      \"file_exclude_patterns\": [
-        \"*.json\",
-        \"Widget - DA (*\",
-        \".version\",
-        \".no-sublime-package\"
-      ],
-    },
-    { 
-      \"path\": \"${USR_DIR/$HOME/'~'}/Projects\",
-      \"name\": \"Project - settings\",
-      \"file_include_patterns\": [\"*.sublime-project\"]
-    },
-    { 
-      \"path\": \"${DOC_DIR/$HOME/'~'}\",
-      \"name\": \"dox\"
-    },
-    { 
-      \"path\": \"${PKG_DIR/$HOME/'~'}\",
-      \"name\": \"packages-extracted\",
-      \"folder_exclude_patterns\": [\"User\",\"zublime\",\"DA UI\"],
-    },
-    { 
-      \"path\": \"${SUB_DIR/$HOME/'~'}/Installed Packages\",
-      \"name\": \"packages-installed\",
-      \"binary_file_patterns\": [\"*.sublime-package\"]
-    },
-    { 
-      \"path\": \"${OPT_DIR}\",
-      \"name\": \"packages-opt\",
-      \"binary_file_patterns\": [\"*.sublime-package\"]
-    },
-  ]
-}" > "$projectfile"
 }
 
 extractinstalled(){
@@ -171,16 +106,18 @@ extractinstalled(){
 
       [[ -f $reads ]] && mv "$reads" "${DOC_DIR}/packages/$name.md"
       [[ -f $keys ]] && {
-        mv "$keys" "${DEF_DIR}/$name.sublime-keymap"
-        ((extracteddeaults==1)) && [[ ! -f "${PKG_DIR}/$name/$keys" ]] && {
+        mv "$keys" "${DEF_DIR}/$name.keymap"
+        ((extracteddeaults==1)) && [[ ! -f "${PKG_DIR}/$name/${keys##*/}" ]] && {
           mkdir -p "${PKG_DIR}/$name"
-          cp "${DEF_DIR}/$name.sublime-keymap" "${PKG_DIR}/$name/${keys##*/}"
+          cp "${DEF_DIR}/$name.keymap" "${PKG_DIR}/$name/${keys##*/}"
         }
       }
 
       [[ -f $conf ]] && {
-        [[ $name != "Package Control" ]] && {
-          cp "$conf" "${USR_DIR}"
+        cnfname="${conf##*/}"
+        cnfname="${cnfname%.*}"
+        [[ $name != "Package Control" ]] && [[ ${conf##*/} != Preferences.${CNF_EXT} ]] && {
+          [[ -f "${USR_DIR}/${conf##*/}" ]] || cp "$conf" "${USR_DIR}"
           ((extracteddeaults==1)) && {
             mkdir -p "${PKG_DIR}/$name"
             ((blankdefaults==1)) \
@@ -189,7 +126,9 @@ extractinstalled(){
           }
         }
 
-        mv "$conf" "${DEF_DIR}"
+        [[ ${conf##*/} = Preferences.${CNF_EXT} ]] \
+          && mv "$conf" "${DEF_DIR}/$name.${CNF_EXT#sublime-}" \
+          || mv "$conf" "${DEF_DIR}/$cnfname.${CNF_EXT#sublime-}"
       }
       rm -rf ./*
     )
@@ -242,6 +181,7 @@ rstcrawl(){
 
 extractdefaults(){
     p="$OPT_DIR/Default.sublime-package"
+    afil=()
     eval "$(unzip -l "$p" -x */* -x *.{todo,tmLanguage,tmPreferences,ini,mustache,ico,xml,disabled-sublime-syntax,bin,dictonary,sublimelinterrc,txt,py,gitignore,json,exe,cs,png,cur,resx,cpp,m,csproj,snk,pal,aco,gpl,sln,sh,css,html,log,ss,dockerignore,yml,svg,js,cfg} \
       | awk '{$1=$2=$3="";sub(/[[:space:]]*/,"",$0)
         if(/./ && $0 != "Name" && $0 != "----") {
@@ -250,79 +190,95 @@ extractdefaults(){
           if (/Default( [(]Linux[)])*.sublime-keymap$/) print "afil+=(\"" $0 "\")"
           if (/Default( [(]Linux[)])*.sublime-mousemap$/) print "afil+=(\"" $0 "\")"
         }}')"
-    (
-      cd "${TMP_DIR}" || exit 1
-      rm -rf ./*
-      mkdir -p "${PKG_DIR}/zublime"
 
-      unzip "$p" -d . "${afil[@]}"
-      # unzip "$p" -d . "${afil[@]}" > /dev/null 2>&1
 
-      # copy stuff to defdir
-      cp -f Preferences.sublime-settings "${DEF_DIR}"
-      cp -f "Default (Linux).sublime-keymap" "${DEF_DIR}"
-      cp -f "Default (Linux).sublime-mousemap" "${DEF_DIR}"
+    rm -rf "${TMP_DIR:?}"/*
+    
 
-      ((extracteddeaults==1)) && {
-        # move default settings to zublime
-        [[ -f ${PKG_DIR}/zublime/Preferences.sublime-settings ]] || awk '
-          BEGIN{fndblk=0}
+    unzip "$p" -d "${TMP_DIR}" "${afil[@]}"
 
-          /^[}]/ {exit}
-          start==1 && /./ {blk[fndblk]=blk[fndblk] "\n" $0}
-          start==1 && $0 !~ /./ {fndblk++}
-          $1 ~ "font_options|theme_font_options|color_scheme|font_face|font_size|ignored_packages" {ignore[fndblk]=1}
-          /^[{]/ {start=1}
-
-          END{
-            print "{"
-            for (b in blk){
-              keep=1
-              for (i in ignore) {
-                if (i==b){keep=0}
-              }
-              if (keep==1)print blk[b]
-            }
-            print "}"
-          }
-        ' Preferences.sublime-settings > ${PKG_DIR}/zublime/Preferences.sublime-settings
-
-        # move default settings to user (autofile)
-        [[ -f ${USR_DIR}/Preferences.sublime-settings ]] || awk '
-          BEGIN{fndblk=0}
-
-          /^[}]/ {exit}
-          start==1 && /./ {blk[fndblk]=blk[fndblk] "\n" $0}
-          start==1 && $0 !~ /./ {fndblk++}
-          $1 ~ "font_options|theme_font_options|color_scheme|font_face|font_size|ignored_packages" {ignore[fndblk]=1}
-          /^[{]/ {start=1}
-
-          END{
-            print "{"
-            for (b in blk){
-              keep=1
-              for (i in ignore) {
-                if (i==b){keep=0}
-              }
-              if (keep==0)print blk[b]
-            }
-            print "}"
-          }
-        ' Preferences.sublime-settings > ${USR_DIR}/Preferences.sublime-settings
-
-        ((blankdefaults==1)) \
-            && echo "{}" | tee Preferences.sublime-settings "Preferences (Linux).sublime-settings"
-
-        ((extracteddeaults==1)) && {
-          mkdir -p "${PKG_DIR}/Default"
-          mv * "${PKG_DIR}/Default"
-        }
-      }
-
-      # create blank keymap file in zublime
-      # [[ -f ${PKG_DIR}/zublime/Default.sublime-keymap ]] \
-      #   || echo -e "{\n\n}" > ${PKG_DIR}/zublime/Default.sublime-keymap
+    # copy stuff to defdir
+    dprefs=(
+      "${TMP_DIR}/Preferences.sublime-settings"
+      "${TMP_DIR}/Preferences (Linux).sublime-settings"
     )
+
+    dkeys=(
+      "${TMP_DIR}/Default (Linux).sublime-keymap"
+      "${TMP_DIR}/Default (Linux).sublime-mousemap"
+    )
+
+
+    for d in "${dprefs[@]}" "${dkeys[@]}"; do
+      dnmn="${d##*/}"
+      cp -f "$d" "${DEF_DIR}/${dnmn/sublime-/}"
+    done
+
+    ((extracteddeaults==1)) && {
+      mkdir -p "${PKG_DIR}/zublime" "${PKG_DIR}/Default"
+      # move default settings to zublime
+      [[ -f ${PKG_DIR}/zublime/Preferences.sublime-settings ]] || awk '
+        BEGIN{fndblk=0}
+
+        /^[}]/ {exit}
+        start==1 && /./ {blk[fndblk]=blk[fndblk] "\n" $0}
+        start==1 && $0 !~ /./ {fndblk++}
+        $1 ~ "font_options|theme_font_options|color_scheme|font_face|font_size|ignored_packages" {ignore[fndblk]=1}
+        /^[{]/ {start=1}
+
+        END{
+          print "{"
+          for (b in blk){
+            keep=1
+            for (i in ignore) {
+              if (i==b){keep=0}
+            }
+            if (keep==1)print blk[b]
+          }
+          print "}"
+        }
+      ' "${TMP_DIR}/Preferences.sublime-settings" > "${PKG_DIR}/zublime/Preferences.sublime-settings"
+
+      # move default settings to user (autofile)
+      [[ -f ${USR_DIR}/Preferences.sublime-settings ]] || awk '
+        BEGIN{fndblk=0}
+
+        /^[}]/ {exit}
+        start==1 && /./ {blk[fndblk]=blk[fndblk] "\n" $0}
+        start==1 && $0 !~ /./ {fndblk++}
+        $1 ~ "font_options|theme_font_options|color_scheme|font_face|font_size|ignored_packages" {ignore[fndblk]=1}
+        /^[{]/ {start=1}
+
+        END{
+          print "{"
+          for (b in blk){
+            keep=1
+            for (i in ignore) {
+              if (i==b){keep=0}
+            }
+            if (keep==0)print blk[b]
+          }
+          print "}"
+        }
+      ' "${TMP_DIR}/Preferences.sublime-settings" > "${USR_DIR}/Preferences.sublime-settings"
+
+      rm -f "${dprefs[@]}"
+
+      ((blankdefaults==1)) \
+          && echo "{}" | tee "${dprefs[@]}"
+
+      mkdir -p "${PKG_DIR}/Default"
+      
+      for f in "${dprefs[@]}" "${dkeys[@]}"; do
+        [[ -f "${PKG_DIR}/Default/${f##*/}" ]] || mv "$f" "${PKG_DIR}/Default"
+      done
+    }
+
+    # create blank keymap file in zublime
+    # [[ -f ${PKG_DIR}/zublime/Default.sublime-keymap ]] \
+    #   || echo -e "{\n\n}" > ${PKG_DIR}/zublime/Default.sublime-keymap
+    
+    rm -rf "${TMP_DIR:?}"/*
 }
 
 printinfo(){

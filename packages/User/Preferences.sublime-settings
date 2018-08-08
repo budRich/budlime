@@ -90,7 +90,8 @@
   ],
   "close_windows_when_empty": false,
   "color_scheme": "Packages/mondo/mondo.tmTheme",
-  "font_face": "monospace",
+  "font_face": "Hack",
+  // "font_face": "monospace",
   "font_options":
   [
     "subpixel_antialias"
@@ -123,5 +124,6 @@
   ],
   "skin": "DA UI/Origin",
   "theme": "DA.sublime-theme",
+  // "theme": "Adaptive.sublime-theme",
   "translate_tabs_to_spaces": true
 }

@@ -1,0 +1,84 @@
+{
+  "folders":
+  [
+    {
+      "name": "User - settings",
+      "path": "~/.config/sublime-text-3/Packages/zublime"
+    },
+    {
+      "name": "Default - settings",
+      "path": "~/.config/sublime-text-3/Packages/Default"
+    },
+    {
+      "file_exclude_patterns":
+      [
+        "*.last-run",
+        "*-ca-bundle"
+      ],
+      "folder_exclude_patterns":
+      [
+        "dox",
+        "Package Control.cache",
+        "Projects"
+      ],
+      "name": "Package - settings",
+      "path": "~/.config/sublime-text-3/Packages/User"
+    },
+    {
+      "file_exclude_patterns":
+      [
+        "*.json",
+        "Widget - DA (*",
+        ".version",
+        ".no-sublime-package"
+      ],
+      "folder_exclude_patterns":
+      [
+        "*"
+      ],
+      "name": "UI - settings",
+      "path": "~/.config/sublime-text-3/Packages/DA UI"
+    },
+    {
+      "file_include_patterns":
+      [
+        "*.sublime-project"
+      ],
+      "name": "Project - settings",
+      "path": "."
+    },
+    {
+      "name": "dox",
+      "path": "~/.config/sublime-text-3/Packages/User/dox"
+    },
+    {
+      "folder_exclude_patterns":
+      [
+        "User",
+        "zublime",
+        "DA UI"
+      ],
+      "name": "packages-extracted",
+      "path": "~/.config/sublime-text-3/Packages"
+    },
+    {
+      "binary_file_patterns":
+      [
+        "*.sublime-package"
+      ],
+      "name": "packages-installed",
+      "path": "~/.config/sublime-text-3/Installed Packages"
+    },
+    {
+      "binary_file_patterns":
+      [
+        "*.sublime-package"
+      ],
+      "name": "packages-opt",
+      "path": "/opt/sublime_text/Packages"
+    },
+    {
+      "path": "~/git/lab/budlime"
+    }
+  ]
+}

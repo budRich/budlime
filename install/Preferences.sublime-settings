@@ -1,0 +1,8 @@
+{
+	"font_face": "monospace",
+	"font_size": 18,
+	"font_options": ["subpixel_antialias"],
+	"color_scheme": "Packages/mondo/mondo.tmTheme",
+	"highlight_modified_tabs": true,
+	"theme": "Adaptive.sublime-theme"
+}

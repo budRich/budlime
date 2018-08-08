@@ -1,0 +1,23 @@
+{
+  "folders":
+  [
+    {
+      "folder_exclude_patterns":
+      [
+        "User",
+        "zublime",
+        "DA UI"
+      ],
+      "name": "packages-extracted",
+      "path": "~/.config/sublime-text-3/Packages"
+    },
+    {
+      "binary_file_patterns":
+      [
+        "*.sublime-package"
+      ],
+      "name": "packages-installed",
+      "path": "~/.config/sublime-text-3/Installed Packages"
+    }
+  ]
+}

@@ -5,12 +5,12 @@
 	],
 	"installed_packages":
 	[
-		"A File Icon",
+    "A File Icon",
 		"ApplySyntax",
 		"ChannelRepositoryTools",
     "Chain of Command",
 		"Color Highlighter",
-		"DA UI",
+    "DA UI",
 		"Dockerfile Syntax Highlighting",
 		"Extract Sublime Package",
 		"File Rename",
@@ -24,7 +24,6 @@
 		"PlainNotes",
 		"ProjectManager",
 		"SimpleSyntax",
-		"Skins",
 		"Snippet Destroyer",
 		"SnippetMaker",
 		"SublimeLinter",
