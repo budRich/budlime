@@ -4,7 +4,8 @@ SYNOPSIS
 --------
 
 `subextract` [`-v`|`-h`]  
-`subextract` [`-c`] [`-d`] [`-e`] [`-p` PACKAGE_DIRECTORY]  
+`subextract` [`-c`] [`-d`] [`-e`] [`-f`] [`-p` PACKAGE_DIRECTORY]  
+`subextract` [`-f`] [`-s` PACKAGE_DIRECTORY]  
 
 DESCRIPTION
 -----------
@@ -51,8 +52,8 @@ Show help and exit.
 `-c`  
 Clean install. Move the current *$PKG_DIR* to *$SUB_DIR/backup* before any other operations.  
 
-`-p` PROJECT_DIRECTORY  
-Copy files withing *PROJECT_DIRECTORY* before any other operations.  
+`-p` PACKAGE_DIRECTORY  
+Copy files withing *PACKAGE_DIRECTORY* before any other operations.  
 Example:  
 
 ``` Text
@@ -97,6 +98,13 @@ Extract packages default settingfiles to *$PKG_DIR*
 `-d`  
 Blank extraced default files. (only have effect if `-e` is used)
 
+`-s` PACKAGE_DIRECTORY  
+Sync files in *PACKAGE_DIRECTORY* with files in *$PKG_DIR*.
+Works both ways, the newest file will overwrite the oldest.
+
+`-f`  
+Force files from PACKAGE_DIRECTORY to overwrite,
+no matter if target file exists (`-p`) or is newer (`-s`).
 
 FILES
 -----

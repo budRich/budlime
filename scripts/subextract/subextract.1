@@ -7,7 +7,9 @@
 .PP
 \fB\fCsubextract\fR [\fB\fC\-v\fR|\fB\fC\-h\fR]
 .br
-\fB\fCsubextract\fR [\fB\fC\-c\fR] [\fB\fC\-d\fR] [\fB\fC\-e\fR] [\fB\fC\-p\fR PACKAGE\_DIRECTORY]
+\fB\fCsubextract\fR [\fB\fC\-c\fR] [\fB\fC\-d\fR] [\fB\fC\-e\fR] [\fB\fC\-f\fR] [\fB\fC\-p\fR PACKAGE\_DIRECTORY]
+.br
+\fB\fCsubextract\fR [\fB\fC\-f\fR] [\fB\fC\-s\fR PACKAGE\_DIRECTORY]
 
 .SH DESCRIPTION
 .PP
@@ -64,9 +66,9 @@ Show help and exit.
 Clean install. Move the current \fI$PKG\_DIR\fP to \fI$SUB\_DIR/backup\fP before any other operations.
 
 .PP
-\fB\fC\-p\fR PROJECT\_DIRECTORY
+\fB\fC\-p\fR PACKAGE\_DIRECTORY
 .br
-Copy files withing \fIPROJECT\_DIRECTORY\fP before any other operations.
+Copy files withing \fIPACKAGE\_DIRECTORY\fP before any other operations.
 .br
 Example:
 
@@ -130,6 +132,18 @@ Extract packages default settingfiles to \fI$PKG\_DIR\fP
 \fB\fC\-d\fR
 .br
 Blank extraced default files. (only have effect if \fB\fC\-e\fR is used)
+
+.PP
+\fB\fC\-s\fR PACKAGE\_DIRECTORY
+.br
+Sync files in \fIPACKAGE\_DIRECTORY\fP with files in \fI$PKG\_DIR\fP\&.
+Works both ways, the newest file will overwrite the oldest.
+
+.PP
+\fB\fC\-f\fR
+.br
+Force files from PACKAGE\_DIRECTORY to overwrite,
+no matter if target file exists (\fB\fC\-p\fR) or is newer (\fB\fC\-s\fR).
 
 .SH FILES
 .PP

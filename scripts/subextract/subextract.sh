@@ -14,20 +14,18 @@ PKG_DIR="$SUB_DIR/Packages"
 USR_DIR="$PKG_DIR/User"
 DOC_DIR="$USR_DIR/dox"
 DEF_DIR="$DOC_DIR/defaults"
-WIK_DIR="$DOC_DIR/wiki"
+
 OPT_DIR="/opt/sublime_text/Packages"
 GIT_DIR="$HOME/git/dox"
-
-declare -A wikis
-wikis[linter]="https://github.com/SublimeLinter/SublimeLinter.git"
-wikis[sublime]="https://github.com/guillermooo/sublime-undocs.git"
 
 PKG_EXT="sublime-package"
 CNF_EXT="sublime-settings"
 
 main(){
-  while getopts :vhcp:de option; do
+  while getopts :vhcp:des:f option; do
     case "${option}" in
+      f) force=1 ;;
+      s) synksettings "${pkgsource:=$OPTARG}" ; exit ;;
       p) pkgsource="${OPTARG}" ;;
       c) cleaninstall=1 ;;
       d) blankdefaults=1 ;;
@@ -54,13 +52,37 @@ main(){
 
   [[ -d $pkgsource ]] && loopsource "$pkgsource"
   
-  preparewikis
   extractinstalled
   extractdefaults
 
   # remove TMP_DIR
   rm -rf "${TMP_DIR:?}"
   
+}
+
+synksettings(){
+  [[ -d "$1" ]] || exit 1
+
+  for f in "$1"/*; do
+    [[ -d "$f" ]] && synksettings "$f" && continue
+    [[ ${f,,} =~ readme.md$ ]] && continue
+    dirname="${f#$pkgsource\/}"
+    dirname="${dirname%/*}"
+    lastdir="${dirname##*/}"
+
+    { [[ $f =~ ${CNF_EXT}$ ]] && [[ $lastdir != zublime ]] ;} \
+      && f2="${USR_DIR}/${f##*/}" \
+      || f2="${PKG_DIR}/$dirname/${f##*/}"
+
+    if ((force!=1)) && [[ -f "${f2}" ]] && [[ "${f}" -ot "${f2}" ]]; then
+      printf '%s --> %s\n' "${f2}" "${f}"
+      cp -f "${f2}" "${f}"
+    else
+      printf '%s --> %s\n' "${f}" "${f2}"
+      cp -f "${f}" "${f2}"
+    fi
+
+  done
 }
 
 loopsource(){
@@ -73,11 +95,16 @@ loopsource(){
     dirname="${dirname%/*}"
     lastdir="${dirname##*/}"
 
-    [[ $f =~ ${CNF_EXT}$ ]] && [[ $lastdir != zublime ]] \
-      && cp "$f" "$USR_DIR" && continue
-    
-    mkdir -p "${PKG_DIR}/$dirname"
-    cp "$f" "${PKG_DIR}/$dirname"
+    if [[ $f =~ ${CNF_EXT}$ ]] && [[ $lastdir != zublime ]]; then
+      ((force==1)) \
+        && cp -f "$f" "$USR_DIR" && continue \
+        || cp "$f" "$USR_DIR" && continue
+    else
+      mkdir -p "${PKG_DIR}/$dirname"
+      ((force==1)) \
+        && cp -f "$f" "${PKG_DIR}/$dirname" \
+        || cp "$f" "${PKG_DIR}/$dirname"
+    fi
   done
 }
 
@@ -133,49 +160,6 @@ extractinstalled(){
       rm -rf ./*
     )
 
-  done
-}
-
-preparewikis(){
-
-  for w in "${!wikis[@]}"; do
-    [[ -d "$GIT_DIR/$w" ]] \
-      || git clone "${wikis[$w]}" "$GIT_DIR/$w"
-    if [[ $w = linter ]]; then
-
-      eval "$(rstcrawl "$GIT_DIR/$w/docs" \
-        | awk -v wdir="$WIK_DIR/$w" -v base="$GIT_DIR/$w/docs" '{
-        full=$0
-        sub(base"/","",$0)
-        fil=$0
-        sub(/\/.*$/,"",$0)
-        dir=$0
-        if (fil==dir) {dir=""}
-        print "mkdir -p " wdir "/" dir
-        print "cp -f " full " " wdir "/" dir
-      }')"
-
-    elif [[ $w = sublime ]]; then
-      eval "$(rstcrawl "$GIT_DIR/$w/source" \
-        | awk -v wdir="$WIK_DIR/$w" -v base="$GIT_DIR/$w/source" '{
-        full=$0
-        sub(base"/","",$0)
-        fil=$0
-        sub(/\/.*$/,"",$0)
-        dir=$0
-        if (fil==dir) {dir=""}
-        print "mkdir -p " wdir "/" dir
-        print "cp -f " full " " wdir "/" dir
-      }')"
-    fi
-  done
-}
-
-rstcrawl(){
-  for f in "${1}/"*; do
-    [[ -d $f ]] && rstcrawl "$f" && continue
-    [[ ${f##*.} = rst ]] || continue
-    echo "$f"
   done
 }
 
@@ -273,10 +257,6 @@ extractdefaults(){
         [[ -f "${PKG_DIR}/Default/${f##*/}" ]] || mv "$f" "${PKG_DIR}/Default"
       done
     }
-
-    # create blank keymap file in zublime
-    # [[ -f ${PKG_DIR}/zublime/Default.sublime-keymap ]] \
-    #   || echo -e "{\n\n}" > ${PKG_DIR}/zublime/Default.sublime-keymap
     
     rm -rf "${TMP_DIR:?}"/*
 }
@@ -288,7 +268,8 @@ SYNOPSIS
 --------
 
 `subextract` [`-v`|`-h`]  
-`subextract` [`-c`] [`-d`] [`-e`] [`-p` PACKAGE_DIRECTORY]  
+`subextract` [`-c`] [`-d`] [`-e`] [`-f`] [`-p` PACKAGE_DIRECTORY]  
+`subextract` [`-f`] [`-s` PACKAGE_DIRECTORY]  
 
 DESCRIPTION
 -----------
@@ -335,8 +316,8 @@ Show help and exit.
 `-c`  
 Clean install. Move the current *$PKG_DIR* to *$SUB_DIR/backup* before any other operations.  
 
-`-p` PROJECT_DIRECTORY  
-Copy files withing *PROJECT_DIRECTORY* before any other operations.  
+`-p` PACKAGE_DIRECTORY  
+Copy files withing *PACKAGE_DIRECTORY* before any other operations.  
 Example:  
 
 ``` Text
@@ -381,6 +362,13 @@ Extract packages default settingfiles to *$PKG_DIR*
 `-d`  
 Blank extraced default files. (only have effect if `-e` is used)
 
+`-s` PACKAGE_DIRECTORY  
+Sync files in *PACKAGE_DIRECTORY* with files in *$PKG_DIR*.
+Works both ways, the newest file will overwrite the oldest.
+
+`-f`  
+Force files from PACKAGE_DIRECTORY to overwrite,
+no matter if target file exists (`-p`) or is newer (`-s`).
 
 FILES
 -----

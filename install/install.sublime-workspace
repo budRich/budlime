@@ -28,6 +28,10 @@
 		"selected_items":
 		[
 			[
+				"packa",
+				"Package Control: Advanced Install Package"
+			],
+			[
 				"ui",
 				"UI: Select Color Scheme"
 			]
@@ -113,16 +117,19 @@
 						"selection":
 						[
 							[
-								51,
-								51
+								48,
+								48
 							]
 						],
 						"settings":
 						{
+							"SL.14.region_keys":
+							[
+							],
 							"apply_syntax_touched": true,
-							"syntax": "Packages/PackageDev/Package/Sublime Text Settings/Sublime Text Settings.sublime-syntax"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
-						"translation.x": 1.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -138,7 +145,7 @@
 	},
 	"input":
 	{
-		"height": 42.0
+		"height": 55.0
 	},
 	"layout":
 	{
@@ -213,7 +220,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 228.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
