@@ -34,9 +34,6 @@ and put the *user* settings inside the directory: *$PKG_DIR/zublime*. The reason
 that sublime removes all comments and empty lines and auto sort, *$PKG_DIR/User/default.sublime-settings*, 
 when the settings are updated (when f.i. the user changes the theme from the command palette.).
 
-`subextract` will clone two GitHub repositories that contain the unofficial sublime documentation
-and `SublimeLinter`s documentation, and copy the documentation to *$USR_DIR/dox/wiki*.
-
 `subextract` will also create a *sublime.sublime-project* file.
 
 
@@ -115,9 +112,6 @@ defaults to: *$HOME/.config/sublime-text-3*
 OPT_DIR - core package directory
 defaults to: */opt/sublime_text/Packages*  
 
-GIT_DIR - where to store the cloned repos.
-defaults to: *$HOME/git/dox*  
-
 TMP_DIR - temporary directory where package files get extracted to.  
 defaults to: */tmp/subextract*  
 
@@ -135,9 +129,6 @@ defaults to: *$USR_DIR/dox*
 
 DEF_DIR - directory where default config files are backed up.  
 defaults to: *$DOC_DIR/defaults*  
-
-WIK_DIR - directory where the documentation from the cloned repos will be stored.   
-defaults to: *$DOC_DIR/wiki*  
 
 $USR_DIR/projects/*sublime.sublime-project*  
 project file.  

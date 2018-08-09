@@ -43,10 +43,6 @@ that sublime removes all comments and empty lines and auto sort, \fI$PKG\_DIR/Us
 when the settings are updated (when f.i. the user changes the theme from the command palette.).
 
 .PP
-\fB\fCsubextract\fR will clone two GitHub repositories that contain the unofficial sublime documentation
-and \fB\fCSublimeLinter\fRs documentation, and copy the documentation to \fI$USR\_DIR/dox/wiki\fP\&.
-
-.PP
 \fB\fCsubextract\fR will also create a \fIsublime.sublime\-project\fP file.
 
 .SH OPTIONS
@@ -156,10 +152,6 @@ OPT\_DIR \- core package directory
 defaults to: \fI/opt/sublime\_text/Packages\fP
 
 .PP
-GIT\_DIR \- where to store the cloned repos.
-defaults to: \fI$HOME/git/dox\fP
-
-.PP
 TMP\_DIR \- temporary directory where package files get extracted to.
 .br
 defaults to: \fI/tmp/subextract\fP
@@ -188,11 +180,6 @@ defaults to: \fI$USR\_DIR/dox\fP
 DEF\_DIR \- directory where default config files are backed up.
 .br
 defaults to: \fI$DOC\_DIR/defaults\fP
-
-.PP
-WIK\_DIR \- directory where the documentation from the cloned repos will be stored.
-.br
-defaults to: \fI$DOC\_DIR/wiki\fP
 
 .PP
 $USR\_DIR/projects/\fIsublime.sublime\-project\fP
