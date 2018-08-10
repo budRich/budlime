@@ -1,0 +1,15 @@
+[
+    // edit binding added by budRich
+    { 
+      "keys": ["alt+p"], "command": "project_manager",
+      "args": {"action": "edit"}
+    },
+    {
+        "keys": ["ctrl+alt+p"], "command": "project_manager", 
+        "args": {"action": "switch"}
+    },
+    // {
+    //     "keys": ["ctrl+alt+o"],
+    //     "command": "project_manager", "args": {"action": "new"}
+    // }
+]
