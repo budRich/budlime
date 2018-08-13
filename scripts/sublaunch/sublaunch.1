@@ -1,0 +1,78 @@
+.TH SUBLAUNCH 1 2018\-08\-06 Linux "User Manuals"
+.SH NAME
+.PP
+\fB\fCsublaunch\fR \- Run or raise sublime with a specific profile and file
+
+.SH SYNOPSIS
+.PP
+\fB\fCsublaunch\fR [\fB\fC\-v\fR|\fB\fC\-h\fR]
+
+.SH DESCRIPTION
+.PP
+\fB\fCsublaunch\fR takes a number of criterion to identify
+a sublime window. If \fB\fCsublaunch\fR can' find a open window
+matching the criteria. A new sublime window will be opened
+and it's \fBinstance name\fP will be renamed to match the criteria.
+
+.SH OPTIONS
+.PP
+\fB\fC\-v|\-\-version\fR
+Show version and exit.
+
+.PP
+\fB\fC\-h|\-\-help\fR
+Show help and exit.
+
+.PP
+\fB\fC\-c|\-\-class\fR CLASS
+Set the criterion to be a window with the class CLASS.
+
+.PP
+\fB\fC\-i|\-\-instance\fR INSTANCE
+.br
+Set the criterion to be a window with the instance name
+INSTANCE. Defaults to the value of SUBLIME\_TITS\_SRCH.
+
+.PP
+\fB\fC\-p|\-\-profile\fR PROFILE
+.br
+Set the criterion to be a window with the instance name:
+\fB\fCsublime\_PROFILE\fR\&. And if a project in $PROJECT\_DIR with
+the name PROFILE.sublime\-project exist. That project will
+get opened if the window doesn't exist.
+
+.PP
+\fB\fC\-j|\-\-project\fR PROJECT
+If a project in $PROJECT\_DIR with
+the name PROJECT.sublime\-project exist. That project will
+get opened if the window doesn't exist. If both this
+and \fB\fC\-\-profile\fR is set, \fB\fC\-\-profile\fR will have priority.
+
+.PP
+\fB\fC\-o|\-\-otions\fR OTIONS
+.br
+Additional commandline otions that will get passed to sublime
+sublime (\fB\fCsubl\fR) when a new window is created.
+
+.SH ENVIRONMENT
+.PP
+\fB\fCFOOCONF\fR
+If non\-null the full pathname for an alternate system wide \fI/etc/foo.conf\fP\&.
+Overridden by the \fB\fC\-c\fR option.
+
+.SH DEPENDENCIES
+.PP
+go\-md2man
+i3get
+Sublime Text
+
+.SH AUTHOR
+.PP
+budRich 
+\[la]robstenklippa@gmail.com\[ra]
+
+\[la]https://budrich.github.io\[ra]
+
+.SH SEE ALSO
+.PP
+wmctrl(1)

@@ -1,15 +1,15 @@
 {
-	"skin":
-	{
-		"id": "origin",
-		"settings":
-		{
-"accent_color": "#4c83ad",
+  "skin":
+  {
+    "id": "origin",
+    "settings":
+    {
+      "accent_color": "#4c83ad",
       "font_face": "FixedFixedsys",
       "font_size": 16,
 
       "status_bar_background_color": "$accent_color",
-"status_label_foreground_color": "#eee8d5",
+      "status_label_foreground_color": "#eee8d5",
       "status_bar_padding": [4, 3, 4, 3],
 
       "tab_height": 20,
@@ -31,10 +31,10 @@
 
       "sidebar_tree_row_padding": [18, 4],
       "show_sidebar_folder_icon": false,
+      "sidebar_background_color":["shade", "$background_color", 0.07 ],
       "sidebar_heading_foreground_color": "$sidebar_background_color",
       "sidebar_padding": [0, -24, 1, 0],
       "show_sidebar_file_icons": false,
-		}
-	}
+    }
+  }
 }
-

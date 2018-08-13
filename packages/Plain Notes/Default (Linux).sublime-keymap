@@ -1,0 +1,60 @@
+[
+  // >> Plain Notes
+    { "keys": ["ctrl+n"],   "command": "notes_list"   },
+    { "keys": ["ctrl+shift+n"], "command": "notes_new"    },
+    { "keys": ["ctrl+f4"],  "command": "notes_buffer" },
+    { "keys": ["f1"],       "command": "jotter"       },
+
+    // Note Extra Features: TODO and HEADING FOLDING
+    { "keys": ["ctrl+shift+["], "command": "note_smart_folding", "context":
+      [
+        { "key": "selector", "operator": "equal", "operand": "(markup.heading.1.markdown.note | markup.heading.2.markdown.note | markup.heading.3.markdown.note| markup.heading.4.markdown.note| markup.heading.5.markdown.note| markup.heading.6.markdown.note)" },
+        {"key": "setting.command_mode"}
+      ]
+    },
+    { "keys": [",","j"], "command": "note_global_folding", "context":
+      [
+        { "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" },
+        {"key": "setting.command_mode"}
+       ]
+    },
+
+    { "keys": [",","t"],  "command": "chain", 
+        "args": { "commands": [
+          ["note_todo_pending"],
+          ["enter_insert_mode", { "insert_command": "shrink_selections_to_end"}],
+        ]}, 
+      "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" },
+        { "key": "setting.command_mode" }
+      ]
+    },
+
+    { "keys": [",","y"],  "command": "note_todo_done", "context":
+      [
+        { "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" },
+        {"key": "setting.command_mode"}
+      ]
+    },
+
+    { "keys": [",","u"],  "command": "note_todo_cancel", "context":
+      [
+        { "key": "selector", "operator": "equal", "operand": "text.html.markdown.note" },
+        {"key": "setting.command_mode"}
+      ]
+    },
+
+    { "keys": ["enter"], "command": "note_open_url", "context":
+      [
+        { "key": "selector", "operator": "equal", "operand": "text.html.markdown.note meta.link.inline.markdown | text.html.markdown.note meta.link.inet.markdown | text.html.markdown.note meta.link.reference.def.markdown" },
+        {"key": "setting.command_mode"}
+      ]
+    },
+
+    { "keys": ["enter"], "command": "note_preview_image", "context":
+      [
+        { "key": "selector", "operator": "equal", "operand": "text.html.markdown.note meta.image.inline.markdown" },
+        {"key": "setting.command_mode"}
+      ]
+    },
+]

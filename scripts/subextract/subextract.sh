@@ -47,8 +47,7 @@ main(){
   }
 
   mkdir -p "${TMP_DIR}" "${USR_DIR}/Projects" "${DEF_DIR}" \
-           "${DOC_DIR}/packages" "${PKG_DIR}" "${GIT_DIR}" \
-           "${WIK_DIR}"
+           "${DOC_DIR}/packages" "${PKG_DIR}" "${GIT_DIR}"
 
   [[ -d $pkgsource ]] && loopsource "$pkgsource"
   
@@ -110,6 +109,8 @@ loopsource(){
 
 extractinstalled(){
   for p in "$ZIP_DIR/"*."${PKG_EXT}"; do
+    
+    echo "$p"
 
     name="${p##*/}"
     name="${name%.*}"
@@ -117,11 +118,13 @@ extractinstalled(){
     keys=""
     conf=""
     reads=""
+    cmds=""
 
     eval "$(unzip -l "$p" -x */* -x *.{todo,tmLanguage,tmPreferences,ini,mustache,ico,xml,disabled-sublime-syntax,bin,dictonary,sublimelinterrc,txt,py,gitignore,json,exe,cs,png,cur,resx,cpp,m,csproj,snk,pal,aco,gpl,sln,sh,css,html,log,ss,dockerignore,yml,svg,js,cfg} \
       | awk '{$1=$2=$3="";sub(/[[:space:]]*/,"",$0)
         if(/./ && $0 != "Name" && $0 != "----") {
           if (/sublime-settings$/) print "conf=\"" $0 "\""
+          if (/sublime-commands$/) print "cmds=\"" $0 "\""
           if (/Default( [(]Linux[)])*.sublime-keymap$/) print "keys=\"" $0 "\""
           if (tolower($0) == "readme.md") print "reads=\"" $0 "\""
         }}')"
@@ -129,7 +132,7 @@ extractinstalled(){
     (
       cd "${TMP_DIR}" || exit 1
       # unzip "$p" -d . "${reads}" "${conf}" "${keys}" > /dev/null 2>&1
-      unzip "$p" -d . "${reads}" "${conf}" "${keys}"
+      unzip "$p" -d . "${reads}" "${conf}" "${keys}" "${cmds}"
 
       [[ -f $reads ]] && mv "$reads" "${DOC_DIR}/packages/$name.md"
       [[ -f $keys ]] && {
@@ -153,10 +156,21 @@ extractinstalled(){
           }
         }
 
+
         [[ ${conf##*/} = Preferences.${CNF_EXT} ]] \
           && mv "$conf" "${DEF_DIR}/$name.${CNF_EXT#sublime-}" \
           || mv "$conf" "${DEF_DIR}/$cnfname.${CNF_EXT#sublime-}"
       }
+
+      [[ -f $cmds ]] && {
+        echo "$cmds"
+        mv "$cmds" "${DEF_DIR}/$name.commands"
+        ((extracteddeaults==1)) && [[ ! -f "${PKG_DIR}/$name/${cmds##*/}" ]] && {
+          mkdir -p "${PKG_DIR}/$name"
+          cp "${DEF_DIR}/$name.commands" "${PKG_DIR}/$name/${cmds##*/}"
+        }
+      }
+
       rm -rf ./*
     )
 
@@ -170,6 +184,7 @@ extractdefaults(){
       | awk '{$1=$2=$3="";sub(/[[:space:]]*/,"",$0)
         if(/./ && $0 != "Name" && $0 != "----") {
           # if (/settings/) print "afil+=(\"" $0 "\")"
+          if (/sublime-commands$/) print "afil+=(\"" $0 "\")"
           if (/Preferences( [(]Linux[)])*.sublime-settings$/) print "afil+=(\"" $0 "\")"
           if (/Default( [(]Linux[)])*.sublime-keymap$/) print "afil+=(\"" $0 "\")"
           if (/Default( [(]Linux[)])*.sublime-mousemap$/) print "afil+=(\"" $0 "\")"
@@ -192,8 +207,12 @@ extractdefaults(){
       "${TMP_DIR}/Default (Linux).sublime-mousemap"
     )
 
+    dcmds=(
+      "${TMP_DIR}/Default.sublime-commands"
+    )
 
-    for d in "${dprefs[@]}" "${dkeys[@]}"; do
+
+    for d in "${dprefs[@]}" "${dkeys[@]}" "${dcmds[@]}"; do
       dnmn="${d##*/}"
       cp -f "$d" "${DEF_DIR}/${dnmn/sublime-/}"
     done
@@ -253,7 +272,7 @@ extractdefaults(){
 
       mkdir -p "${PKG_DIR}/Default"
       
-      for f in "${dprefs[@]}" "${dkeys[@]}"; do
+      for f in "${dprefs[@]}" "${dkeys[@]}" "${dcmds[@]}"; do
         [[ -f "${PKG_DIR}/Default/${f##*/}" ]] || mv "$f" "${PKG_DIR}/Default"
       done
     }

@@ -7,14 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/home/bud/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 683,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -61,10 +53,10 @@
 	],
 	"file_history":
 	[
+		"/home/bud/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
 		"/home/bud/git/lab/budlime/packages/User/Preferences.sublime-settings",
 		"/home/bud/git/lab/budlime/install/Preferences.sublime-settings",
 		"/home/bud/git/lab/budlime/install/install.sh",
-		"/home/bud/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
 		"/home/bud/git/lab/budlime/scripts/install.sh",
 		"/home/bud/git/lab/budlime/packages/User/Projects/install.sublime-project"
 	],
@@ -101,41 +93,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/home/bud/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 683,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								48,
-								48
-							]
-						],
-						"settings":
-						{
-							"SL.14.region_keys":
-							[
-							],
-							"apply_syntax_touched": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
