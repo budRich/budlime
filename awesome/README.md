@@ -12,25 +12,42 @@ tool | description
 
 # Recommended packages
 
-package | author | description
-:------ |:------ |:-----------
-[**SimpleSyntax**] | [budlabs] | A Sublime Text 3 package that adds a simple syntax highlighting, perfect for config files.
-[A File Icon] | [ihodev] | This package adds file icons to the sidebar. The author, ihodev, has created several cool UI related packages, such as `DA UI` and `DA CS`.
-[ApplySyntax] | [facelessuser] | Sublime applies syntax to files by looking at the file extension. With `ApplySyntax` one can make more fine grained rules for how the settings are applied. It is very useful for files that have no apparent way to determine the syntax. F.i. configuration files, which often have a syntax that only exist for that particular configfile (f.i. `i3wm`). ApplySyntax` can set the syntax based on things like the content (looking for a specific line), or by evaluating the first line that often contains of a *shebang* that tells what syntax to use.
-[Chain of Command] | [jisaacks] | Sublime text plugin to run a chain of commands
-[Color Highlighter] | [Monnoroch] | underlays selected hexadecimal colorcodes (like "#FFFFFF", "rgb(255,255,255)", "white", etc.) with their real color.
-[DA UI] | [ihodev] | Adaptive, Customizable, Elegant UI Theme and Color Schemes for Sublime Text 3
-[Extract Sublime Package] | [SublimeText] | Extract .sublime-package files to the Sublime Text Packages folder.
-[File Rename] | [brianlow] | Rename files from the SublimeText3 command palette. No mouse required.
-[iOpener] | [rosshemsley] | Open files from path, with completion, listings and history. Similar to Emacs find file.
-[PackageDev] | [SublimeText] | Tools to ease the creation of snippets, syntax definitions, etc. for Sublime Text.
-[PlainNotes] | [aziz] | Simple and pleasant note taking for SublimeText
-[ProjectManager] | [randy3k] | Project Manager for Sublime Text 3
-[SnippetMaker] | [jugyo] | Makes managing snippets easy in Sublime Text
-[SublimeLinter] | [SublimeLinter] | The code linting framework for Sublime Text 3
-[Zen Tabs] | [travmik] | he ultimate plugin for Sublime Text 2/3 to keep your tabs in Zen
-[MoveTab] | [SublimeText] | Plugin for Sublime Text to move tabs around
-[ExpandRegion] | [aronwoost] |Like “Expand Selection to Scope”. But better!
+package             | author         | description
+:------------------ |:-------------- |:-----------
+[ApplySyntax]       | [facelessuser] |
+Sublime applies syntax to files by looking at the file extension. With `ApplySyntax` one can make more fine grained rules for how the settings are applied. It is very useful for files that have no apparent way to determine the syntax. F.i. configuration files, which often have a syntax that only exist for that particular configfile (f.i. `i3wm`). ApplySyntax` can set the syntax based on things like the content (looking for a specific line), or by evaluating the first line that often contains of a *shebang* that tells what syntax to use.
+[Color Highlighter] | [Monnoroch]    |
+underlays selected hexadecimal colorcodes (like "#FFFFFF", "rgb(255,255,255)", "white", etc.) with their real color.
+[SimpleSyntax]      | [budlabs]      |
+A Sublime Text 3 package that adds a simple syntax highlighting, perfect for config files.
+[A File Icon]       | [ihodev]       |
+This package adds file icons to the sidebar. The author, ihodev, has created several cool UI related packages, such as `DA UI` and `DA CS`.
+[Chain of Command]  | [jisaacks]     |
+Sublime text plugin to run a chain of commands
+[DA UI]             | [ihodev]       |
+Adaptive, Customizable, Elegant UI Theme and Color Schemes for Sublime Text 3
+[File Rename]       | [brianlow]     |
+Rename files from the SublimeText3 command palette. No mouse required.
+[iOpener]           | [rosshemsley]  |
+Open files from path, with completion, listings and history. Similar to Emacs find file.
+[PackageDev]        | [SublimeText]  |
+Tools to ease the creation of snippets, syntax definitions, etc. for Sublime Text.
+[PlainNotes]        | [aziz]         |
+Simple and pleasant note taking for SublimeText
+[ProjectManager]    | [randy3k]      |
+Project Manager for Sublime Text 3
+[SnippetMaker]      | [jugyo]        |
+Makes managing snippets easy in Sublime Text
+[SublimeLinter]     | [SublimeLinter] |
+The code linting framework for Sublime Text 3
+[Zen Tabs]          | [travmik]      |
+he ultimate plugin for Sublime Text 2/3 to keep your tabs in Zen
+[MoveTab]           | [SublimeText]  |
+Plugin for Sublime Text to move tabs around
+[ExpandRegion]      | [aronwoost]    |
+Like “Expand Selection to Scope”. But better!
+[Extract Sublime Package] | [SublimeText] |
+Extract .sublime-package files to the Sublime Text Packages folder.
 
 # Documentation
 [official documentation](https://www.sublimetext.com/docs/3/)  
