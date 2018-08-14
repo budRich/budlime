@@ -26,6 +26,12 @@
   { "keys": ["l"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
       [ {"key": "control", "operand": "sidebar_tree"} ] },
 
+  // spellcheck
+  { "keys": ["]","s"], "command": "next_misspelling", 
+    "context": [{"key": "setting.command_mode"}] },
+  { "keys": ["[","s"], "command": "prev_misspelling", 
+    "context": [{"key": "setting.command_mode"}] },
+    
   // >> Tabswitching
   { "keys": ["J"], "command": "next_view", 
     "context": [{"key": "setting.command_mode"}] },
