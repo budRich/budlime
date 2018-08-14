@@ -1,4 +1,5 @@
-<https://github.com/Monnoroch/ColorHighlighter>  
+## [ColorHighLighter] - underlays selected hexadecimal colorcodes (like "#FFFFFF", "rgb(255,255,255)", "white", etc.) with their real color.
+by: [Monnoroch]
 
 This package adds embeded highlighting of colors anywhere in the source code.  
 
@@ -23,5 +24,6 @@ SO i recommend, making all settings look something like this:
 
 *the settings can also be changed from the menu bar (Tools->color highlighter)*
 
-
+[ColorHighLighter]: https://github.com/Monnoroch/ColorHighlighter
+[Monnoroch]: https://github.com/Monnoroch
 

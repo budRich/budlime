@@ -15,7 +15,7 @@ package | author | description
 [ProjectManager](https://github.com/randy3k/ProjectManager) | [randy3k](https://github.com/randy3k) | Project Manager for Sublime Text 3
 [SnippetMaker](https://github.com/jugyo/SublimeSnippetMaker) | [jugyo](https://github.com/jugyo) | Makes managing snippets easy in Sublime Text
 [SublimeLinter](http://www.sublimelinter.com/en/stable/) | [SublimeLinter](https://github.com/SublimeLinter) | The code linting framework for Sublime Text 3
-[Zen Tabs](https://github.com/travmik/ZenTabs) | [travmik](https://github.com/travmik) | he ultimate plugin for Sublime Text 2/3 to keep your tabs in Zen
+[Zen Tabs](https://github.com/travmik/ZenTabs) | [travmik](https://github.com/travmik) | The ultimate plugin for Sublime Text 2/3 to keep your tabs in Zen
 [MoveTab](https://github.com/SublimeText/MoveTab) | [SublimeText](https://github.com/SublimeText) | Plugin for Sublime Text to move tabs around
 [ExpandRegion](https://github.com/aronwoost/sublime-expand-region)|[aronwoost](https://github.com/aronwoost)|Like “Expand Selection to Scope”. But better!
 

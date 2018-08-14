@@ -1,4 +1,5 @@
-https://github.com/rosshemsley/iOpener
+## [iOpener] - Open files from path, with completion, listings and history. Similar to Emacs find file.
+by: [rosshemsley]
 
 Open files from path, with completion, listings and history. Similar to Emacs find file.
 
@@ -8,3 +9,6 @@ I like to set this setting:
 `"open_folders_in_new_window": false,`  
 
 to false. That will add folders to the current project instead of opening them in a new window.
+
+[iOpener]: https://github.com/rosshemsley/iOpener
+[rosshemsley]: https://github.com/rosshemsley

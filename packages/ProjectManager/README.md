@@ -1,4 +1,5 @@
-# [ProjectManager]
+## [ProjectManager] - Project Manager for Sublime Text 3
+by: [randy3k]
 
 Projects is one of the best features of **Sublime Text**, but as with most of the built in functionality it is very clunky to manage.  
 

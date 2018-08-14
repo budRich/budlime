@@ -1,6 +1,6 @@
-# A File Icon
+## [A File Icon] - Sublime Text File-Specific Icons for Improved Visual Grepping
+by: [ihodev]
 
-Author [ihodev]
 https://youtu.be/aTpuEhVHASw  
 
 This package adds file icons to the sidebar. The author, [ihodev], has created several cool UI related packages, such as `DA UI` and [DA CS].  
