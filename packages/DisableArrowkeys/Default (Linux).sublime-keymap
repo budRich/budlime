@@ -1,36 +1,7 @@
 [
-  { "keys": ["up"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-  { "keys": ["down"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-  { "keys": ["left"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-  { "keys": ["right"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-
-  { "keys": ["ctrl+up"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-  { "keys": ["ctrl+down"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-  { "keys": ["ctrl+left"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-  { "keys": ["ctrl+right"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },  
-
-  { "keys": ["ctrl+shift+up"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-  { "keys": ["ctrl+shift+down"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-  { "keys": ["ctrl+shift+left"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-  { "keys": ["ctrl+shift+right"], "command": "pass", "context":
-    [ { "key": "setting.is_widget", "operand": false } ] },
-
-
   // improve Tab key functionality, to compensate
   // for disabled arrowkeys:
 
-  // >> autocomplete
   // ctr+tab to confirm in automcomplete
   {
     "keys": ["ctrl+tab"],
@@ -58,9 +29,6 @@
     ]
   },
   
-  
-  
-
   {
     "keys": ["tab"],
     "command": "move",
@@ -71,7 +39,6 @@
     ]
   },
 
-
   {
     "keys": ["shift+tab"],
     "command": "move",
@@ -80,4 +47,34 @@
       { "key": "setting.is_widget" }
     ]
   },
+
+  // disable arrowkeys everywhere except in widgets.
+
+  { "keys": ["up"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["down"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["left"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["right"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+
+  { "keys": ["ctrl+up"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+down"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+left"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+right"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },  
+
+  { "keys": ["ctrl+shift+up"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+shift+down"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+shift+left"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+  { "keys": ["ctrl+shift+right"], "command": "pass", "context":
+    [ { "key": "setting.is_widget", "operand": false } ] },
+
 ]

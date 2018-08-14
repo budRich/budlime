@@ -27,10 +27,10 @@
         "caption": "Project Manager: Remove Project",
         "command": "project_manager", "args": {"action": "remove"}
     },
-    {
-        "caption": "Project Manager: Edit Project",
-        "command": "project_manager", "args": {"action": "edit"}
-    },
+    // {
+    //     "caption": "Project Manager: Edit Project",
+    //     "command": "project_manager", "args": {"action": "edit"}
+    // },
     {
         "caption": "Project Manager: Rename Project",
         "command": "project_manager", "args": {"action": "rename"}

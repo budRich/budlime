@@ -1,13 +1,6 @@
 [
 	/* custom Sublime Text 3 default keymap file.
 	   curated by budRich since 2014.
-
-	   Optimized for use with Vintage enabled.
-
-	   Only customization done in the file is disabling un-needed
-	   or duplicate commands. But I have organized the file to be 
-	   easier to read and added comments about which default commands
-	   that are overwritten by my user.sublime-keymap file. 
 	*/
 
 	// most used defaults:
@@ -631,13 +624,10 @@
 		]
 	},
 
-	
-
 	{ "keys": ["shift+f2"], "command": "prev_bookmark" },
 	{ "keys": ["ctrl+f2"], "command": "toggle_bookmark" },
 	{ "keys": ["ctrl+shift+f2"], "command": "clear_bookmarks" },
 	{ "keys": ["alt+f2"], "command": "select_all_bookmarks" },
-
 
 	{ "keys": ["alt+q"], "command": "wrap_lines" },
 
@@ -751,6 +741,10 @@
 	}
 
 	// layouts are handled by origami and vi-bindings, default behaviour disabled.
+  // well, i use i3 and multiple windows as much as possible now
+  // and have ditched origami as well.
+
+  // >> window layouts (disabled)
 	/*{
 		"keys": ["alt+shift+1"],
 		"command": "set_layout",
@@ -862,4 +856,6 @@
 	{ "keys": ["alt+9"], "command": "select_by_index", "args": { "index": 8 } },
 	{ "keys": ["alt+0"], "command": "select_by_index", "args": { "index": 9 } },
 	*/
+
+  // syntax:ssDslash
 ]
