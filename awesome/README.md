@@ -14,7 +14,7 @@ tool | description
 
 package | author | description
 :------ |:------ |:-----------
-[SimpleSyntax] | [budlabs] | A Sublime Text 3 package that adds a simple syntax highlighting, perfect for config files.
+[**SimpleSyntax**] | [budlabs] | A Sublime Text 3 package that adds a simple syntax highlighting, perfect for config files.
 [A File Icon] | [ihodev] | This package adds file icons to the sidebar. The author, ihodev, has created several cool UI related packages, such as `DA UI` and `DA CS`.
 [ApplySyntax] | [facelessuser] | Sublime applies syntax to files by looking at the file extension. With `ApplySyntax` one can make more fine grained rules for how the settings are applied. It is very useful for files that have no apparent way to determine the syntax. F.i. configuration files, which often have a syntax that only exist for that particular configfile (f.i. `i3wm`). ApplySyntax` can set the syntax based on things like the content (looking for a specific line), or by evaluating the first line that often contains of a *shebang* that tells what syntax to use.
 [Chain of Command] | [jisaacks] | Sublime text plugin to run a chain of commands
@@ -31,6 +31,11 @@ package | author | description
 [Zen Tabs] | [travmik] | he ultimate plugin for Sublime Text 2/3 to keep your tabs in Zen
 [MoveTab] | [SublimeText] | Plugin for Sublime Text to move tabs around
 [ExpandRegion] | [aronwoost] |Like “Expand Selection to Scope”. But better!
+
+# Documentation
+[official documentation](https://www.sublimetext.com/docs/3/)  
+[unofficial documentation](http://docs.sublimetext.info/en/latest/)  
+[package control documentation](https://packagecontrol.io/docs)  
 
 [SimpleSyntax]: https://github.com/budlabs/SimpleSyntax
 [budlabs]: https://github.com/budlabs
@@ -62,9 +67,4 @@ package | author | description
 [MoveTab]: https://github.com/SublimeText/MoveTab
 [ExpandRegion]: https://github.com/aronwoost/sublime-expand-region
 [aronwoost]: https://github.com/aronwoost
-
-# Documentation
-[official documentation](https://www.sublimetext.com/docs/3/)  
-[unofficial documentation](http://docs.sublimetext.info/en/latest/)  
-[package control documentation](https://packagecontrol.io/docs)  
 
