@@ -1,41 +1,44 @@
 {
-	"bootstrapped": true,
-	"in_process_packages":
-	[
-	],
-	"installed_packages":
-	[
-    "A File Icon",
-		"ApplySyntax",
-		"ChannelRepositoryTools",
-    "Chain of Command",
-		"Color Highlighter",
-    "DA UI",
-		"Dockerfile Syntax Highlighting",
-		"Extract Sublime Package",
-		"File Rename",
-		"Golang Build",
-		"Golang Tools Integration",
-		"HTML-CSS-JS Prettify",
-		"iOpener",
-		"Man Page Support",
-		"Package Control",
-		"PackageDev",
-		"PlainNotes",
-		"ProjectManager",
-		"Snippet Destroyer",
-		"SnippetMaker",
-		"SublimeLinter",
-		"SublimeLinter-contrib-write-good",
-		"SublimeLinter-pycodestyle",
-		"SublimeLinter-shellcheck",
-		"Zen Tabs"
-	],
-	"repositories":
-	[
-	],
+  "bootstrapped": true,
   "ignore_vcs_packages":
   [
     "SimpleSyntax"
   ],
+  "in_process_packages":
+  [
+  ],
+  "installed_packages":
+  [
+    "A File Icon",
+    "ApplySyntax",
+    "Chain of Command",
+    "ChannelRepositoryTools",
+    "Color Highlighter",
+    "DA UI",
+    "Dockerfile Syntax Highlighting",
+    "ExpandRegion",
+    "Extract Sublime Package",
+    "File Rename",
+    "Golang Build",
+    "Golang Tools Integration",
+    "HTML-CSS-JS Prettify",
+    "iOpener",
+    "Man Page Support",
+    "MoveTab",
+    "Package Control",
+    "PackageDev",
+    "PlainNotes",
+    "ProjectManager",
+    "Snippet Destroyer",
+    "SnippetMaker",
+    "SublimeLinter",
+    "SublimeLinter-contrib-write-good",
+    "SublimeLinter-pycodestyle",
+    "SublimeLinter-shellcheck",
+    "Zen Tabs"
+  ],
+  "repositories":
+  [
+  ],
+  "submit_usage": false
 }

@@ -12,6 +12,7 @@ tool | description
 # Recommended packages
 package | author | description
 :------ |:------ |:-----------
+[SimpleSyntax](https://github.com/budlabs/SimpleSyntax) | [budlabs](https://github.com/budlabs) | A Sublime Text 3 package that adds a simple syntax highlighting, perfect for config files.
 [A File Icon](https://github.com/ihodev/a-file-icon) | [ihodev](https://github.com/ihodev) | This package adds file icons to the sidebar. The author, ihodev, has created several cool UI related packages, such as `DA UI` and `DA CS`. 
 [ApplySyntax](https://github.com/facelessuser/ApplySyntax) | [facelessuser](https://github.com/facelessuser) | Sublime applies syntax to files by looking at the file extension. With `ApplySyntax` one can make more fine grained rules for how the settings are applied. It is very useful for files that have no apparent way to determine the syntax. F.i. configuration files, which often have a syntax that only exist for that particular configfile (f.i. `i3wm`). `ApplySyntax` can set the syntax based on things like the content (looking for a specific line), or by evaluating the first line that often contains of a *shebang* that tells what syntax to use.
 [Chain of Command](https://github.com/jisaacks/ChainOfCommand) | [jisaacks](https://github.com/jisaacks) | Sublime text plugin to run a chain of commands
@@ -27,6 +28,7 @@ package | author | description
 [SublimeLinter](http://www.sublimelinter.com/en/stable/) | [SublimeLinter](https://github.com/SublimeLinter) | The code linting framework for Sublime Text 3
 [Zen Tabs](https://github.com/travmik/ZenTabs) | [travmik](https://github.com/travmik) | he ultimate plugin for Sublime Text 2/3 to keep your tabs in Zen
 [MoveTab](https://github.com/SublimeText/MoveTab) | [SublimeText](https://github.com/SublimeText) | Plugin for Sublime Text to move tabs around
+[ExpandRegion](https://github.com/aronwoost/sublime-expand-region)|[aronwoost](https://github.com/aronwoost)|Like “Expand Selection to Scope”. But better!
 
 # people
 This is a list of package developers worth keeping an eye on.
