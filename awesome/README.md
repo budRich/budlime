@@ -12,3 +12,26 @@ http://docs.sublimetext.info/en/latest/
 
 # package control documentation
 https://packagecontrol.io/docs
+
+# people
+https://github.com/randy3k
+https://randycity.github.io/stuff.html
+- project manager
+- syntaxmanager
+- terminus
+- sendcode
+- aligntab
+
+https://github.com/ihodev
+- DA UI
+- DA CS
+- A File Icon
+
+https://github.com/aziz
+- Plain Notes
+- Plain Tasks
+- SublimeSyntaxConvertor
+- SublimeANSI
+- SublimeHyperClick
+
+

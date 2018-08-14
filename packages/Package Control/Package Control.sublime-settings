@@ -33,5 +33,9 @@
 	],
 	"repositories":
 	[
-	]
+	],
+  "ignore_vcs_packages":
+  [
+    "SimpleSyntax"
+  ],
 }
