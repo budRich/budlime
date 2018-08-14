@@ -13,18 +13,24 @@ tool | description
 # Recommended packages
 
 ---
-package:
-  [SimpleSyntax](https://github.com/budlabs/SimpleSyntax)
-author:
-  [budlabs](https://github.com/budlabs)
-description:
-  A Sublime Text 3 package that adds a simple syntax highlighting, perfect for config files.
-package:
-  [A File Icon](https://github.com/ihodev/a-file-icon)
-author:
-  [ihodev](https://github.com/ihodev)
-description:
-  This package adds file icons to the sidebar. The author, ihodev, has created several cool UI related packages, such as `DA UI` and `DA CS`.
+package: [SimpleSyntax](https://github.com/budlabs/SimpleSyntax)
+author: [budlabs](https://github.com/budlabs)
+description: A Sublime Text 3 package that adds a simple syntax highlighting, perfect for config files.
+package: [A File Icon](https://github.com/ihodev/a-file-icon)
+author: [ihodev](https://github.com/ihodev)
+description: This package adds file icons to the sidebar. The author, ihodev, has created several cool UI related packages, such as `DA UI` and `DA CS`.
+---
+
+
+---
+title: "sublime_setup_settings"
+date: 2017-10-23T10:01:40+02:00
+author: "budRich"
+draft: true
+type: "post"
+target: "budlime/articles"
+tags: ["sublime","setup"]
+notes:
 ---
 
 package | author | description
