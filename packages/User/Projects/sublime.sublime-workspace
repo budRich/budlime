@@ -3,10 +3,81 @@
 	{
 		"selected_items":
 		[
+			[
+				"bud",
+				"budlabs"
+			],
+			[
+				"l",
+				"left"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/Default (Linux).sublime-keymap",
+			"settings":
+			{
+				"buffer_size": 48689,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nMarkdownPreview\n---------------\n\n  [![Unix Build Status][travis-image]][travis-link]\n  [![Package Control Downloads][pc-image]][pc-link]\n  ![License][license-image]\n  \n  # Markdown Preview\n  \n  Preview and build your markdown files quickly in your web browser using [Sublime Text](https://www.sublimetext.com/) 3.\n  \n  You can use the builtin [Python Markdown][pymd] parser (offline) or use the [GitHub Markdown API][gfm-api] or [GitLab Markdown API][glfm-api] (online) for the conversion.\n  \n  ## Features\n  \n  - Markdown preview using the [python-markdown][pymd] with syntax highlighting via Pygments and optional 3rd party extensions ([pymdown-extensions][pymdownx-docs] included by default).\n  - Markdown previews via the GitHub API.\n  - Markdown previews via the GitLab API thanks to [@hadisfr][hadisfr].\n  - Ability use other external Markdown parsers.\n  - Build markdown file using Sublime Text build system.\n  - Browser preview auto reload on save if you have the [LiveReload plugin][live-reload] installed.\n  - Configurable CSS and JavaScript assets with overriding if needed.\n  - YAML support thanks to [@tommi][tommi].\n  - Clipboard selection and copy to clipboard thanks to [@hexatrope][hexatrope].\n  - MathJax support : `\\(\\frac{\\pi}{2}\\)` thanks to [@bps10][bps10].\n  - HTML template customization thanks to [@hozaka][hozaka].\n  - Embed images as base64.\n  - Strip out MultiMarkdown CriticMarkup.\n  \n  ## Documentation\n  \n  https://facelessuser.github.io/MarkdownPreview/\n  \n  ## Support\n  \n  - Any bugs about Markdown Preview please feel free to report [here][issue].\n  - And you are welcome to fork and submit pull requests.\n  \n  ## Attribution\n  \n  Markdown Preview contains a stripped down version of font awesome that is included in the default non-GitHub CSS.  It contains only the icons we currently use.\n  \n  https://fontawesome.com/license\n  \n  ## License\n  \n  The code is available at [GitHub][home] under the [MIT license][license].\n  \n  [bps10]: https://github.com/bps10\n  [gfm-api]: https://developer.github.com/v3/markdown/\n  [glfm-api]: https://docs.gitlab.com/ee/api/markdown.html\n  [hexatrope]: https://github.com/hexatrope\n  [home]: https://github.com/revolunet/sublimetext-markdown-preview\n  [hozaka]: https://github.com/hozaka\n  [hadisfr]: https://github.com/hadisfr\n  [issue]: https://github.com/facelessuser/MarkdownPreview/issues\n  [license]: http://revolunet.mit-license.org\n  [live-reload]: https://packagecontrol.io/packages/LiveReload\n  [pymd]: https://github.com/Python-Markdown/markdown\n  [pymdownx-docs]: http://facelessuser.github.io/pymdown-extensions/usage_notes/\n  [tommi]: https://github.com/tommi\n  [travis-image]: https://img.shields.io/travis/facelessuser/MarkdownPreview/master.svg\n  [travis-link]: https://travis-ci.org/facelessuser/MarkdownPreview\n  [pc-image]: https://img.shields.io/packagecontrol/dt/MarkdownPreview.svg\n  [pc-link]: https://packagecontrol.io/packages/MarkdownPreview\n  [license-image]: https://img.shields.io/badge/license-MIT-blue.svg\n",
+			"settings":
+			{
+				"buffer_size": 3062,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "/home/bud/.config/sublime-text-3/Packages/User/HTML (Rails).sublime-settings",
+			"settings":
+			{
+				"buffer_size": 38,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/bud/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 12587,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/bud/.config/sublime-text-3/Packages/MarkdownPreview/markdown_preview.py",
+			"settings":
+			{
+				"buffer_size": 47484,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/bud/git/lab/budlime/packages/SyntaxSettings/README.md",
+			"settings":
+			{
+				"buffer_size": 476,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/Default.sublime-commands",
+			"settings":
+			{
+				"buffer_size": 4858,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -19,14 +90,109 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"livere",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"markpr",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ui",
+				"UI: Select Color Scheme"
+			],
+			[
+				"tabde",
+				"Table Editor: Show demo film in new scratch view"
+			],
+			[
+				"tab",
+				"Table Editor: Enable for current syntax"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"da",
+				"DA UI: Re-apply Settings"
+			],
+			[
+				"da ui",
+				"DA UI: Re-apply Settings"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"synta no",
+				"Set Syntax: Note"
+			],
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"di",
+				"Package Control: Disable Package"
+			],
+			[
+				"synt",
+				"Syntax Manager: Reload Settings"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"syntax",
+				"Syntax Manager: Reload Settings"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"snippet de",
+				"Destroy all snippets!!"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			]
 		],
 		"width": 0.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 213.0,
 		"history":
 		[
+			"sublime.log_commands(True)",
+			"view.settings().get(\"syntax\")",
+			"command(\"reveal_in_side_bar\")"
 		]
 	},
 	"distraction_free":
@@ -38,8 +204,147 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/home/bud/.config/sublime-text-3/Packages/User/dox",
+		"/home/bud/git/lab/budlime/packages",
+		"/home/bud/.config/sublime-text-3/Packages",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownPreview",
+		"/home/bud/git/lab/budlime",
+		"/home/bud/git/lab/budlime/scripts",
+		"/home/bud/git/lab/budlime/scripts/sublaunch",
+		"/home/bud/git/lab/GTFM"
+	],
 	"file_history":
 	[
+		"/home/bud/git/lab/GTFM/GTFM.sh",
+		"/home/bud/git/lab/budlime/scripts/sublaunch/sublaunch.sh",
+		"/home/bud/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/User/dox/packages/Extract Sublime Package.md",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownPreview/MarkdownPreview.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownPreview/README.md",
+		"/home/bud/git/lab/budlime/packages/Table Editor/README.md",
+		"/home/bud/git/lab/budlime/packages/SyntaxSettings/Markdown.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/tests/Markdown.md",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/tests/GFM.md",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/snippets/Markdown_codeblock_(mdc).sublime-snippet",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/samples/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/samples/GFM.md",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/samples/Fenced Code Blocks.md",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/Markdown.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/lint_docs/RULES.md",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/lint_docs/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/User/Markdown.sublime-settings",
+		"/home/bud/git/lab/budlime/packages/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/mondo/mondoMarkdown.tmTheme",
+		"/home/bud/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/bud/git/lab/budlime/packages/mondo/mondo.tmTheme",
+		"/home/bud/.config/sublime-text-3/Packages/Table Editor/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3/Packages/Table Editor/2018-08-15.md",
+		"/home/bud/git/lab/budlime/packages/mondo/mondoMarkdown.tmTheme",
+		"/home/bud/.config/mondo/generator/sublimeMarkdownTheme/_mondo-template",
+		"/home/bud/.config/sublime-text-3/Packages/mondo/mondo.tmTheme",
+		"/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/MarkdownEditor.tmTheme",
+		"/home/bud/dox/not/budlime/doit.note",
+		"/home/bud/.config/sublime-text-3/Packages/Table Editor/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/Table Editor/.gitignore",
+		"/home/bud/.config/sublime-text-3/Packages/Table Editor/Main.sublime-menu",
+		"/home/bud/.config/sublime-text-3/Packages/Table Editor/Default.sublime-commands",
+		"/home/bud/.config/sublime-text-3/Packages/User/Projects/sublime.sublime-project",
+		"/home/bud/git/lab/budlime/packages/VintageSanity/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/Table Editor/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3/Packages/zublime/Preferences.sublime-settings",
+		"/home/bud/git/lab/budlime/packages/Horizontal Scroll/README.md",
+		"/home/bud/git/lab/budlime/packages/iOpener/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/Table Editor/known_issues.md",
+		"/home/bud/git/lab/budlime/packages/Horizontal Scroll/Default.sublime-commands",
+		"/home/bud/.config/sublime-text-3/Installed Packages/Table Editor.sublime-package",
+		"/home/bud/.config/sublime-text-3/Packages/Horizontal Scroll/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/Horizontal Scroll/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3/Packages/SoberVintage/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3/Packages/Horizontal Scroll/Default.sublime-commands",
+		"/home/bud/.config/sublime-text-3/Packages/zublime/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/zublime/Preferences.sublime-settings",
+		"/home/bud/git/lab/budlime/awesome/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/KeyboardSpellCheck/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/Vintage/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/KeyboardSpellCheck/KeyboardSpellCheck.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/wiki/subl7_hidden_commands.md",
+		"/home/bud/git/lab/budlime/packages/Zen Tabs/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/KeyboardSpellCheck/README.md",
+		"/home/bud/git/lab/budlime/packages/Plain Notes/README.md",
+		"/home/bud/.config/sublime-text-3/Installed Packages/KeyboardSpellCheck.sublime-package",
+		"/home/bud/git/lab/budlime/packages/ExpandRegion/README.md",
+		"/home/bud/git/lab/budlime/packages/ProjectManager/README.md",
+		"/home/bud/git/lab/budlime/packages/MoveTab/README.md",
+		"/home/bud/git/lab/budlime/packages/mondo/README.md",
+		"/home/bud/git/lab/budlime/packages/Color Highlighter/README.md",
+		"/home/bud/git/lab/budlime/packages/DA UI/README.md",
+		"/home/bud/git/lab/budlime/packages/ApplySyntax/README.md",
+		"/home/bud/git/lab/budlime/packages/A File Icon/README.md",
+		"/home/bud/git/lab/budlime/packages/Default/README.md",
+		"/home/bud/git/lab/budlime/packages/Default/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/Default/Default.sublime-commands",
+		"/home/bud/git/lab/budlime/packages/VintageSanity/README.md",
+		"/home/bud/git/lab/budlime/packages/Vintage/Default.sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/Vintage/Vintage.sublime-commands",
+		"/home/bud/git/lab/budlime/packages/DisableArrowkeys/README.md",
+		"/home/bud/git/lab/budlime/packages/A File Icon/A File Icon.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/User/A File Icon.sublime-settings",
+		"/home/bud/.config/mondo/generator/sublimeIcon/_mondo-template",
+		"/home/bud/.config/mondo/generator/sublimeIcon/_mondo-settings",
+		"/home/bud/git/lab/budlime/packages/DisableArrowkeys/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/SidebarToggler/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/SidebarToggler/README.md",
+		"/home/bud/git/lab/budlime/packages/VintageFinder/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/SoberVintage/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/SublimeLinter/Default.sublime-commands",
+		"/home/bud/git/lab/budlime/packages/ShellScript/README.md",
+		"/home/bud/git/lab/budlime/packages/ShellScript/Symbol List - Aliases.tmPreferences",
+		"/home/bud/git/lab/budlime/packages/ProjectManager/support/Default.sublime-commands",
+		"/home/bud/git/lab/budlime/packages/MoveTab/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/Package Control/Package Control.sublime-settings",
+		"/home/bud/git/lab/budlime/packages/Package Control/README.md",
+		"/home/bud/git/lab/budlime/packages/MoveTab/Default.sublime-commands",
+		"/home/bud/.config/sublime-text-3/Packages/DA UI/DA Scheme.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/DA UI/DA General.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/DA UI/DA Color.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/DA CS/DA Color.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/DA UI/DA.sublime-theme",
+		"/home/bud/.config/sublime-text-3/Packages/DA UI/DA Dark.tmTheme",
+		"/home/bud/.config/sublime-text-3/Packages/DA UI/DA UI.skins",
+		"/home/bud/.config/sublime-text-3/Packages/User/DA Theme.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/DA CS/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/DA CS/Solarized Dark.tmTheme",
+		"/home/bud/.config/sublime-text-3/Packages/User/i_opener.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/User/i_opener_history.sublime-settings",
+		"/home/bud/git/lab/budlime/packages/iOpener/i_opener.sublime-settings",
+		"/home/bud/git/lab/budlime/packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/home/bud/git/lab/budlime/packages/Color Highlighter/Default.sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/zublime/README.md",
+		"/home/bud/dox/not/budlime/brainstorm.md",
+		"/home/bud/dox/not/budlime/projectBU",
+		"/home/bud/git/lab/budlime/packages/ExpandRegion/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/ExpandRegion/Default.sublime-commands",
+		"/home/bud/.config/sublime-text-3/Packages/ExpandRegion/Default.sublime-commands",
+		"/home/bud/.config/sublime-text-3/Packages/ExpandRegion/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/wiki/subl2_settings.md",
+		"/home/bud/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/ExpandRegion/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/ExpandRegion/ExpandRegionFallback.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/ExpandRegion/ExpandRegion.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/MoveTab/Default.sublime-commands",
+		"/home/bud/.config/sublime-text-3/Packages/MoveTab/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3/Packages/MoveTab/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/JavaScript/JSON.sublime-syntax",
+		"/home/bud/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/SimpleSyntax/ssDslashsymbols.tmPreferences",
+		"/home/bud/.config/sublime-text-3/Packages/PackageDev/Package/TextMate Syntax Definition (JSON)/TextMate Syntax Definition (JSON).tmLanguage",
+		"/home/bud/.config/sublime-text-3/Packages/User/ApplySyntax.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/PackageDev/Package/TextMate Syntax Definition (JSON)/TextMate Syntax Definition (JSON).JSON-tmLanguage",
+		"/home/bud/.config/sublime-text-3/Packages/Default/Preferences (Linux).sublime-settings"
 	],
 	"find":
 	{
@@ -57,11 +362,55 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"</kbd>",
+			"<kbd>",
+			"</kbd>",
+			"<kbd>",
+			"+left\"",
+			"+right\"",
+			"+down\"",
+			"+up\"",
+			"up",
+			"\"ctrl+k\",",
+			"      { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"$\", \"match_all\": true }\n",
+			"Scroll",
+			"Horizontal",
+			"scroll",
+			"management",
+			"manipulation",
+			"true",
+			"'",
+			"// ",
+			"ctrl",
+			"Packages",
+			"]:",
+			")",
+			"(",
+			"](",
+			")",
+			"(",
+			"scheme",
+			"is",
+			"shift",
+			"descr",
+			"'",
+			"url",
+			"true",
+			"\": ",
+			"focus",
+			"Friend",
+			"  ",
+			"shift",
+			"Color",
+			"with",
+			"endwithsemi",
+			"package",
+			"},"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
 		],
@@ -74,8 +423,421 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/Default (Linux).sublime-keymap",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								589,
+								589
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/PackageDev/Package/Sublime Text Keymap/Sublime Text Keymap.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3062,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								547,
+								547
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 609.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/bud/.config/sublime-text-3/Packages/User/HTML (Rails).sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 38,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38,
+								38
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/PackageDev/Package/Sublime Text Settings/Sublime Text Settings.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/bud/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								313,
+								313
+							]
+						],
+						"settings":
+						{
+							"SL.196.region_keys":
+							[
+							],
+							"apply_syntax_touched": true,
+							"syntax": "Packages/PackageDev/Package/Sublime Text Settings/Sublime Text Settings.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/bud/.config/sublime-text-3/Packages/MarkdownPreview/markdown_preview.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 47484,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								43820,
+								43820
+							]
+						],
+						"settings":
+						{
+							"SL.201.region_keys":
+							[
+								"SL.pycodestyle.Highlights.|cc04f3cedac81cd2f328bd3670e26956dd4ec07c6a5e8140b3e860d156eefaf5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|f9f2c2710b5bd3a566df3b12577806c41d84f93d7e25bf3a9a30d1a9891eeb7e|region.redish markup.error.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.pycodestyle.Highlights.|599fac70b3e3a5b46b9b09992b34332e9bcd7ea70a6a2fa38285c61a42f1d6d1|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|fa9e8e05b7ee54493ddffd826f24efb58f031d86e09fb0c252b3bd4cbc3f57a0|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3e7ac60949ed08dd0530682d78bf8f1fb1ce9cff841f02429c383fc30f399bff|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|abccf88fb21c4c09bb1373f0051b9f698d0869880ef9bc507d5c1aab28bc224f|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|62141fdfdb827f92ed153ec77d8d3ec5131d5d580d79abd064191d1e6dc8ee48|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|9f844d3be9fa0bfa0329cff58391dafbcabe86b5f3e4e3443e19ae4fb0e6b8cf|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|8f2fd24ef37a85a2a5ce52505609c9d3530c49859d21167175948e56013961db|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|f9f59b6b4fb4c816e5b25d118197ea7c693d86a6864045244cd8a77ada441756|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7eb242478838118c9f1ece043577c455092c3d657f771aad1793e11b9c39098e|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|19c772142b49712fe4e5f172f7b22d42a80b30cc89e4427bbb51cc4450603f20|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|eaf4c39c095ea9e7f99a694a62ee0e04927de5331f30a837d39d480c440898f5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|58dd95ced4b0dbc8b00914081a1237106abf998493bc42c49e720b54466f7ed5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a74a3c180414fbece4d226230d789868a5322624058f8ec94da61761da63ed45|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d3150859eaf5443640572177a54c02d251c4ad6cb37324be3214d8bd0aa598b1|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|1874e1bb3f3ee6a563722105ac088046688b0219d54486991b5b3e17f327b7f1|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|2c1b264c98bc66fd8f19d6261e0ec3273a801265030a216a82c1bbc9e185ab28|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|5fa115a0e95a3a6c033649760c8107cca249a8deaeb16a255e08a9981a07002f|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|5b9377ba81071ef3f620564f80515d04dfce8e3ad0c079d4f40d567ff62b064a|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d0db030a360007c4ae34f3be2385dc3f64de5588e945f3631b0501880af760c9|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|b33389fea039e305435a5a5c2ca604f4e9a91d15d8cb612020c8d5687153a11c|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|91346656f1748a69839538cc8e941cf75c4b92c907eb600aaa3222186d1ff577|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3f0b6b61dfd5903ffb7db21dc5bafb8bf96b04d5af87a4f6b89cbfeb5556fb5e|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7f5674665598b72df45f41ca7b48eaf1e3bc600931796349cd65ffd101d453d8|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a6ffc05885f6a2b23dadb979f6390f4828be3f0670dc7eb14e3829cc5839fecb|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|9ea7166fb21322ad5e2cc98dba01d0a0e9a922ad979d785cb00d1e0b2c0838d4|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|30f8eb9c3b1b083af0f9d744086fcabf81c9b99834648e0f1840eafe0e9174aa|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a01c2e4cb3ecc24bc5c1accce8bef900e0fe433ed2e8bc30edf4b9503ca1c532|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|43454e3922a50e9aaff37b9ff52f8d995f711a4178955921b489107ab81d033d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|80c54189680c3783bd0cab90fa2f977bb8bfef96b8fdd8a0bea14aa2cd7f54f0|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|87411e2afa0c2a82d427f87c01b55f1f9fc9e1ce2f84aa80832f5feb00407b9d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|9012db4599a5fc97b7e8367ce212837f22228846dfdae4d0f54320399dcc7b35|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|8a6fc088c9d4560822438ef08a37d430892b004145b9f10e3a45d28359c46a53|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d9840f43510193e16b4a68795e9d538680fdaef8a8735a6eade4b425e5849f7b|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|2f6823847c7394ab8da3a2ec02f38313c2874f7308fd02641d5ee8521f2bf9b0|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|0e86a2478336aacd2f054653b9df7fa36bf6914665ceb131fbc97c0eba3446bd|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|bac8f5f7d67a68aa8ed2ee780fa52c9e631d42ce08ea1908bb9df309db9e1658|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7c529d0b0574ab21aa78f62a75b50ada490181a5a1572ef4f492acc231fb70e4|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|ac40613e9b8402cd224c223567b7fe21907ddfb0a2b2af486a704fc281644865|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|6d79b899b6f38b68a371f6957aa24b1d874e836a523c2de83ab0552396fd14c7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|aba2fdf7ef4d7251398f2c0f9dda50af2ac990c7115bfee2b2544caee5f7be06|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|70c624e118932858d8170350627d215691d695bcf6cf58eb5a3055e154de1ef2|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3a9ec9cf1150219eb20bac8f3bac1ef43f64e5c2421864a96ff567a3e0ba17ab|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|f9d5c4fb9405dc066ac2ab26b7ae1a9febf3085514ea11e42e1f3a02e1ffe7b9|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|486b89eb89c1f7e85efcb5740d1b02c38b97a15adac0b366fc91a082e33ba30f|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7f5259f62844a00ad998d3d04be4c8dc6cfd6644cb14dd94b56a1b8a4cf35361|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|dfebebb71b0bcefb1335e75d819fda39aebab360233306f99f734e637caf3267|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|fedbe437556bd9075ff5bf17a0ec051260c3fb5102cb8271c57eac7ef528da41|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7e6c3ff446a11d1558d1f605a5c7ed6b03f63e3ec732d5e56031e2e64c87f0c7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|b80fd352dbcacf68a14101490636fd54cb756bdd2ec2e88e47bfad3d590625e7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|9621c6dab1a3a748456232ef656784564a3934793704d9b519a59786efe193e2|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3c587a12d520bb9ddda5fb2e5328addd96bda32f2d6123d23dd260a4dfeeb8ef|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|c0e4640653c518d77b268cdfeef6107eef59edb3a3a03727581236d0f20eec6d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|ccc202c6f9c8c6c93330e9a4f3a494f7aed9202b0768d3a6d91f856d7d4bd680|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|49faed5bbf93a93c6fd97299b07190d2fe05d0c9e695466baa4df22b4a8376cc|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|deebf140a251c1b93a692e13e8d1a3c08b21a3404c9d3694baecae6bbe4567e8|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a84ccc503c3a5610c02c357e1d9ddfa1dca095bade07ab3fdc596060c5085e1f|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3c5cc2d761659cf84e267723bd3675dbe6703e48d96f91f90ccde3dfddb4701c|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|641a493d8ea19a292f165cb37c54c3c197cd1aa88e17fe3814dad1067ba5e6d0|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|c9c1cfe0b581ee6286651ac69efa05d400a80dd1cedc9fd9538955a7b13dbb16|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|214044ad660d149ee09ec218d48e03e834ad048d2a4396a705df73f50bd3fcb5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|71e6cc0a584146b52ee1be14d314f95dfee2495aac60e6dd1da5317bbeb47d7a|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|47a7639c373b2bb346e6625b7e8089a29363d103e8496ed8a55c4f3659ecd749|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|129bc36761f60a19afd53e9f1b153c38d1acd2f1e0d0b25af21ee2f1b145fd4d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|ccd07658bc650a963f5c0f7834c97750b0d8e142dc1d25ed2054397721d19270|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|c7e754638be7bbec697bca399d814b9fb596bbcc0d95c6b401b22bf0ac302325|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|727509c3cc5a62c4c8ce716733a98877c4576465287a121fe42c97e2040bb66e|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"SL.pycodestyle.Highlights.|4beeb8534310e38684bc895551fed458ba6f245299be868d3ffaee5d112080e6|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|0a121b444cef6fe4bfcb09acb5f3636de630478d4cc2a34461f43d89d050bdbb|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d35c4b0a4f065e227eeba9b71f82ea7849dcb6588be7603bc959b056ef29a5f4|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|81fea2938e9607ec45a8db71dfb1a338f0eaf1f035f2cc74b8519acaf90cac2d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a305a0b141d0a61cbf7239c99eecfd78d03f5238709ad5ee8eaca4c5af323b1b|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|2380ddc4ed098c28abfc1ade95e0e8bd3cf07ba300078e8f1c511473e13c27d7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a407a225914659ac3f563ea7d1680cde8b07cd2b3eb3fa3cf4e7d5c9c791b631|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a449787f9982376a8dea2e8405144a1411890e0e84749fffbfb506eb1c59b451|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|dc4de552eee09ce4968f1b421419baf9ff828e6b08d91a7192e5849023d5fdfb|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|b84ea2be60de679d617f8c063365871e5ba04f77c9e4d3b0cd76e5625d7521ed|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|f21b032030780a04f4f6e778b60380675a70de9ca759ba0f2b5edce191b2c3a3|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|fdb6cfebbb2272e2d5e2028b459b871ccdd5e317197ae2d90fe78ebc831ed2dd|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|2ccb423478a316f729745b05df6ab20440cbcc5b2521b23c9763dbda3f79edf7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d09f7f4824ae9de202d67622446f0a2ae083513781ec1b672e8ebe74a54bf636|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|5b07bde1cca472d3021878c5aec220a700023af9dfe4743de3652780e3e8668c|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|4fc418f6a1c99d7bc0ba1837ba653bae9a5e34b746f79fb9596a047f0cc138fe|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|53ac39564b07ceaadab0e47d24247731426446f9cc9921dd65470eb27f945045|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|e328f78d82795ef9842c1f73dcad7f330f4da2ce3f30be34f46f7ca65676b3a6|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|6f9b9bfab7327f0bcab393fbadc2277e15fd260d6bc29863886110f5476aaf11|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|df535590dbbdc67d8a89438a13ea42506ac4414c1f744036bbee96f44a394645|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|23272e57063ce15879cd048f56cacacffece2f4ca29972647840572f81059d90|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|44c71a836ddcb9d98cda08e895e52f7fa31b8def4456739cf929ed81fa9efbf8|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3dfc4eda9f4e7d8001d8c21d785cbac5e8b3c7a76b5189d7ba1d7c48c040a2e5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|08d84e4fb90c93fd8bba5d35ba1ed3caec00887ecda670f4b1b3d8978bed4fd5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|486f7cf1ce885a756581d5c8a7069d3e17918f4f1f042f712a16ea813915e693|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|1147c7a1e87c24afe0e16b9c84d60f23cae443601809836cb6306c772c0b1d79|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|1dcedc6526b637d3b3e0b8b58f333d6747cded6d5d05650352199abf11c44bff|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|53430872e61fec6171fe5ba23a6c75738dd61bdd0ac283fbc08252a7940270f8|region.redish markup.error.sublime_linter|32"
+							],
+							"SL.221.region_keys":
+							[
+								"SL.pycodestyle.Highlights.|cc04f3cedac81cd2f328bd3670e26956dd4ec07c6a5e8140b3e860d156eefaf5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|f9f2c2710b5bd3a566df3b12577806c41d84f93d7e25bf3a9a30d1a9891eeb7e|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d0db030a360007c4ae34f3be2385dc3f64de5588e945f3631b0501880af760c9|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|599fac70b3e3a5b46b9b09992b34332e9bcd7ea70a6a2fa38285c61a42f1d6d1|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|fa9e8e05b7ee54493ddffd826f24efb58f031d86e09fb0c252b3bd4cbc3f57a0|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3e7ac60949ed08dd0530682d78bf8f1fb1ce9cff841f02429c383fc30f399bff|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|abccf88fb21c4c09bb1373f0051b9f698d0869880ef9bc507d5c1aab28bc224f|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|62141fdfdb827f92ed153ec77d8d3ec5131d5d580d79abd064191d1e6dc8ee48|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|9f844d3be9fa0bfa0329cff58391dafbcabe86b5f3e4e3443e19ae4fb0e6b8cf|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|8f2fd24ef37a85a2a5ce52505609c9d3530c49859d21167175948e56013961db|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|f9f59b6b4fb4c816e5b25d118197ea7c693d86a6864045244cd8a77ada441756|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7eb242478838118c9f1ece043577c455092c3d657f771aad1793e11b9c39098e|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|19c772142b49712fe4e5f172f7b22d42a80b30cc89e4427bbb51cc4450603f20|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|eaf4c39c095ea9e7f99a694a62ee0e04927de5331f30a837d39d480c440898f5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|58dd95ced4b0dbc8b00914081a1237106abf998493bc42c49e720b54466f7ed5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a74a3c180414fbece4d226230d789868a5322624058f8ec94da61761da63ed45|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d3150859eaf5443640572177a54c02d251c4ad6cb37324be3214d8bd0aa598b1|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|1874e1bb3f3ee6a563722105ac088046688b0219d54486991b5b3e17f327b7f1|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|2c1b264c98bc66fd8f19d6261e0ec3273a801265030a216a82c1bbc9e185ab28|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|5fa115a0e95a3a6c033649760c8107cca249a8deaeb16a255e08a9981a07002f|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|5b9377ba81071ef3f620564f80515d04dfce8e3ad0c079d4f40d567ff62b064a|region.redish markup.error.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.pycodestyle.Highlights.|b33389fea039e305435a5a5c2ca604f4e9a91d15d8cb612020c8d5687153a11c|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|91346656f1748a69839538cc8e941cf75c4b92c907eb600aaa3222186d1ff577|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3f0b6b61dfd5903ffb7db21dc5bafb8bf96b04d5af87a4f6b89cbfeb5556fb5e|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7f5674665598b72df45f41ca7b48eaf1e3bc600931796349cd65ffd101d453d8|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a6ffc05885f6a2b23dadb979f6390f4828be3f0670dc7eb14e3829cc5839fecb|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|9ea7166fb21322ad5e2cc98dba01d0a0e9a922ad979d785cb00d1e0b2c0838d4|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|30f8eb9c3b1b083af0f9d744086fcabf81c9b99834648e0f1840eafe0e9174aa|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a01c2e4cb3ecc24bc5c1accce8bef900e0fe433ed2e8bc30edf4b9503ca1c532|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|43454e3922a50e9aaff37b9ff52f8d995f711a4178955921b489107ab81d033d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|80c54189680c3783bd0cab90fa2f977bb8bfef96b8fdd8a0bea14aa2cd7f54f0|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|87411e2afa0c2a82d427f87c01b55f1f9fc9e1ce2f84aa80832f5feb00407b9d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|9012db4599a5fc97b7e8367ce212837f22228846dfdae4d0f54320399dcc7b35|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|8a6fc088c9d4560822438ef08a37d430892b004145b9f10e3a45d28359c46a53|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d9840f43510193e16b4a68795e9d538680fdaef8a8735a6eade4b425e5849f7b|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|2f6823847c7394ab8da3a2ec02f38313c2874f7308fd02641d5ee8521f2bf9b0|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|0e86a2478336aacd2f054653b9df7fa36bf6914665ceb131fbc97c0eba3446bd|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|bac8f5f7d67a68aa8ed2ee780fa52c9e631d42ce08ea1908bb9df309db9e1658|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7c529d0b0574ab21aa78f62a75b50ada490181a5a1572ef4f492acc231fb70e4|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|ac40613e9b8402cd224c223567b7fe21907ddfb0a2b2af486a704fc281644865|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|6d79b899b6f38b68a371f6957aa24b1d874e836a523c2de83ab0552396fd14c7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|aba2fdf7ef4d7251398f2c0f9dda50af2ac990c7115bfee2b2544caee5f7be06|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|70c624e118932858d8170350627d215691d695bcf6cf58eb5a3055e154de1ef2|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3a9ec9cf1150219eb20bac8f3bac1ef43f64e5c2421864a96ff567a3e0ba17ab|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|f9d5c4fb9405dc066ac2ab26b7ae1a9febf3085514ea11e42e1f3a02e1ffe7b9|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|486b89eb89c1f7e85efcb5740d1b02c38b97a15adac0b366fc91a082e33ba30f|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7f5259f62844a00ad998d3d04be4c8dc6cfd6644cb14dd94b56a1b8a4cf35361|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|dfebebb71b0bcefb1335e75d819fda39aebab360233306f99f734e637caf3267|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|fedbe437556bd9075ff5bf17a0ec051260c3fb5102cb8271c57eac7ef528da41|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|7e6c3ff446a11d1558d1f605a5c7ed6b03f63e3ec732d5e56031e2e64c87f0c7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|b80fd352dbcacf68a14101490636fd54cb756bdd2ec2e88e47bfad3d590625e7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|9621c6dab1a3a748456232ef656784564a3934793704d9b519a59786efe193e2|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3c587a12d520bb9ddda5fb2e5328addd96bda32f2d6123d23dd260a4dfeeb8ef|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|c0e4640653c518d77b268cdfeef6107eef59edb3a3a03727581236d0f20eec6d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|ccc202c6f9c8c6c93330e9a4f3a494f7aed9202b0768d3a6d91f856d7d4bd680|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|49faed5bbf93a93c6fd97299b07190d2fe05d0c9e695466baa4df22b4a8376cc|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|deebf140a251c1b93a692e13e8d1a3c08b21a3404c9d3694baecae6bbe4567e8|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a84ccc503c3a5610c02c357e1d9ddfa1dca095bade07ab3fdc596060c5085e1f|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3c5cc2d761659cf84e267723bd3675dbe6703e48d96f91f90ccde3dfddb4701c|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|641a493d8ea19a292f165cb37c54c3c197cd1aa88e17fe3814dad1067ba5e6d0|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|c9c1cfe0b581ee6286651ac69efa05d400a80dd1cedc9fd9538955a7b13dbb16|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|214044ad660d149ee09ec218d48e03e834ad048d2a4396a705df73f50bd3fcb5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|71e6cc0a584146b52ee1be14d314f95dfee2495aac60e6dd1da5317bbeb47d7a|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|47a7639c373b2bb346e6625b7e8089a29363d103e8496ed8a55c4f3659ecd749|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|129bc36761f60a19afd53e9f1b153c38d1acd2f1e0d0b25af21ee2f1b145fd4d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|ccd07658bc650a963f5c0f7834c97750b0d8e142dc1d25ed2054397721d19270|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|c7e754638be7bbec697bca399d814b9fb596bbcc0d95c6b401b22bf0ac302325|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|727509c3cc5a62c4c8ce716733a98877c4576465287a121fe42c97e2040bb66e|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"SL.pycodestyle.Highlights.|4beeb8534310e38684bc895551fed458ba6f245299be868d3ffaee5d112080e6|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|0a121b444cef6fe4bfcb09acb5f3636de630478d4cc2a34461f43d89d050bdbb|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d35c4b0a4f065e227eeba9b71f82ea7849dcb6588be7603bc959b056ef29a5f4|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|81fea2938e9607ec45a8db71dfb1a338f0eaf1f035f2cc74b8519acaf90cac2d|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a305a0b141d0a61cbf7239c99eecfd78d03f5238709ad5ee8eaca4c5af323b1b|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|2380ddc4ed098c28abfc1ade95e0e8bd3cf07ba300078e8f1c511473e13c27d7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a407a225914659ac3f563ea7d1680cde8b07cd2b3eb3fa3cf4e7d5c9c791b631|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|a449787f9982376a8dea2e8405144a1411890e0e84749fffbfb506eb1c59b451|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|dc4de552eee09ce4968f1b421419baf9ff828e6b08d91a7192e5849023d5fdfb|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|b84ea2be60de679d617f8c063365871e5ba04f77c9e4d3b0cd76e5625d7521ed|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|f21b032030780a04f4f6e778b60380675a70de9ca759ba0f2b5edce191b2c3a3|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|fdb6cfebbb2272e2d5e2028b459b871ccdd5e317197ae2d90fe78ebc831ed2dd|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|2ccb423478a316f729745b05df6ab20440cbcc5b2521b23c9763dbda3f79edf7|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|d09f7f4824ae9de202d67622446f0a2ae083513781ec1b672e8ebe74a54bf636|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|5b07bde1cca472d3021878c5aec220a700023af9dfe4743de3652780e3e8668c|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|4fc418f6a1c99d7bc0ba1837ba653bae9a5e34b746f79fb9596a047f0cc138fe|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|53ac39564b07ceaadab0e47d24247731426446f9cc9921dd65470eb27f945045|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|e328f78d82795ef9842c1f73dcad7f330f4da2ce3f30be34f46f7ca65676b3a6|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|6f9b9bfab7327f0bcab393fbadc2277e15fd260d6bc29863886110f5476aaf11|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|df535590dbbdc67d8a89438a13ea42506ac4414c1f744036bbee96f44a394645|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|23272e57063ce15879cd048f56cacacffece2f4ca29972647840572f81059d90|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|44c71a836ddcb9d98cda08e895e52f7fa31b8def4456739cf929ed81fa9efbf8|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|3dfc4eda9f4e7d8001d8c21d785cbac5e8b3c7a76b5189d7ba1d7c48c040a2e5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|08d84e4fb90c93fd8bba5d35ba1ed3caec00887ecda670f4b1b3d8978bed4fd5|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|486f7cf1ce885a756581d5c8a7069d3e17918f4f1f042f712a16ea813915e693|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|1147c7a1e87c24afe0e16b9c84d60f23cae443601809836cb6306c772c0b1d79|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|1dcedc6526b637d3b3e0b8b58f333d6747cded6d5d05650352199abf11c44bff|region.redish markup.error.sublime_linter|32",
+								"SL.pycodestyle.Highlights.|53430872e61fec6171fe5ba23a6c75738dd61bdd0ac283fbc08252a7940270f8|region.redish markup.error.sublime_linter|32"
+							],
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 33520.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/bud/git/lab/budlime/packages/SyntaxSettings/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"parser": "github",
+							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax",
+							"target": "disk"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/bud/.config/sublime-text-3/Packages/MarkdownEditing/Default.sublime-commands",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4858,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/PackageDev/Package/Sublime Text Commands/Sublime Text Commands.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -85,7 +847,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 57.0
 	},
 	"layout":
 	{
@@ -109,7 +871,7 @@
 			1.0
 		]
 	},
-	"menu_visible": true,
+	"menu_visible": false,
 	"output.SublimeLinter":
 	{
 		"height": 0.0
@@ -122,7 +884,7 @@
 	"project": "sublime.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 98.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -131,6 +893,30 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"di",
+				"notes/doit.note"
+			],
+			[
+				"doi",
+				"notes/doit.note"
+			],
+			[
+				"do",
+				"notes/doit.note"
+			],
+			[
+				"",
+				"notes/doit.note"
+			],
+			[
+				"aw",
+				"budlime/awesome/README.md"
+			],
+			[
+				"hi",
+				"budlime/wiki/subl7_hidden_commands.md"
+			]
 		],
 		"width": 0.0
 	},
@@ -156,11 +942,11 @@
 	"settings":
 	{
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 282.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

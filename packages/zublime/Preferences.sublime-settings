@@ -120,7 +120,7 @@
   // tree with the keyboard with preview enabled. And I also always forget files
   // are in preview mode, which means their tab gets replaced when a new preview
   // is selected.
-  "preview_on_click": false,
+  "preview_on_click": true,
 
   // folder_exclude_patterns and file_exclude_patterns control which files
   // are listed in folders on the side bar. These can also be set on a per-

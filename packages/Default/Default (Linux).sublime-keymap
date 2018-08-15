@@ -1,11 +1,16 @@
 [
 	/* custom Sublime Text 3 default keymap file.
 	   curated by budRich since 2014.
+
+	   Optimized for use with Vintage enabled.
+
+	   Only customization done in the file is disabling un-needed
+	   or duplicate commands. But I have organized the file to be 
+	   easier to read and added comments about which default commands
+	   that are overwritten by my user.sublime-keymap file. 
 	*/
 
-	// most used defaults:
-
-	// line manipulation:
+	// >> line manipulation:
 	{ "keys": ["ctrl+/"], "command": "toggle_comment", "args": { "block": false } },
 	{ "keys": ["ctrl+shift+/"], "command": "toggle_comment", "args": { "block": true } },
 	{ "keys": ["ctrl+shift+l"], "command": "split_selection_into_lines" },
@@ -17,12 +22,12 @@
 	{ "keys": ["f9"], "command": "sort_lines", "args": {"case_sensitive": false} },
 	{ "keys": ["ctrl+f9"], "command": "sort_lines", "args": {"case_sensitive": true} },
 
-	// file management
-	{ "keys": ["ctrl+n"], "command": "new_file" },
+	// >> file management
+	// { "keys": ["ctrl+n"], "command": "new_file" },
 	{ "keys": ["ctrl+s"], "command": "save" },
 	{ "keys": ["ctrl+shift+s"], "command": "prompt_save_as" },
 
-	// selection
+	// >> selection
 	{ "keys": ["ctrl+shift+space"], "command": "expand_selection", "args": {"to": "scope"} },
 	{ "keys": ["ctrl+shift+m"], "command": "expand_selection", "args": {"to": "brackets"} },
 	{ "keys": ["ctrl+m"], "command": "move_to", "args": {"to": "brackets"} },
@@ -115,138 +120,8 @@
 	{ "keys": ["ctrl+f3"], "command": "find_under" },
 	{ "keys": ["ctrl+shift+f3"], "command": "find_under_prev" },
 
-  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*  // Disabled defaults without replacements.
-  { "keys": ["ctrl+k", "ctrl+d"], "command": "find_under_expand_skip" },
-  { "keys": ["ctrl+shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} },
-  
-  { "keys": ["shift+f4"], "command": "prev_result" },
-  { "keys": ["alt+o"], "command": "switch_file", "args": {"extensions": ["cpp", "cxx", "cc", "c", "hpp", "hxx", "hh", "h", "ipp", "inl", "m", "mm"]} },
-
-  // duplicates of `n` and `N` in command mode.
-
-	// not needed, use window manager instead.
-	{ "keys": ["ctrl+q"], "command": "exit" },
-	
-	// duplicate of ctrl+w+w
-	{ "keys": ["ctrl+f4"], "command": "close_file" },
-
-	{ "keys": ["ctrl+shift+h"], "command": "replace_next" },
-
-	// ctrl+shift+e is disabled. slurp_replace_string is set to shift+f3
-	{ "keys": ["ctrl+shift+e"], "command": "slurp_replace_string" },
-	
-	// f4 is disabled because it clashes with window manager hotkey. NOT REPLACED		
-	{ "keys": ["f4"], "command": "next_result" },
-
-	// f6 is disabled, clash with window manager hotkey. replaced by shift+f6
-	{ "keys": ["f6"], "command": "toggle_setting", "args": {"setting": "spell_check"} },
-
-	// disabled default bubbling keys, replaced with ctrl+shift+j/k
-	{ "keys": ["ctrl+shift+up"], "command": "swap_line_up" },
-	{ "keys": ["ctrl+shift+down"], "command": "swap_line_down" },
-
-	// ctrl+shift+w doesn't work, wm close window works as expected though.
-	{ "keys": ["ctrl+shift+w"], "command": "close_window" },
-	 
-	{ "keys": ["alt+-"], "command": "jump_back" },
-	{ "keys": ["alt+shift+-"], "command": "jump_forward" },
-	{ "keys": ["alt+keypad_minus"], "command": "jump_back" },
-	{ "keys": ["alt+shift+keypad_minus"], "command": "jump_forward" },
-
-	{ "keys": ["alt+/"], "command": "auto_complete" },
-	{ "keys": ["alt+/"], "command": "replace_completion_with_auto_complete", "context":
-		[
-			{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
-			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
-			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
-		]
-	},
-
-    */
-
-	// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-	// broken defaults, overridden in user.keymap-sublime:
-  // { "keys": ["ctrl+k", "ctrl+b"], "command": "toggle_side_bar" },
-	{ "keys": ["ctrl+2"], "command": "focus_group", "args": { "group": 0 } },
-	{ "keys": ["ctrl+9"], "command": "focus_group", "args": { "group": 0 } },
-	{ "keys": ["ctrl+0"], "command": "focus_side_bar" },
-
-	// switched ctrl+page[up/down] with ctrl+[shift+]tab
-	{ "keys": ["ctrl+pagedown"], "command": "next_view" },
-	{ "keys": ["ctrl+pageup"], "command": "prev_view" },
-
-	{ "keys": ["ctrl+tab"], "command": "next_view_in_stack" },
-	{ "keys": ["ctrl+shift+tab"], "command": "prev_view_in_stack" },
-
-	// using alternative shift+insert, pasting from selection.
-	{ "keys": ["shift+insert"], "command": "paste" },
-
-	// overridden by vi-binding half_page_up. replaced by `u` in command mode
-	{ "keys": ["ctrl+u"], "command": "soft_undo" },
-
-	// ctrl+o is over-ridden and handled by iOpener
-	{ "keys": ["ctrl+o"], "command": "prompt_open_file" },
-	// ctrl+w is disabled to allow window manipulation with vi-bindings
-	{ "keys": ["ctrl+w"], "command": "close" },
-
-	// over-ridden by vi-command 'half_page_down'
-	// new keys for find_under_expand: ctrl+. and ctrl+shift+.
-	{ "keys": ["ctrl+d"], "command": "find_under_expand" },
-	// { "keys": ["ctrl+k", "ctrl+d"], "command": "find_under_expand_skip" },
-
-	// over-ridden by bubble_line, new key: ctrl+shift+j
-	{ "keys": ["ctrl+shift+j"], "command": "expand_selection", "args": {"to": "indentation"} },
-
-	// ctrl+enter: open URL in browser. Open line below is now achievable with `o` in command mode.
-	{ "keys": ["ctrl+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
-	// ctrl+shift+enter disabled. Open line above is now achievable with `O` in command mode.
-	// { "keys": ["ctrl+shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} },
-
-	// ctrl+shift+p overridden by goto_files. command palette opened by `:` in command mode
-	// { "keys": ["ctrl+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
-	// ctrl+r overridden by vi-binding. New key to goto file is: ctrl+shift+p
-	{ "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
-	// overridden by vi-binding, half_page_down: `/` in command mode is used to open find(replace) panel.
-	{ "keys": ["ctrl+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
-	// show replace panel is bound to `/` in command mode. ctrl+h is now: "replace_next"
-	{ "keys": ["ctrl+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
-
-	// f3 is set to slurp_find_string, find_next is `n` in command mode.
-	// shift+f3 is set to slurp_replace_string, find_next is `N` in command mode.
-	{ "keys": ["f3"], "command": "find_next" },
-	{ "keys": ["shift+f3"], "command": "find_prev" },
-	
-	// ctrl+e is overridden by vi-binding. slurp_find_string is set to: f3
-	// ctrl+shift+h is disabled and replaced with ctrl+h
-	{ "keys": ["ctrl+e"], "command": "slurp_find_string" },
-	// { "keys": ["ctrl+shift+h"], "command": "replace_next" },
-	// ctrl+b is overridden by vi-binding page_up. function on f7 retained.
-	{ "keys": ["ctrl+b"], "command": "build" },
-	
-	// ctrl+shift+k replaced by bubble line up. Delete line with `dd` in command mode.
-	{ "keys": ["ctrl+shift+k"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-	// f2 replaced by File Rename, NOT REPLACED!
-	{ "keys": ["f2"], "command": "next_bookmark" },
 
 	// boring standard keys:
 
@@ -624,10 +499,13 @@
 		]
 	},
 
+	
+
 	{ "keys": ["shift+f2"], "command": "prev_bookmark" },
 	{ "keys": ["ctrl+f2"], "command": "toggle_bookmark" },
 	{ "keys": ["ctrl+shift+f2"], "command": "clear_bookmarks" },
 	{ "keys": ["alt+f2"], "command": "select_all_bookmarks" },
+
 
 	{ "keys": ["alt+q"], "command": "wrap_lines" },
 
@@ -740,11 +618,121 @@
 		]
 	}
 
-	// layouts are handled by origami and vi-bindings, default behaviour disabled.
-  // well, i use i3 and multiple windows as much as possible now
-  // and have ditched origami as well.
+    /*  // Disabled defaults without replacements.
+    { "keys": ["ctrl+k", "ctrl+d"], "command": "find_under_expand_skip" },
+    { "keys": ["ctrl+shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} },
+    
+    { "keys": ["shift+f4"], "command": "prev_result" },
+    { "keys": ["alt+o"], "command": "switch_file", "args": {"extensions": ["cpp", "cxx", "cc", "c", "hpp", "hxx", "hh", "h", "ipp", "inl", "m", "mm"]} },
 
-  // >> window layouts (disabled)
+    // duplicates of `n` and `N` in command mode.
+
+    // not needed, use window manager instead.
+    { "keys": ["ctrl+q"], "command": "exit" },
+    
+    // duplicate of ctrl+w+w
+    { "keys": ["ctrl+f4"], "command": "close_file" },
+
+    { "keys": ["ctrl+shift+h"], "command": "replace_next" },
+
+    // ctrl+shift+e is disabled. slurp_replace_string is set to shift+f3
+    { "keys": ["ctrl+shift+e"], "command": "slurp_replace_string" },
+    
+    // f4 is disabled because it clashes with window manager hotkey. NOT REPLACED    
+    { "keys": ["f4"], "command": "next_result" },
+
+    // f6 is disabled, clash with window manager hotkey. replaced by shift+f6
+    { "keys": ["f6"], "command": "toggle_setting", "args": {"setting": "spell_check"} },
+
+    // disabled default bubbling keys, replaced with ctrl+shift+j/k
+    { "keys": ["ctrl+shift+up"], "command": "swap_line_up" },
+    { "keys": ["ctrl+shift+down"], "command": "swap_line_down" },
+
+    // ctrl+shift+w doesn't work, wm close window works as expected though.
+    { "keys": ["ctrl+shift+w"], "command": "close_window" },
+     
+    { "keys": ["alt+-"], "command": "jump_back" },
+    { "keys": ["alt+shift+-"], "command": "jump_forward" },
+    { "keys": ["alt+keypad_minus"], "command": "jump_back" },
+    { "keys": ["alt+shift+keypad_minus"], "command": "jump_forward" },
+
+    { "keys": ["alt+/"], "command": "auto_complete" },
+    { "keys": ["alt+/"], "command": "replace_completion_with_auto_complete", "context":
+      [
+        { "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+        { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+        { "key": "setting.tab_completion", "operator": "equal", "operand": true }
+      ]
+    },
+
+      */
+
+    // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    // broken defaults, overridden in user.keymap-sublime:
+    // { "keys": ["ctrl+k", "ctrl+b"], "command": "toggle_side_bar" },
+    // { "keys": ["ctrl+2"], "command": "focus_group", "args": { "group": 0 } },
+    // { "keys": ["ctrl+9"], "command": "focus_group", "args": { "group": 0 } },
+    // { "keys": ["ctrl+0"], "command": "focus_side_bar" },
+
+    // switched ctrl+page[up/down] with ctrl+[shift+]tab
+    // { "keys": ["ctrl+pagedown"], "command": "next_view" },
+    // { "keys": ["ctrl+pageup"], "command": "prev_view" },
+
+    // { "keys": ["ctrl+tab"], "command": "next_view_in_stack" },
+    // { "keys": ["ctrl+shift+tab"], "command": "prev_view_in_stack" },
+
+    // using alternative shift+insert, pasting from selection.
+    // { "keys": ["shift+insert"], "command": "paste" },
+
+    // overridden by vi-binding half_page_up. replaced by `u` in command mode
+    // { "keys": ["ctrl+u"], "command": "soft_undo" },
+
+    // ctrl+o is over-ridden and handled by iOpener
+    // { "keys": ["ctrl+o"], "command": "prompt_open_file" },
+    // ctrl+w is disabled to allow window manipulation with vi-bindings
+    // { "keys": ["ctrl+w"], "command": "close" },
+
+    // over-ridden by vi-command 'half_page_down'
+    // new keys for find_under_expand: ctrl+. and ctrl+shift+.
+    // { "keys": ["ctrl+d"], "command": "find_under_expand" },
+    // { "keys": ["ctrl+k", "ctrl+d"], "command": "find_under_expand_skip" },
+
+    // over-ridden by bubble_line, new key: ctrl+shift+j
+    // { "keys": ["ctrl+shift+j"], "command": "expand_selection", "args": {"to": "indentation"} },
+
+    // ctrl+enter: open URL in browser. Open line below is now achievable with `o` in command mode.
+    // { "keys": ["ctrl+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
+    // ctrl+shift+enter disabled. Open line above is now achievable with `O` in command mode.
+    // { "keys": ["ctrl+shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} },
+
+    // ctrl+shift+p overridden by goto_files. command palette opened by `:` in command mode
+    // { "keys": ["ctrl+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+    // ctrl+r overridden by vi-binding. New key to goto file is: ctrl+shift+p
+    // { "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+    // overridden by vi-binding, half_page_down: `/` in command mode is used to open find(replace) panel.
+    // { "keys": ["ctrl+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
+    // show replace panel is bound to `/` in command mode. ctrl+h is now: "replace_next"
+    // { "keys": ["ctrl+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+
+    // f3 is set to slurp_find_string, find_next is `n` in command mode.
+    // shift+f3 is set to slurp_replace_string, find_next is `N` in command mode.
+    // { "keys": ["f3"], "command": "find_next" },
+    // { "keys": ["shift+f3"], "command": "find_prev" },
+    
+    // ctrl+e is overridden by vi-binding. slurp_find_string is set to: f3
+    // ctrl+shift+h is disabled and replaced with ctrl+h
+    // { "keys": ["ctrl+e"], "command": "slurp_find_string" },
+    // { "keys": ["ctrl+shift+h"], "command": "replace_next" },
+    // ctrl+b is overridden by vi-binding page_up. function on f7 retained.
+    // { "keys": ["ctrl+b"], "command": "build" },
+    
+    // ctrl+shift+k replaced by bubble line up. Delete line with `dd` in command mode.
+    // { "keys": ["ctrl+shift+k"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+    // f2 replaced by File Rename, NOT REPLACED!
+    // { "keys": ["f2"], "command": "next_bookmark" },
+
+	// layouts are handled by origami and vi-bindings, default behaviour disabled.
 	/*{
 		"keys": ["alt+shift+1"],
 		"command": "set_layout",

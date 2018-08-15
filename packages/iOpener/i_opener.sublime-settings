@@ -3,7 +3,7 @@
     "use_project_dir": false,
 
     // Whether to open folders in a new window or add them to the project in the current window
-    "open_folders_in_new_window": false,
+   "open_folders_in_new_window": false,
 
     // Whether or not to ignore case when completing.
     "case_sensitive": false,
