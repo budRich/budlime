@@ -35,7 +35,7 @@ pcfile="${USR_DIR}/Package Control.sublime-settings"
 {
   printf '%s\n' \
     "// Select 'Install Package Control', from 'Tools' menu." \
-    "// Close this sublime window when all pac" \kages are installed," \
+    "// Close this sublime window when all packages are installed," \
     "// To apply custom package settings." \
     " " \
     "$(cat "${BUD_DIR}/packages/Package Control/Package Control.sublime-settings")"
