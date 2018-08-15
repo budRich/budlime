@@ -44,7 +44,8 @@ main(){
     url="${1}"
     [[ -f $url ]] && url='file://'"${url}"
     echo -n "${url}" | xclip -selection clipboard
-    xdotool key P
+    sleep .1
+    xdotool search --onlyvisible --class Vivaldi-main key Escape P
     i3fyra -m D
     i3fyra -z B
     i3fyra -l AB=900
