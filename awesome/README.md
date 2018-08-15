@@ -5,6 +5,13 @@ article | author | date | description
 [My Sublime Text Configuration](https://spifftastic.net/post/2014/05/my-sublime-text-configuration/) | [Noel Cower](https://spifftastic.net) | 14 May 2014 | run down of a users configuration that doesn't use Package Control
 https://www.macstories.net/roundups/sublime-text-2-and-markdown-tips-tricks-and-links/
 
+# Screencasts
+| cast | description | episodes | year |
+|[laracst]| Great series about setting up sublime in particular for devloping PHP with laravel. But lots of useful tips for general usage as well. | 11 | 2017
+
+
+[laracst]: https://laracasts.com/series/professional-php-workflow-in-sublime-text/
+
 # External Tools
 tool | description
 :--- |:-----------
@@ -50,12 +57,14 @@ Plugin for Sublime Text to move tabs around
 Like “Expand Selection to Scope”. But better!
 [Extract Sublime Package] | [SublimeText] |
 Extract .sublime-package files to the Sublime Text Packages folder.
+[GitStatusBar] | [randy3k] | A more compact git status bar
 
 # Documentation
 [official documentation](https://www.sublimetext.com/docs/3/)  
 [unofficial documentation](http://docs.sublimetext.info/en/latest/)  
 [package control documentation](https://packagecontrol.io/docs)  
 
+[GitStatusBar]: https://github.com/randy3k/GitStatusBar
 [SimpleSyntax]: https://github.com/budlabs/SimpleSyntax
 [budlabs]: https://github.com/budlabs
 [A File Icon]: https://github.com/ihodev/a-file-icon

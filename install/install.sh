@@ -24,26 +24,28 @@ rm -rf "${SUB_DIR}/Cache"
 # prepare sublime for install
 mkdir -p "${PKG_DIR}/mondo"
 mkdir -p "${USR_DIR}"
-cp -f "${BUD_DIR}/packages/Package Control/Package Control.sublime-settings" \
-   "${USR_DIR}"
+
 cp -f "${BUD_DIR}/packages/mondo/mondo.tmTheme" \
 	"${PKG_DIR}/mondo"
 cp -f "${THIS_DIR}/Preferences.sublime-settings" \
 	"${USR_DIR}"
 
-dunstify -r 112 -t 0 "Select 'Install Package Control', from 'Tools' menu."
-dunstify -r 111 -u critical "Close sublime window when all packages are installed..."
-subl "${THIS_DIR}/install.sublime-workspace"
-subl -w "${USR_DIR}/Package Control.sublime-settings"
-dunstify -C 111
-dunstify -C 112
+pcfile="${USR_DIR}/Package Control.sublime-settings"
 
-rm -f \
-  "${USR_DIR}/Preferences.sublime-settings" \
-  "${USR_DIR}/ApplySyntax"*
+{
+  printf '%s\n' \
+    "// Select 'Install Package Control', from 'Tools' menu." \
+    "// Close this sublime window when all pac" \kages are installed," \
+    "// To apply custom package settings." \
+    " " \
+    "$(cat "${BUD_DIR}/packages/Package Control/Package Control.sublime-settings")"
+} > "${pcfile}"
+
+subl "${THIS_DIR}/install.sublime-workspace"
+subl -w "$pcfile"
 
 # extract packages
-"${BUD_DIR}/scripts/subextract/"subextract.sh -ed -p "${BUD_DIR}/packages"
+"${BUD_DIR}/scripts/subextract/"subextract.sh -fed -p "${BUD_DIR}/packages"
 
 rm -f "${SUB_DIR}/Local/"*.sublime_session
 

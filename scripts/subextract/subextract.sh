@@ -134,7 +134,10 @@ extractinstalled(){
       # unzip "$p" -d . "${reads}" "${conf}" "${keys}" > /dev/null 2>&1
       unzip "$p" -d . "${reads}" "${conf}" "${keys}" "${cmds}"
 
-      [[ -f $reads ]] && mv "$reads" "${DOC_DIR}/packages/$name.md"
+      trgread="${DOC_DIR}/packages/$name.md"
+      [[ -f $reads ]] && [[ ! -f $trgread ]] \
+        && mv "$reads" "$trgread"
+        
       [[ -f $keys ]] && {
         mv "$keys" "${DEF_DIR}/$name.keymap"
         ((extracteddeaults==1)) && [[ ! -f "${PKG_DIR}/$name/${keys##*/}" ]] && {
