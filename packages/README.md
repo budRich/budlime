@@ -16,7 +16,15 @@ most of the files here, are settings for 3rd party packages, but a few are brews
 [VintageFinder] | Better behaviour of the **find_panel** optimized for [Vintage]
 [VintageSanity] | Fixes for some key combinations that breaks when [Vintage] is enabled
 
-[CommandCommander]: 
+[CommandCommander]: https://github.com/budlabs/budlime/tree/master/packages/CommandCommander
+[DisableArrowkeys]: https://github.com/budlabs/budlime/tree/master/packages/DisableArrowkeys
+[mondo]: https://github.com/budlabs/budlime/tree/master/packages/mondo
+[SidebarToggler]: https://github.com/budlabs/budlime/tree/master/packages/SidebarToggler
+[TwoFont]: https://github.com/budlabs/budlime/tree/master/packages/TwoFont
+[VintageFinder]: https://github.com/budlabs/budlime/tree/master/packages/VintageFinder
+[VintageSanity]: https://github.com/budlabs/budlime/tree/master/packages/VintageSanity
+[mondo]: https://github.com/budlabs/mondo
+[Vintage]: http://www.sublimetext.com/docs/3/vintage.html
 
 ## [subextract]
 
