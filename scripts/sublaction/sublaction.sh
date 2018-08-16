@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 __name="sublaction"
-__version="0.008"
+__version="0.009"
 __author="budRich"
 __contact='robstenklippa@gmail.com'
 __created="2018-08-15"
@@ -49,6 +49,7 @@ main(){
   __sblbasedir="${__sblbase%/*}"
   __sblbasename="${__sblbase##*/}"
 
+  notify-send "${__sblfil}"
 
   if [[ $__sbldir =~ ^${__sublimeDir} ]];then
     # file is in sublime packages directory:
@@ -58,10 +59,32 @@ main(){
   elif [[ $__sbldir =~ ^${__gitDir} ]];then
     __gfiles=("${__sblbase}")
     commit_to_git
-  else
-    dunstify "$__sblfil"
+  else # assume dotfile, move to ~/git...
+    dot_to_git
   fi
 
+}
+
+dot_to_git(){
+  
+  local trgdir
+
+  trgdir="$(oneliner -p "'move file to dir: '" -f '~/git')"
+  [[ -z $trgdir ]] && ERX "no target directory chosen"
+
+  sublaunch -i sublime_main
+  subl --command "close"
+  
+  trgdir="${trgdir/'~'/$HOME}"
+
+  mkdir -p "${trgdir}"
+  mv "${__sblbase}" "${trgdir}"
+
+  ln -s "$trgdir/${__sblbasename}" \
+        "${__sblbase}"
+
+  # re-open file, now in ~/git...
+  subl "${__sblbase}"
 }
 
 update_script(){
