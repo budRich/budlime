@@ -6,10 +6,13 @@ article | author | date | description
 https://www.macstories.net/roundups/sublime-text-2-and-markdown-tips-tricks-and-links/
 
 # Screencasts
-| cast | description | episodes | year |
+| cast | description | episodes/duration | year |
+|:-----|:------------|:---------|:-----|
+|[What you need to know]|from budlabs, short intro to the strangeness that is sublime. | 25min | 2018
 |[laracst]| Great series about setting up sublime in particular for devloping PHP with laravel. But lots of useful tips for general usage as well. | 11 | 2017
 
 
+[What you need to know]: https://youtu.be/uJrQkzAncZ0
 [laracst]: https://laracasts.com/series/professional-php-workflow-in-sublime-text/
 
 # External Tools
