@@ -24,37 +24,78 @@ main(){
     esac
   done
 
-  __subdir="$HOME/.config/sublime-text-3/Packages"
-  __buddir="$HOME/git/lab/budlime/packages"
+  __sublimeDir="$HOME/.config/sublime-text-3/Packages"
+  __budlimeDir="$HOME/git/lab/budlime/packages"
+  __gitDir="$HOME/git"
 
-  atit=($(tits -i sublime_main -napf))
+  __atit=($(tits -i sublime_main -napf))
 
-  sblwid=${atit[0]}
-  sblact=${atit[1]}
-  sblprj=${atit[2]}
-  sblfil="${atit[@]:3}"
-  sbldir="${sblfil%/*}"
-  sblnmn="${sblfil##*/}"
+  __sblwid=${__atit[0]}
+  __sblact=${__atit[1]}
+  __sblprj=${__atit[2]}
+  __sblfil="${__atit[@]:3}"
+  __sbldir="${__sblfil%/*}"
+  __sblnmn="${__sblfil##*/}"
 
-  [[ -z $sblwid ]] && ERX "no sublime_main window found"
+  [[ -z $__sblwid ]] && ERX "no sublime_main window found"
 
-  [[ $sbldir =~ ^${__subdir} ]] && {
-    mkdir -p "${sbldir/$__subdir/$__buddir}"
-    [[ -f "${sblfil/$__subdir/$__buddir}" ]] \
-      || cp "${sblfil}" "${sblfil/$__subdir/$__buddir}"
-  } || dunstify "$sblfil"
-
+  if [[ $__sbldir =~ ^${__sublimeDir} ]];then
+    # file is in sublime packages directory:
+    copy_sublime_setting_to_budlime
+  elif command -v "${__sblfil}" > /dev/null 2>&1; then
+    update_script
+  else
+    dunstify "$__sblfil"
+  fi
 
 }
 
+update_script(){
+  local base firstline basedir basename readme 
+  local msg manpage
+
+  firstline="$(head -1 "$__sblfil")"
+  base="$(readlink -f "$__sblfil")"
+  basedir="${base%/*}"
+  basename="${base##*/}"
+  [[ $firstline =~ ^(#!).*bash ]] || ERX "not a bash script"
+
+  dunstify "$base"
+  if [[ $base =~ ^${__gitDir} ]]; then
+    readme="${basedir}/README.md"
+    manpage="${basedir}/${basename%.*}.1"
+    "${base}" -hmdg
+    "${base}" -hman
+    gfiles=("${base}" "${readme}" "${manpage}")
+    git add "${gfiles[@]}"
+    msg="$(oneliner -p 'commit message: ')"
+    [[ -n $msg ]] && {
+      dunstify "$(git commit -m "$msg" "${gfiles[@]}")"
+    }
+  else
+    dunstify "its not in git"
+  fi
+  # if script is not in git dir, move it there
+  # update documentation?
+}
+
+commit_to_git(){
+  dunstify "comi"
+}
+
+copy_sublime_setting_to_budlime(){
+  mkdir -p "${__sbldir/$__sublimeDir/$__budlimeDir}"
+  [[ -f "${__sblfil/$__sublimeDir/$__budlimeDir}" ]] \
+    || cp "${__sblfil}" "${__sblfil/$__sublimeDir/$__budlimeDir}"
+}
 printinfo(){
 about='`sublaction` - Do stuff with the currently open file in sublime
 
 SYNOPSIS
 --------
 
-`sublaction` [[`-v|--version`]|[`-h|--help`]]
-`sublaction` `--menu`|`-m`
+`sublaction` [[`-v|--version`]|[`-h|--help`]]  
+`sublaction` `--menu`|`-m`  
 
 DESCRIPTION
 -----------
@@ -65,16 +106,16 @@ executed without any arguments, it will try to figure
 out the action by it self by analyzing the path of the
 file. If it can'"'"' figure out tha action or if the
 `-m|--menu` option is used. A rofi menu with options
-will be displayed. 
+will be displayed.. 
 
 OPTIONS
 -------
 
 `-v`  
-Show version and exit.
+Show version and exit.  
 
 `-h`  
-Show help and exit.
+Show help and exit.  
 
 DEPENDENCIES
 ------------

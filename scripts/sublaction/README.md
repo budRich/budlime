@@ -3,8 +3,8 @@
 SYNOPSIS
 --------
 
-`sublaction` [[`-v|--version`]|[`-h|--help`]]
-`sublaction` `--menu`|`-m`
+`sublaction` [[`-v|--version`]|[`-h|--help`]]  
+`sublaction` `--menu`|`-m`  
 
 DESCRIPTION
 -----------
@@ -15,16 +15,16 @@ executed without any arguments, it will try to figure
 out the action by it self by analyzing the path of the
 file. If it can' figure out tha action or if the
 `-m|--menu` option is used. A rofi menu with options
-will be displayed. 
+will be displayed.. 
 
 OPTIONS
 -------
 
 `-v`  
-Show version and exit.
+Show version and exit.  
 
 `-h`  
-Show help and exit.
+Show help and exit.  
 
 DEPENDENCIES
 ------------
