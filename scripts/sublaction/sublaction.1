@@ -1,0 +1,53 @@
+.TH SUBLACTION 1 2018\-08\-15 Linux "User Manuals"
+.SH NAME
+.PP
+\fB\fCsublaction\fR \- Do stuff with the currently open file in sublime
+
+.SH SYNOPSIS
+.PP
+\fB\fCsublaction\fR [[\fB\fC\-v|\-\-version\fR]|[\fB\fC\-h|\-\-help\fR]]
+\fB\fCsublaction\fR \fB\fC\-\-menu\fR|\fB\fC\-m\fR
+
+.SH DESCRIPTION
+.PP
+\fB\fCsublaction\fR uses \fB\fCtits\fR to get information about the
+currently open file in sublime. If \fB\fCsublaction\fR is
+executed without any arguments, it will try to figure
+out the action by it self by analyzing the path of the
+file. If it can' figure out tha action or if the
+\fB\fC\-m|\-\-menu\fR option is used. A rofi menu with options
+will be displayed.
+
+.SH OPTIONS
+.PP
+\fB\fC\-v\fR
+.br
+Show version and exit.
+
+.PP
+\fB\fC\-h\fR
+.br
+Show help and exit.
+
+.SH DEPENDENCIES
+.PP
+go\-md2man
+.br
+tits
+.br
+Sublime Text
+.br
+oneliner
+.br
+rofi
+
+.SH AUTHOR
+.PP
+budRich 
+\[la]robstenklippa@gmail.com\[ra]
+
+\[la]https://budrich.github.io\[ra]
+
+.SH SEE ALSO
+.PP
+tits(1), rofi(1), oneliner(1)
