@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 __name="sublaction"
-__version="0.006"
+__version="0.007"
 __author="budRich"
 __contact='robstenklippa@gmail.com'
 __created="2018-08-15"
@@ -55,6 +55,9 @@ main(){
     copy_sublime_setting_to_budlime
   elif command -v "${__sblfil}" > /dev/null 2>&1; then
     update_script
+  elif [[ $__sbldir =~ ^${__gitDir} ]];then
+    __gfiles=("${__sblbase}")
+    commit_to_git
   else
     dunstify "$__sblfil"
   fi
@@ -92,8 +95,8 @@ update_script(){
     [[ -f $readme ]]  && __gfiles+=("${readme}")
 
     # add changes to git, commit if message is given
-    __gfiles=("${__sblbase}" "${readme}" "${manpage}")
     commit_to_git
+
   else # script is not located in ~/git
     trgdir="$(oneliner -p 'move script to dir: ' -f '~/git')"
     [[ -z $trgdir ]] && ERX "no target directory chosen"
