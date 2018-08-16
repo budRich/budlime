@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 __name="sublaction"
-__version="0.004"
+__version="0.005"
 __author="budRich"
 __contact='robstenklippa@gmail.com'
 __created="2018-08-15"
@@ -24,6 +24,8 @@ main(){
     esac
   done
 
+  declare -a __gfiles # files to git
+
   __sublimeDir="$HOME/.config/sublime-text-3/Packages"
   __budlimeDir="$HOME/git/lab/budlime/packages"
   __gitDir="$HOME/git"
@@ -31,13 +33,22 @@ main(){
   __atit=($(tits -i sublime_main -napf))
 
   __sblwid=${__atit[0]}
+
+  [[ -z $__sblwid ]] && ERX "no sublime_main window found"
+
   __sblact=${__atit[1]}
   __sblprj=${__atit[2]}
   __sblfil="${__atit[@]:3}"
+
+  [[ -f $__sblfil ]] || ERX "$__sblfil : file not found"
+
   __sbldir="${__sblfil%/*}"
   __sblnmn="${__sblfil##*/}"
 
-  [[ -z $__sblwid ]] && ERX "no sublime_main window found"
+  __sblbase="$(readlink -f "$__sblfil")"
+  __sblbasedir="${__sblbase%/*}"
+  __sblbasename="${__sblbase##*/}"
+
 
   if [[ $__sbldir =~ ^${__sublimeDir} ]];then
     # file is in sublime packages directory:
@@ -51,16 +62,13 @@ main(){
 }
 
 update_script(){
-  local base firstline basedir basename readme 
-  local msg manpage
+  local  firstline readme msg manpage
 
   firstline="$(head -1 "$__sblfil")"
-  base="$(readlink -f "$__sblfil")"
-  basedir="${base%/*}"
-  basename="${base##*/}"
+  
   [[ $firstline =~ ^(#!).*bash ]] || ERX "not a bash script"
 
-  if [[ $base =~ ^${__gitDir} ]]; then
+  if [[ $__sblbase =~ ^${__gitDir} ]]; then
     # bump version, update date
     awk -i inplace -v today="$(date +'%Y-%m-%d')" -F'=' '{
       if ($1 == "__version") {
@@ -69,26 +77,17 @@ update_script(){
       } else if ($1 == "__updated") {
         print $1 "=\"" today "\""
       } else {print $0}
-    }' "${base}"
+    }' "${__sblbase}"
 
     # update documentation
-    readme="${basedir}/README.md"
-    manpage="${basedir}/${basename%.*}.1"
-    "${base}" -hmdg
-    "${base}" -hman
+    readme="${__sblbasedir}/README.md"
+    manpage="${__sblbasedir}/${__sblbasename%.*}.1"
+    "${__sblbase}" -hmdg
+    "${__sblbase}" -hman
 
     # add changes to git, commit if message is given
-    gfiles=("${base}" "${readme}" "${manpage}")
-    (
-      cd "${basedir}" || ERX "cd $basedir failed"
-      git add "${gfiles[@]}" && {
-        msg="$(oneliner -p 'commit message: ')"
-        [[ -n $msg ]] && {
-          msg="${basename}: $msg"
-          dunstify "$(git commit -m "$msg" "${gfiles[@]}")"
-        }
-      }
-    )
+    __gfiles=("${__sblbase}" "${readme}" "${manpage}")
+    commit_to_git
   else
     dunstify "its not in git"
   fi
@@ -97,7 +96,16 @@ update_script(){
 }
 
 commit_to_git(){
-  dunstify "comi"
+(
+  cd "${__sblbasedir}" || ERX "cd $__sblbasedir failed"
+  git add "${__gfiles[@]}" && {
+    msg="$(oneliner -p 'commit message: ')"
+    [[ -n $msg ]] && {
+      msg="${__sblbasename}: $msg"
+      dunstify "$(git commit -m "$msg" "${__gfiles[@]}")"
+    }
+  }
+)
 }
 
 copy_sublime_setting_to_budlime(){
