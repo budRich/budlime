@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 __name="sublaction"
-__version="0.007"
+__version="0.008"
 __author="budRich"
 __contact='robstenklippa@gmail.com'
 __created="2018-08-15"
@@ -97,16 +97,31 @@ update_script(){
     # add changes to git, commit if message is given
     commit_to_git
 
-  else # script is not located in ~/git
+  else # script is not located in ~/git...
+    
     trgdir="$(oneliner -p 'move script to dir: ' -f '~/git')"
     [[ -z $trgdir ]] && ERX "no target directory chosen"
+    
+    category="$(oneliner -p 'category: ' -l "$(ls ~/src/bash | grep -v new)")"
+    [[ -z $category ]] && ERX "no category chosen"
+
     trgdir="${trgdir/'~'/$HOME}"
     mkdir -p "$trgdir"
-    mv "${__sblbasedir}/${__sblbasename%.*}.sh" "$trgdir"
-    category="$(oneliner -p 'category: ' -l "$(ls ~/src/bash | grep -v new)")"
-    [[ -n $category ]] \
-      && ln -s "${trgdir}/${__sblbasename}" \
-               "$HOME/src/bash/$category/${__sblbasename%.*}"
+
+    # close the file in sublime before moving it
+    sublaunch -i sublime_main
+    subl --command "close"
+    
+    mv "${__sblbase}" "$trgdir/${__sblbasename%.*}.sh"
+
+    [[ -n $category ]] && {
+      mkdir -p "$HOME/src/bash/$category"
+      ln -s "$trgdir/${__sblbasename%.*}.sh" \
+            "$HOME/src/bash/$category/${__sblbasename%.*}"
+    }
+
+    # re-open file, now in ~/git...
+    subl "$trgdir/${__sblbasename%.*}.sh"
   fi
   # if script is not in git dir, move it there
   # update documentation?
