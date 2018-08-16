@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 __name="sublaction"
-__version="0.001"
+__version="0.003"
 __author="budRich"
 __contact='robstenklippa@gmail.com'
 __created="2018-08-15"
-__updated="2018-08-15"
+__updated="2018-08-16"
 
 main(){
 
@@ -61,16 +61,30 @@ update_script(){
   [[ $firstline =~ ^(#!).*bash ]] || ERX "not a bash script"
 
   if [[ $base =~ ^${__gitDir} ]]; then
+    # bump version, update date
+    awk -i inplace -v today="$(date +'%Y-%m-%d')" -F'=' '{
+      if ($1 == "__version") {
+        gsub(/["]/,"",$2)
+        print $1 "=\"" $2 + 0.001 "\""
+      } else if ($1 == "__updated") {
+        print $1 "=\"" today "\""
+      } else {print $0}
+    }' "${base}"
+
+    # update documentation
     readme="${basedir}/README.md"
     manpage="${basedir}/${basename%.*}.1"
     "${base}" -hmdg
     "${base}" -hman
+
+    # add changes to git, commit if message is given
     gfiles=("${base}" "${readme}" "${manpage}")
     (
       cd "${basedir}" || ERX "cd $basedir failed"
       git add "${gfiles[@]}" && {
         msg="$(oneliner -p 'commit message: ')"
         [[ -n $msg ]] && {
+          msg="${basename}: $msg"
           dunstify "$(git commit -m "$msg" "${gfiles[@]}")"
         }
       }
