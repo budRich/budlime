@@ -176,7 +176,6 @@ SYNOPSIS
 --------
 
 `sublaction` [[`-v|--version`]|[`-h|--help`]]  
-`sublaction` `--menu`|`-m`  
 
 DESCRIPTION
 -----------
@@ -185,9 +184,8 @@ DESCRIPTION
 currently open file in sublime. If `sublaction` is
 executed without any arguments, it will try to figure
 out the action by it self by analyzing the path of the
-file. If it can'"'"' figure out tha action or if the
-`-m|--menu` option is used. A rofi menu with options
-will be displayed.. 
+file.  
+
 
 OPTIONS
 -------

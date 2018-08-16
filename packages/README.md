@@ -10,21 +10,12 @@ most of the files here, are settings for 3rd party packages, but a few are brews
 |:--------|:------------|
 [CommandCommander] | by adding this package, command_mode will get enabled in all files when they lose focus.
 [DisableArrowkeys] | Makes the arrowkeys useless and the tab key better.
-[mondo] | custom colorschemes, generated with [mondo][mondo-generator]
+[mondo] | custom colorschemes, generated with [mondo-generator]
 [SidebarToggler] | A more efficient toggling function for the sidebar
 [TwoFont] | toggle between different font settings
 [VintageFinder] | Better behaviour of the **find_panel** optimized for [Vintage]
 [VintageSanity] | Fixes for some key combinations that breaks when [Vintage] is enabled
 
-[CommandCommander]: https://github.com/budlabs/budlime/tree/master/packages/CommandCommander
-[DisableArrowkeys]: https://github.com/budlabs/budlime/tree/master/packages/DisableArrowkeys
-[mondo]: https://github.com/budlabs/budlime/tree/master/packages/mondo
-[SidebarToggler]: https://github.com/budlabs/budlime/tree/master/packages/SidebarToggler
-[TwoFont]: https://github.com/budlabs/budlime/tree/master/packages/TwoFont
-[VintageFinder]: https://github.com/budlabs/budlime/tree/master/packages/VintageFinder
-[VintageSanity]: https://github.com/budlabs/budlime/tree/master/packages/VintageSanity
-[mondo]: https://github.com/budlabs/mondo
-[Vintage]: http://www.sublimetext.com/docs/3/vintage.html
 
 ## [subextract]
 
@@ -37,3 +28,12 @@ By populating the list *"installed_packages"* in:
 
 [Sublime Text]: https://www.sublimetext.com/
 [subextract]: https://github.com/budlabs/budlime/tree/master/scripts/subextract
+[CommandCommander]: https://github.com/budlabs/budlime/tree/master/packages/CommandCommander
+[DisableArrowkeys]: https://github.com/budlabs/budlime/tree/master/packages/DisableArrowkeys
+[mondo]: https://github.com/budlabs/budlime/tree/master/packages/mondo
+[SidebarToggler]: https://github.com/budlabs/budlime/tree/master/packages/SidebarToggler
+[TwoFont]: https://github.com/budlabs/budlime/tree/master/packages/TwoFont
+[VintageFinder]: https://github.com/budlabs/budlime/tree/master/packages/VintageFinder
+[VintageSanity]: https://github.com/budlabs/budlime/tree/master/packages/VintageSanity
+[mondo]: https://github.com/budlabs/mondo
+[Vintage]: http://www.sublimetext.com/docs/3/vintage.html
