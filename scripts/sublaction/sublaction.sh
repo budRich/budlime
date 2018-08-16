@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 __name="sublaction"
-__version="0.003"
+__version="0.004"
 __author="budRich"
 __contact='robstenklippa@gmail.com'
 __created="2018-08-15"
@@ -145,7 +145,7 @@ rofi
 '
 
 bouthead="
-${__name^^} 1 ${__created} Linux \"User Manuals\"
+${__name^^} 1 ${__updated} Linux \"User Manuals\"
 =======================================
 
 NAME
