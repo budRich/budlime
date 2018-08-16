@@ -60,18 +60,21 @@ update_script(){
   basename="${base##*/}"
   [[ $firstline =~ ^(#!).*bash ]] || ERX "not a bash script"
 
-  dunstify "$base"
   if [[ $base =~ ^${__gitDir} ]]; then
     readme="${basedir}/README.md"
     manpage="${basedir}/${basename%.*}.1"
     "${base}" -hmdg
     "${base}" -hman
     gfiles=("${base}" "${readme}" "${manpage}")
-    git add "${gfiles[@]}"
-    msg="$(oneliner -p 'commit message: ')"
-    [[ -n $msg ]] && {
-      dunstify "$(git commit -m "$msg" "${gfiles[@]}")"
-    }
+    (
+      cd "${basedir}" || ERX "cd $basedir failed"
+      git add "${gfiles[@]}" && {
+        msg="$(oneliner -p 'commit message: ')"
+        [[ -n $msg ]] && {
+          dunstify "$(git commit -m "$msg" "${gfiles[@]}")"
+        }
+      }
+    )
   else
     dunstify "its not in git"
   fi
