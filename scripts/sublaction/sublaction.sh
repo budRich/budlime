@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 __name="sublaction"
-__version="0.005"
+__version="0.006"
 __author="budRich"
 __contact='robstenklippa@gmail.com'
 __created="2018-08-15"
@@ -62,12 +62,13 @@ main(){
 }
 
 update_script(){
-  local  firstline readme msg manpage
+  local  firstline readme msg manpage trgdir category
 
   firstline="$(head -1 "$__sblfil")"
   
   [[ $firstline =~ ^(#!).*bash ]] || ERX "not a bash script"
 
+  # script is located in ~/git
   if [[ $__sblbase =~ ^${__gitDir} ]]; then
     # bump version, update date
     awk -i inplace -v today="$(date +'%Y-%m-%d')" -F'=' '{
@@ -82,14 +83,27 @@ update_script(){
     # update documentation
     readme="${__sblbasedir}/README.md"
     manpage="${__sblbasedir}/${__sblbasename%.*}.1"
+
     "${__sblbase}" -hmdg
     "${__sblbase}" -hman
+
+    __gfiles=("${__sblbase}")
+    [[ -f $manpage ]] && __gfiles+=("${manpage}")
+    [[ -f $readme ]]  && __gfiles+=("${readme}")
 
     # add changes to git, commit if message is given
     __gfiles=("${__sblbase}" "${readme}" "${manpage}")
     commit_to_git
-  else
-    dunstify "its not in git"
+  else # script is not located in ~/git
+    trgdir="$(oneliner -p 'move script to dir: ' -f '~/git')"
+    [[ -z $trgdir ]] && ERX "no target directory chosen"
+    trgdir="${trgdir/'~'/$HOME}"
+    mkdir -p "$trgdir"
+    mv "${__sblbasedir}/${__sblbasename%.*}.sh" "$trgdir"
+    category="$(oneliner -p 'category: ' -l "$(ls ~/src/bash | grep -v new)")"
+    [[ -n $category ]] \
+      && ln -s "${trgdir}/${__sblbasename}" \
+               "$HOME/src/bash/$category/${__sblbasename%.*}"
   fi
   # if script is not in git dir, move it there
   # update documentation?
@@ -113,6 +127,7 @@ copy_sublime_setting_to_budlime(){
   [[ -f "${__sblfil/$__sublimeDir/$__budlimeDir}" ]] \
     || cp "${__sblfil}" "${__sblfil/$__sublimeDir/$__budlimeDir}"
 }
+
 printinfo(){
 about='`sublaction` - Do stuff with the currently open file in sublime
 
