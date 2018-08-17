@@ -3,11 +3,13 @@ This directory and readme contains the files, links and resources used in the vi
 [Sublime Text: Package Papis Package][videoSTppp]
 
 ## packages
-[Package Control]
-[Extract Sublime Package]
-Default (core package) (extract it from the `/opt/sublime_text/Packages` directory).
+[Package Control]  
+[Extract Sublime Package]  
+**Default** (core package) (extract it from the `/opt/sublime_text/Packages` directory).
+
 ## useful shortcuts used in the video
 Toggle sublime console: <kbd>Ctrl</kbd>+<kbd>`</kbd>  
+Search files in the current project: <kbd>Ctrl</kbd>+<kbd>p</kbd>  
 Show the command palette: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>  
 
 [Extract Sublime Package]: https://github.com/SublimeText/ExtractSublimePackage
@@ -30,11 +32,28 @@ Show the command palette: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>
 **User settings:** (*manually created*)   
 `~/.config/sublime-text-3/Packages/zublime`
 
+## settings
+
+**exclude folders from a project:**  
+`"folder_exclude_patterns": ["User","zublime"],`  
+
+**exclude files from search things**
+`"binary_file_patterns": ["*.sublime-package"],`
+
+## documentation
+
+https://packagecontrol.io/docs/customizing_packages  
+http://docs.sublimetext.info/en/latest/extensibility/packages.html?highlight=package
+  
+- - - - -
+
 The global colorscheme Used everywhere except sublime in the video, is called **Plan9** and generated with [mondo] based on a emacs theme by:
 [John Louis Del Rosario](https://github.com/john2x/plan9-theme.el)
 
 The BIOS like start page is created by GitHub user [tommyku] and can be found here:  
 <https://github.com/tommyku/start-page-bios>  
 
+[What happened to that guy?](https://www.youtube.com/watch?v=Gkxolne0U5U)
+
 [tommyku]: https://github.com/tommyku
-[videoSTppp]: #
+[videoSTppp]: https://youtu.be/G9uYJ689xEw
