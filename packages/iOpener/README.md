@@ -1,6 +1,22 @@
 ## [iOpener] - Open files from path, with completion, listings and history. Similar to Emacs find file.
 by: [rosshemsley]
 
+### budlabs mod
+I changed a small part of `i_opener.py` around line **210**:  
+
+``` py
+folder = dict(path=path, follow_symlinks=True)
+if project_data == {}:
+    project_data = dict(folders=[dict(follow_symlinks=True, path=path)])
+elif all(folder['path'] != path for folder in project_folders):
+    project_data['folders'].append(folder)
+sublime.active_window().set_project_data(project_data)
+```
+
+this mod will create a new project if the workspace is clean, and a directory is chosen.
+
+- - - - - -
+
 Open files from path, with completion, listings and history. Similar to Emacs find file.
 
 This package only have one function. It overrides the default open file functionality. Instead of launching the normal open file dialog (which differs depending on the OS), this package uses sublimes built in panel and command palette. It supports tab completion and if a file doesn't exist it will get created (along with needed subdirectories), making this package perfect for creating new files.
