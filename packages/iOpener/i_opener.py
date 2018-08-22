@@ -208,10 +208,9 @@ class iOpenerPathInput():
                 project_folders = project_data.get('folders') or []
 
                 folder = dict(path=path, follow_symlinks=True)
-                if project_data == {}:
-                    project_data = dict(folders=[dict(follow_symlinks=True, path=path)])
-                elif all(folder['path'] != path for folder in project_folders):
-                    project_data['folders'].append(folder)
+
+                if all(folder['path'] != path for folder in project_folders):
+                    project_data.setdefault('folders', []).append(folder)
                 sublime.active_window().set_project_data(project_data)
         else:
             # If file doesn't exist, add a message in the status bar.

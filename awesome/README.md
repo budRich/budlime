@@ -4,12 +4,14 @@ article | author | date | description
 [Creating a custom sublime text colour scheme](https://www.chenhuijing.com/blog/creating-a-custom-sublime-text-colour-scheme/) | [Chen Hui Jing](https://www.chenhuijing.com) | 09 Aug 2018 | write up on the process to create a color scheme from scratch.
 [My Sublime Text Configuration](https://spifftastic.net/post/2014/05/my-sublime-text-configuration/) | [Noel Cower](https://spifftastic.net) | 14 May 2014 | run down of a users configuration that doesn't use Package Control
 https://www.macstories.net/roundups/sublime-text-2-and-markdown-tips-tricks-and-links/
+https://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-themes-color-schemes-and-cool-features
 
 # Screencasts
 | cast | description | episodes/duration | year |
 |:-----|:------------|:---------|:-----|
 |[What you need to know]|from budlabs, short intro to the strangeness that is sublime. | 27:22 | 2018
 |[laracst]| Great series about setting up sublime in particular for devloping PHP with laravel. But lots of useful tips for general usage as well. | 11 | 2017
+https://www.youtube.com/watch?v=Sxkrp9iTgZ8&list=PLIM28v8sWGUcz6LKXlxTn0m1OFCKarKM-
 
 
 [What you need to know]: https://youtu.be/uJrQkzAncZ0
