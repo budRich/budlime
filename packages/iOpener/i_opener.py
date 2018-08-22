@@ -59,7 +59,7 @@ def get_completion(path):
     directory_listing = listdir(expanduser(directory))
     new_filename, completion_type = complete_path(filename, directory_listing, CASE_SENSITIVE)
 
-    if new_filename != '' and isdir(expanduser(join(directory, new_filename))):
+     if new_filename != '' and isdir(expanduser(join(directory, new_filename))) and completion_type != COMPLETION_TYPE.CompleteButNotUnique:
         new_filename += sep
 
     return join(directory, new_filename), completion_type
