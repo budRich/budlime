@@ -15,6 +15,10 @@ sublime.active_window().set_project_data(project_data)
 
 this mod will create a new project if the workspace is clean, and a directory is chosen.
 
+**edit**
+I just saw that someone already had made a pullrequest with a more elegant solution.  
+https://github.com/rosshemsley/iOpener/pull/33/commits/e368274df38c3df1798a5e559eca29b211606603
+
 - - - - - -
 
 Open files from path, with completion, listings and history. Similar to Emacs find file.
