@@ -33,8 +33,13 @@ in `~/.config/sublime-text-3/Packages/User/i_opener.sublime-settins`:
 This will make directories add them self to the currently open project instead of opening a new window.  
 
 ## the hack:
-The modified `i_opener.py` and `i_opener.sublime-keymap` can be found in [budlabs/packages/iOpener][iopy]
+The modified `i_opener.py` can be found in [budlime/packages/iOpener][iopy]
 
+And the custom keybinding for ProjectManager in: [budlime/packages/ProjectManager][prjm]
+
+
+
+[prjm]: https://github.com/budlabs/budlime/tree/master/packages/ProjectManager
 [iopy]: https://github.com/budlabs/budlime/tree/master/packages/iOpener
 
 ## important directories
