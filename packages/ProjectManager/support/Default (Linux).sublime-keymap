@@ -1,0 +1,17 @@
+[
+    {
+        "keys": ["ctrl+alt+p"],
+        "command": "project_manager", "args": {"action": "switch"}
+    },
+
+    {
+        "keys": ["alt+shift+p"],
+        "command": "project_manager", "args": {"action": "add_project"}
+    },
+
+    // "command": "project_manager", "args": {"action": "add_project"}
+    // {
+    //     "keys": ["ctrl+alt+o"],
+    //     "command": "project_manager", "args": {"action": "new"}
+    // }
+]
