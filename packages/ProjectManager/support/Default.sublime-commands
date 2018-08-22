@@ -1,8 +1,8 @@
 [
-    {
-        "caption": "Project Manager",
-        "command": "project_manager"
-    },
+    // {
+        // "caption": "Project Manager",
+        // "command": "project_manager"
+    // },
     {
         "caption": "Project Manager: Add New Project",
         "command": "project_manager", "args": {"action": "add_project"}
@@ -35,10 +35,10 @@
         "caption": "Project Manager: Rename Project",
         "command": "project_manager", "args": {"action": "rename"}
     },
-    {
-        "caption": "Project Manager: Clear Recent Projects",
-        "command": "project_manager", "args": {"action": "clear_recent_projects"}
-    },
+    // {
+        // "caption": "Project Manager: Clear Recent Projects",
+        // "command": "project_manager", "args": {"action": "clear_recent_projects"}
+    // },
     {
         "caption": "Project Manager: Remove Dead Projects",
         "command": "project_manager", "args": {"action": "remove_dead_projects"}

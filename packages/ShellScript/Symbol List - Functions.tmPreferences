@@ -12,7 +12,7 @@
         <key>showInIndexedSymbolList</key>
         <integer>1</integer>
         <key>symbolTransformation</key>
-        <string>s/$0/</string>
+        <string>s/.+/function\: $0/</string>
     </dict>
 </dict>
 </plist>

@@ -97,16 +97,18 @@
 		"sublaunch",
 		"subdox",
 		"browserpreview",
-		"https"
+		"https",
+		"Papis"
 	],
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/mondo/mondo.tmTheme",
+	"figlet_font": "3-d",
 	"font_face": "Hack",
 	"font_options":
 	[
 		"subpixel_antialias"
 	],
-	"font_size": 18,
+	"font_size": 17,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[

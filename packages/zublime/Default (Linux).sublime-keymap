@@ -71,7 +71,9 @@
     "keys": ["alt+p"],
     "command": "open_file", "args": {"file": "${project}"} 
   },
-  
+ 
+  { "keys": ["alt+w"], "command": "close_workspace" },
+ 
   // select lines before reindent? 
   { "keys": ["ctrl+alt+["], "command": "reindent", "args": {"single_line": false}},
 

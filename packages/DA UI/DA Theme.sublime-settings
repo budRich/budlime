@@ -4,12 +4,12 @@
     "id": "origin",
     "settings":
     {
-      "accent_color": "#4c83ad",
+      "accent_color": "#8888c8",
       "font_face": "FixedFixedsys",
       "font_size": 16,
 
       "status_bar_background_color": "$accent_color",
-      "status_label_foreground_color": "#eee8d5",
+      "status_label_foreground_color": "#FFFFE8",
       "status_bar_padding": [4, 3, 4, 3],
 
       "tab_height": 20,
@@ -35,6 +35,7 @@
       "sidebar_heading_foreground_color": "$sidebar_background_color",
       "sidebar_padding": [0, -24, 1, 0],
       "show_sidebar_file_icons": false,
+      "panel_background_color": "$sidebar_background_color",
     }
   }
 }
