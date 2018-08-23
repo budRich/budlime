@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 __name="sublaction"
-__version="0.009"
+__version="0.01"
 __author="budRich"
 __contact='robstenklippa@gmail.com'
 __created="2018-08-15"
-__updated="2018-08-16"
+__updated="2018-08-23"
 
 main(){
 
@@ -26,6 +26,7 @@ main(){
 
   declare -a __gfiles # files to git
 
+  __pkgSourceDir="$HOME/tmp/stpkg"
   __sublimeDir="$HOME/.config/sublime-text-3/Packages"
   __budlimeDir="$HOME/git/lab/budlime/packages"
   __gitDir="$HOME/git"
@@ -49,13 +50,15 @@ main(){
   __sblbasedir="${__sblbase%/*}"
   __sblbasename="${__sblbase##*/}"
 
-  notify-send "${__sblfil}"
+  
 
   if [[ $__sbldir =~ ^${__sublimeDir} ]];then
     # file is in sublime packages directory:
     copy_sublime_setting_to_budlime
   elif command -v "${__sblfil}" > /dev/null 2>&1; then
     update_script
+  elif [[ $__sbldir =~ ^${__pkgSourceDir} ]];then
+    notify-send "aaa ${__sblfil}"
   elif [[ $__sbldir =~ ^${__gitDir} ]];then
     __gfiles=("${__sblbase}")
     commit_to_git
