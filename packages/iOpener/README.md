@@ -38,6 +38,7 @@ If you choose to use [my fork], clone the repo and copy the directory to `~/subl
 ```
 
 [mattstfrk]: https://github.com/mattst/iOpener
+[my for]: https://github.com/budRich/iOpener
 - - - - - -
 
 Open files from path, with completion, listings and history. Similar to Emacs find file.
