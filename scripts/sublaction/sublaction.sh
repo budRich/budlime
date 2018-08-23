@@ -58,7 +58,13 @@ main(){
   elif command -v "${__sblfil}" > /dev/null 2>&1; then
     update_script
   elif [[ $__sbldir =~ ^${__pkgSourceDir} ]];then
-    notify-send "aaa ${__sblfil}"
+
+    trgfil="$__sublimeDir${__sblfil#$__pkgSourceDir}"
+    trgdir="${trgfil%/*}"
+    mkdir -p "$trgdir"
+
+    cp "${__sblfil}" "${trgfil}"
+
   elif [[ $__sbldir =~ ^${__gitDir} ]];then
     __gfiles=("${__sblbase}")
     commit_to_git

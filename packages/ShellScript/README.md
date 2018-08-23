@@ -7,7 +7,7 @@ Before:
 <integer>1</integer>
 <key>showInIndexedSymbolList</key>
 <integer>1</integer>
-``` 
+```
 
 After:  
 
@@ -16,4 +16,6 @@ After:
 <integer>0</integer>
 <key>showInIndexedSymbolList</key>
 <integer>0</integer>
-``` 
+```
+
+I also blanked all the defautl **Snippets** . I use my own instead.
