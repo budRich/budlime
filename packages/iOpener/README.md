@@ -24,6 +24,20 @@ https://github.com/rosshemsley/iOpener/pull/31/commits/7555c4daa8e62d4a40f672134
 
 That will autocomplete better when there are multiple options.
 
+I made a fork of [mattst's fork][mattstfrk], to which i applied that two patches linked above.  
+
+If you choose to use [my fork], clone the repo and copy the directory to `~/sublime-text-3/Packages` . And add `iOpener` to 
+`~/sublime-text-3/Packages/User/Package Control.sublime-settings` `ignore_vcs_packages` list:   
+
+``` js
+"ignore_vcs_packages":
+[
+    "SimpleSyntax",
+    "iOpener"
+],
+```
+
+[mattstfrk]: https://github.com/mattst/iOpener
 - - - - - -
 
 Open files from path, with completion, listings and history. Similar to Emacs find file.

@@ -38,18 +38,17 @@
 			"name": "snippets",
 			"path": "/home/bud/.config/sublime-text-3/Packages/User/Snippets"
 		},
-    {
-      "name": "notes",
-      "follow_symlinks": true,
-      "path": "/home/bud/dox/not/sublime/"
-    },
 		{
+			"name": "notes",
+			"path": "/home/bud/dox/not/sublime"
+		},
+		{
+			"binary_file_patterns":
+			[
+				"defaults/*"
+			],
 			"name": "dox",
-			"path": "/home/bud/.config/sublime-text-3/Packages/User/dox",
-      "binary_file_patterns":
-      [
-        "defaults/*"
-      ],
+			"path": "/home/bud/.config/sublime-text-3/Packages/User/dox"
 		},
 		{
 			"folder_exclude_patterns":
@@ -77,24 +76,27 @@
 			"path": "/opt/sublime_text/Packages"
 		},
 		{
+			"binary_file_patterns":
+			[
+				"*"
+			],
 			"name": "packages - source",
-			"path": "~/tmp/stpkg",
-      "binary_file_patterns":
-      [
-        "*"
-      ],
+			"path": "/home/bud/tmp/stpkg"
 		},
 		{
 			"name": "packages - budlime",
 			"path": "/home/bud/git/lab/budlime/packages"
 		},
 		{
-			"path": "/home/bud/git/lab/budlime",
-      "folder_exclude_patterns": ["package"],
+			"folder_exclude_patterns":
+			[
+				"package"
+			],
+			"path": "/home/bud/git/lab/budlime"
 		},
 		{
 			"name": "scripts",
-			"path": "~/src/bash/sublime"
-		},
+			"path": "/home/bud/src/bash/sublime"
+		}
 	]
 }

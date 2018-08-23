@@ -28,28 +28,57 @@
 	"buffers":
 	[
 		{
-			"file": "/home/bud/git/lab/budlime/youtube/good-packs2-iOpener/README.md",
+			"file": "/home/bud/.config/sublime-text-3/Packages/CommandCommander/CommandCommander.py",
 			"settings":
 			{
-				"buffer_size": 2211,
+				"buffer_size": 372,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/bud/.config/sublime-text-3/Packages/User/i_opener.sublime-settings",
+			"file": "/home/bud/tmp/nix6/www.tom-yam.or.jp/2238/src/alloc.c.html",
 			"settings":
 			{
-				"buffer_size": 425,
+				"buffer_size": 24840,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/bud/dox/not/sublime/todo.md",
+			"file": "/home/bud/src/bash/browser/brws",
 			"settings":
 			{
-				"buffer_size": 7,
+				"buffer_size": 8824,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/bud/dox/websave/dennis-comments-in-uv6.md",
+			"settings":
+			{
+				"buffer_size": 10224,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/bud/git/lab/budlime/awesome/README.md",
+			"settings":
+			{
+				"buffer_size": 6038,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "",
+			"file": "/home/bud/git/lab/budlime/packages/iOpener/as/1.md",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -61,14 +90,6 @@
 			"settings":
 			{
 				"buffer_size": 104,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/bud/.config/sublime-text-3goodproj/Packages/zublime/Default (Linux).sublime-keymap",
-			"settings":
-			{
-				"buffer_size": 95,
 				"line_ending": "Unix"
 			}
 		}
@@ -84,6 +105,34 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Add Repository"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
 			[
 				"sni",
 				"SnippetMaker: Make Snippet"
@@ -125,10 +174,6 @@
 				"Markdown Preview: Preview in Browser"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"ui",
 				"UI: Select Color Scheme"
 			],
@@ -139,10 +184,6 @@
 			[
 				"tab",
 				"Table Editor: Enable for current syntax"
-			],
-			[
-				"inst",
-				"Package Control: Install Package"
 			],
 			[
 				"ins",
@@ -165,20 +206,12 @@
 				"Set Syntax: Note"
 			],
 			[
-				"en",
-				"Package Control: Enable Package"
-			],
-			[
 				"di",
 				"Package Control: Disable Package"
 			],
 			[
 				"synt",
 				"Syntax Manager: Reload Settings"
-			],
-			[
-				"dis",
-				"Package Control: Disable Package"
 			],
 			[
 				"syntax",
@@ -204,6 +237,22 @@
 		"height": 213.0,
 		"history":
 		[
+			"clear()",
+			"clear",
+			"print(sublime.view.visibleRegion())",
+			"print(sublime.visibleRegion())",
+			"print(sublime.View.visibleRegion())",
+			"print(sublime.View.visibleRegion()",
+			"print(sublime.View.VisibleRegion()",
+			"print(sublime.View.visibleRegion()",
+			"print(sublime.Settings.get('is_panel')",
+			"print(sublime.Settings.__dict__)",
+			"print(sublime.__dict__)",
+			"print(sublime)",
+			"print(sublime.view.settins())",
+			"print(view.settins())",
+			"clear",
+			"ear",
 			"sublime.log_commands(True)",
 			"view.settings().get(\"syntax\")",
 			"command(\"reveal_in_side_bar\")"
@@ -220,22 +269,68 @@
 	},
 	"expanded_folders":
 	[
+		"/home/bud/.config/sublime-text-3/Packages/zublime",
 		"/home/bud/.config/sublime-text-3/Packages/Default",
-		"/home/bud/.config/sublime-text-3/Packages/User",
 		"/home/bud/.config/sublime-text-3/Packages",
-		"/home/bud/git/lab/budlime/packages",
-		"/home/bud/git/lab/budlime/packages/iOpener",
+		"/home/bud/.config/sublime-text-3/Packages/CommandCommander",
+		"/home/bud/.config/sublime-text-3/Packages/iOpener",
+		"/home/bud/.config/sublime-text-3/Installed Packages",
+		"/home/bud/tmp/stpkg",
+		"/home/bud/tmp/stpkg/C#",
 		"/home/bud/git/lab/budlime",
-		"/home/bud/git/lab/budlime/youtube",
-		"/home/bud/git/lab/budlime/youtube/good-packs2-iOpener",
-		"/home/bud/git/lab/budlime/youtube/package-papis-package"
+		"/home/bud/git/lab/budlime/awesome"
 	],
 	"file_history":
 	[
+		"/home/bud/.config/sublime-text-3/Packages/iOpener/i_opener.py",
+		"/home/bud/git/lab/budlime/packages/sublime-swap-boolean-polarity/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/DisableArrowkeys/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3/Packages/zublime/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3/Packages/iOpener/Default (Linux).sublime-keymap",
+		"/home/bud/tmp/stpkg/C#/Build.sublime-syntax",
+		"/home/bud/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/bud/tmp/stpkg/Default/arithmetic.py",
+		"/home/bud/.config/sublime-text-3/Packages/CommandCommander/CommandCommander.py",
+		"/home/bud/src/bash/browser/brws",
+		"/home/bud/git/lab/budlime/packages/DA UI/DA Theme.sublime-settings",
+		"/home/bud/git/lab/budlime/packages/sublime-swap-boolean-polarity/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3/Packages/sublime-swap-boolean-polarity/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/awesome/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/iOpener/i_opener.sublime-settings",
+		"/home/bud/dox/websave/kritik.md",
+		"/home/bud/git/lab/budlime/packages/iOpener/Default (Linux).sublime-keymap",
 		"/home/bud/git/lab/budlime/packages/iOpener/README.md",
+		"/home/bud/git/lab/budlime/packages/Package Control/Package Control.sublime-settings",
+		"/home/bud/git/lab/budlime/packages/iOpener/i_opener.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/User/i_opener.sublime-settings",
+		"/home/bud/.config/sublime-text-3/Packages/sublime-swap-boolean-polarity/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/Package Control/Default.sublime-commands",
+		"/home/bud/.config/sublime-text-3/Packages/SwapBooleanPolarity/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3/Installed Packages/sublime-swap-boolean-polarity.sublime-package",
+		"/home/bud/.config/sublime-text-3/Packages/SwapBooleanPolarity/README.md",
+		"/home/bud/git/clones/sublime-swap-boolean-polarity/README.md",
+		"/home/bud/git/lab/budlime/packages/iOpener/i_opener.py",
+		"/home/bud/git/lab/budlime/packages/iOpener/asbe/2.md",
+		"/home/bud/git/lab/budlime/packages/iOpener/asberg/3.md",
+		"/home/bud/.config/sublime-text-3goodproj/Packages/zublime/Default (Linux).sublime-keymap",
+		"/home/bud/dox/not/sublime/todo.md",
+		"/home/bud/.config/sublime-text-3/Packages/User/Projects/sublime.sublime-project",
+		"/home/bud/git/lab/budlime/packages/ProjectManager/support/Default (Linux).sublime-keymap",
+		"/home/bud/dox/websave/sam-text.md",
+		"/home/bud/.config/sublime-text-3/Packages/CommandCommander/README.md",
+		"/home/bud/git/lab/budlime/youtube/hack-the-packs1-iOpener/README.md",
+		"/home/bud/.config/sublime-text-3/Packages/ProjectManager/support/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/youtube/hack-the-packs1-iOpener/zublime/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3last/Packages/zublime/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/packages/ProjectManager/support/Default.sublime-commands",
+		"/home/bud/tmp/stpkg/iOpener/i_opener.sublime-commands",
+		"/home/bud/.config/sublime-text-3ophax/Packages/iOpener/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3last/Packages/iOpener/Default (Linux).sublime-keymap",
+		"/home/bud/.config/sublime-text-3iopgod/Packages/iOpener/Default (Linux).sublime-keymap",
+		"/home/bud/git/lab/budlime/youtube/good-packs2-iOpener/README.md",
 		"/home/bud/git/lab/budlime/youtube/essential-package-ProjectManager/README.md",
 		"/home/bud/git/lab/budlime/youtube/README.md",
-		"/home/bud/.config/sublime-text-3/Packages/User/Projects/sublime.sublime-project",
 		"/home/bud/git/lab/budlime/youtube/essential-package-ProjectManager/User/Projects/sublime.sublime-project",
 		"/home/bud/.config/sublime-text-3/Packages/User/Snippets/md-kbd.sublime-snippet",
 		"/home/bud/git/lab/budlime/youtube/essential-package-ProjectManager/ProjectManager/project_manager.sublime-settings",
@@ -245,27 +340,18 @@
 		"/home/bud/git/lab/budlime/youtube/essential-package-ProjectManager/ProjectManager/support/Default (Linux).sublime-keymap",
 		"/home/bud/git/lab/budlime/youtube/essential-package-ProjectManager/ProjectManager/README.md",
 		"/home/bud/git/lab/budlime/youtube/package-papis-package/README.md",
-		"/home/bud/.config/sublime-text-3/Packages/zublime/Default (Linux).sublime-keymap",
 		"/home/bud/git/lab/budlime/packages/ProjectManager/README.md",
 		"/home/bud/git/lab/budlime/packages/Extract Sublime Package/README.md",
 		"/home/bud/git/lab/budlime/packages/Extract Sublime Package/ExtractSublimePackage.py",
 		"/home/bud/git/lab/budlime/packages/Horizontal Scroll/README.md",
-		"/home/bud/git/lab/budlime/awesome/README.md",
-		"/home/bud/.config/sublime-text-3/Packages/iOpener/Default (Linux).sublime-keymap",
-		"/home/bud/git/lab/budlime/packages/iOpener/i_opener.py",
 		"/home/bud/git/lab/budlime/packages/Extract Sublime Package/Context.sublime-menu",
-		"/home/bud/git/lab/budlime/packages/iOpener/Default (Linux).sublime-keymap",
-		"/home/bud/.config/sublime-text-3/Packages/iOpener/i_opener.py",
 		"/home/bud/.config/sublime-text-3ophax/Packages/iOpener/i_opener.py",
 		"/home/bud/tmp/stpkg/ProjectManager/support/Default (Linux).sublime-keymap",
 		"/home/bud/.config/sublime-text-3/Packages/User/DA Theme.sublime-settings",
 		"/home/bud/.config/sublime-text-3/Packages/ProjectManager/support/Default.sublime-commands",
-		"/home/bud/.config/sublime-text-3/Packages/ProjectManager/support/Default (Linux).sublime-keymap",
 		"/home/bud/.config/sublime-text-3/Packages/Default/Default.sublime-commands",
-		"/home/bud/.config/sublime-text-3/Packages/iOpener/i_opener.sublime-settings",
 		"/home/bud/.config/sublime-text-3/Packages/iOpener/i_opener.sublime-commands",
 		"/home/bud/.config/sublime-text-3/Packages/iOpener/paths.py",
-		"/home/bud/.config/sublime-text-3/Packages/User/i_opener.sublime-settings",
 		"/home/bud/.config/sublime-text-3/Packages/Extract Sublime Package/ExtractSublimePackage.py",
 		"/home/bud/git/lab/budlime/packages/A File Icon/README.md",
 		"/home/bud/git/lab/budlime/packages/A File Icon/A File Icon.sublime-settings",
@@ -323,43 +409,7 @@
 		"/home/bud/git/lab/budlime/youtube/package-papis-package/cascading.html",
 		"/home/bud/tmp/sublime.sublime-project",
 		"/home/bud/.config/sublime-text-3/Packages/DA CS/DA Color.sublime-settings",
-		"/home/bud/.config/sublime-text-3/Packages/DA CS/Nord.tmTheme",
-		"/home/bud/.config/sublime-text-3/Packages/DA CS/README.md",
-		"/home/bud/.config/sublime-text-3/Packages/User/dox/packages/DA CS.md",
-		"/home/bud/git/lab/budlime/README.md",
-		"/home/bud/git/lab/budlime/youtube/package-papis-package-directory/cascading.html",
-		"/home/bud/git/lab/budlime/install/install.sh",
-		"/home/bud/.config/sublime-text-3/Packages/GitGutter/Default (Linux).sublime-keymap",
-		"/home/bud/git/lab/budlime/packages/TwoFont/TwoFont.sublime-settings",
-		"/home/bud/.config/sublime-text-3/Packages/TwoFont/tfnt.py",
-		"/home/bud/.config/sublime-text-3/Packages/TwoFont/Default (Linux).sublime-keymap",
-		"/home/bud/.config/sublime-text-3/Packages/TwoFont/README.md",
-		"/home/bud/git/lab/budlime/packages/mondo/README.md",
-		"/home/bud/.config/sublime-text-3BU/Packages/User/Default (Linux).sublime-keymap",
-		"/home/bud/.config/sublime-text-3BU/Packages/TwoFont/README.md",
-		"/home/bud/git/lab/budlime/packages/README.md",
-		"/home/bud/git/lab/budlime/packages/Vintage/README.md",
-		"/home/bud/git/lab/budlime/packages/CommandCommander/README.md",
-		"/home/bud/git/lab/budlime/packages/CommandCommander/CommandCommander.py",
-		"/home/bud/.config/sublime-text-3/Packages/CommandCommander/README.md",
-		"/home/bud/.config/sublime-text-3/Packages/CommandCommander/CommandCommander.py",
-		"/home/bud/tmp/stop",
-		"/home/bud/git/lab/budlime/scripts/sublaction/sublaction.sh",
-		"/home/bud/tmp/good.csproj",
-		"/home/bud/git/skurt/mikecheck.sh",
-		"/home/bud/tmp/ql.lisp",
-		"/home/bud/git/skurt/mpv666.sh",
-		"/home/bud/src/bash/new/mikecheck",
-		"/home/bud/src/bash/sublime/sublaunch",
-		"/home/bud/src/bash/new/mpv666",
-		"/home/bud/src/bash/sublime/subswap",
-		"/home/bud/src/bash/sublime/sublaction",
-		"/home/bud/src/bash/new/thisis",
-		"/home/bud/git/lab/budlime/scripts/sublaction/README.md",
-		"/home/bud/src/bash/new/themon",
-		"/home/bud/.config/sublime-text-3/Packages/GitGutter/Default.sublime-commands",
-		"/home/bud/.config/sublime-text-3/Packages/User/dox/packages/SublimeLinter-pycodestyle.md",
-		"/home/bud/.config/sublime-text-3/Packages/Figlet Big ASCII Text/README.md"
+		"/home/bud/.config/sublime-text-3/Packages/DA CS/Nord.tmTheme"
 	],
 	"find":
 	{
@@ -367,7 +417,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 138.0,
 		"where_history":
 		[
 		]
@@ -377,6 +427,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"widget",
+			"panel",
+			"comments",
+			"```",
 			"extract",
 			"scheme",
 			"status_bar_background_color",
@@ -452,24 +506,167 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/bud/git/lab/budlime/youtube/good-packs2-iOpener/README.md",
+					"file": "/home/bud/.config/sublime-text-3/Packages/CommandCommander/CommandCommander.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2211,
+						"buffer_size": 372,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								147,
-								147
+								176,
+								176
+							]
+						],
+						"settings":
+						{
+							"SL.25.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"apply_syntax_touched": true,
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/bud/tmp/nix6/www.tom-yam.or.jp/2238/src/alloc.c.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24840,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6371,
+								6371
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2591.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/bud/src/bash/browser/brws",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8824,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1777,
+								1777
+							]
+						],
+						"settings":
+						{
+							"SL.32.region_keys":
+							[
+								"SL.shellcheck.Highlights.|d0491458e2a54dffbccdb1fffb99369a067f3702ae6154685b1bedb5fd8687fc|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|9e7e70188dcab1003b4a7f6b0060d8850ca0696545112c70cd5ea64d5a8729bc|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|1ef008f1ce0af7992af23d873d245b947b2bebab06f3fa1be46fef87dc98daf6|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|493fade6c5d4fcb7f6ea1f68be18c2ac793233516d0ad127325e26d870d72eff|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.shellcheck.Highlights.|e8394ee85a86ded7000cb015a2e3182e244eb5d343bcd365d100d18d850ff94f|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|8f1fd9d9feb6663c19239b567d5bdd5a666012cd7d866bbff8a44e47e61e26f8|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|fc5074166bec605e80831653d9280081795b4503830bbd6d26196875c4c0da59|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|d01d377ff49e46f8182cc1c1f74718970d4b4e33722754edae1785104dd385b0|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|6084831cf83e9e901c9ea1276e1175b0ddc609f20449dfd84e0f0c9539f4fd17|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|1ce70c599aa40c90f78faa6a708f8df7049aaac63ddb07cad6ce22b62398abe2|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|deb19b099a99e51bb32fb17a16e085f0d60c38a211fff498c6d02d7fe66b33b9|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|66d90ca8076efceeab394e6be3b14c11dec50e1ec8f4a8b5b1da42499adfcda7|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|3dddd7cb9aa4ee31e876bb0bbdc0a8533c6b675431ba519edc9a0610079dce42|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Highlights.|5a70004f406d08b256707872a79e94bbc03b77e483043b92c2bdabdcc201b5d8|region.yellowish markup.warning.sublime_linter|32",
+								"SL.shellcheck.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.shellcheck.Highlights.|567ae389a223d7d44fa365b9d7e4dd17ba5ece02c0f6681d9f234e11a6cc65ba|region.yellowish markup.warning.sublime_linter|32"
+							],
+							"apply_syntax_touched": true,
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1855.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/bud/dox/websave/dennis-comments-in-uv6.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/bud/git/lab/budlime/awesome/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6038,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								802,
+								802
 							]
 						],
 						"settings":
@@ -486,56 +683,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/home/bud/.config/sublime-text-3/Packages/User/i_opener.sublime-settings",
+					"buffer": 5,
+					"file": "/home/bud/git/lab/budlime/packages/iOpener/as/1.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 425,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								229,
-								229
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"apply_syntax_touched": true,
-							"git_gutter_is_enabled": false,
-							"syntax": "Packages/PackageDev/Package/Sublime Text Settings/Sublime Text Settings.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/bud/dox/not/sublime/todo.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7,
-								7
-							]
-						],
-						"settings":
-						{
-							"apply_syntax_touched": true,
-							"color_scheme": "Packages/PlainNotes/Color Schemes/Sticky-Yellow.tmTheme",
 							"git_gutter_is_enabled": false,
 							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
 						},
@@ -543,11 +709,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 6,
 					"file": "/home/bud/git/lab/budlime/youtube/essential-package-ProjectManager/Default (Linux).sublime-keymap",
 					"semi_transient": false,
 					"settings":
@@ -573,37 +739,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/bud/.config/sublime-text-3goodproj/Packages/zublime/Default (Linux).sublime-keymap",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 95,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								94,
-								94
-							]
-						],
-						"settings":
-						{
-							"apply_syntax_touched": true,
-							"git_gutter_is_enabled": false,
-							"syntax": "Packages/PackageDev/Package/Sublime Text Keymap/Sublime Text Keymap.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -660,7 +796,7 @@
 	"project": "sublime.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 98.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -669,6 +805,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"aw",
+				"budlime/awesome/README.md"
+			],
+			[
+				"pac",
+				"packages - budlime/Package Control/Package Control.sublime-settings"
+			],
 			[
 				"subla",
 				"src/sublaction"
@@ -692,10 +836,6 @@
 			[
 				"",
 				"notes/doit.note"
-			],
-			[
-				"aw",
-				"budlime/awesome/README.md"
 			],
 			[
 				"hi",
@@ -730,7 +870,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 221.0,
+	"side_bar_width": 364.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

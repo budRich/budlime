@@ -5,6 +5,7 @@ article | author | date | description
 [My Sublime Text Configuration](https://spifftastic.net/post/2014/05/my-sublime-text-configuration/) | [Noel Cower](https://spifftastic.net) | 14 May 2014 | run down of a users configuration that doesn't use Package Control
 https://www.macstories.net/roundups/sublime-text-2-and-markdown-tips-tricks-and-links/
 https://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-themes-color-schemes-and-cool-features
+https://fosstack.com/setup-sublime-python/
 
 # Screencasts
 | cast | description | episodes/duration | year |
@@ -63,6 +64,8 @@ Like “Expand Selection to Scope”. But better!
 [Extract Sublime Package] | [SublimeText] |
 Extract .sublime-package files to the Sublime Text Packages folder.
 [GitStatusBar] | [randy3k] | A more compact git status bar
+https://github.com/mattst/sublime-swap-boolean-polarity
+
 
 # Documentation
 [official documentation](https://www.sublimetext.com/docs/3/)  

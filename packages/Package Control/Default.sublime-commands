@@ -1,8 +1,8 @@
 [
-    // {
-    //     "caption": "Package Control: Add Repository",
-    //     "command": "add_repository"
-    // },
+    {
+        "caption": "Package Control: Add Repository",
+        "command": "add_repository"
+    },
     // {
     //     "caption": "Package Control: Add Channel",
     //     "command": "add_channel"
