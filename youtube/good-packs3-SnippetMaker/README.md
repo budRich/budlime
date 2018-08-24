@@ -60,5 +60,6 @@ Open project: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>p</kbd>
 The global colorscheme Used everywhere except sublime in the video, is called **Plan9** and generated with [mondo] based on a emacs theme by:
 [John Louis Del Rosario](https://github.com/john2x/plan9-theme.el)
 
-[videoSTppp]: https://youtu.be/-RcJaY0fdsM
+[videoSTppp]: https://youtu.be/F2Nb9fz_HNQ
+[mondo]: https://github.com/budlabs/mondo
 
