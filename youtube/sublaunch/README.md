@@ -1,4 +1,10 @@
-I strongly recommend having one *main* sublime window that is not bound to any specific
+These are shownotes for the youtube video:  
+
+# [Sublime Text - sublaunch][thisVideo]
+
+It shows how i use [sublaunch], to manage multiple sublime windows.  
+
+I strongly recommend having one *main* sublime window that is not bound to any specific project (this is done, by specifying a *profile name* that doesn't corresponds to a project name.)
 
 To see the available commandline options for sublime, enter `subl --help`:   
 
@@ -65,3 +71,4 @@ for_window [instance="sublime_main"] title_format "sublime", focus; exec --no-st
 
 [i3ass]: https://github.com/budlabs/i3ass
 [sublaunch]: https://github.com/budlabs/budlime/tree/master/scripts/sublaunch
+[thisVideo]: https://youtu.be/hTYbYhDfiHU
