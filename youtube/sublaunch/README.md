@@ -31,11 +31,18 @@ location.
 Below are some example keybindings and windowrules for i3:  
 
 ``` text
-# bind super+s to spawn or activate a sublime window with the profile "main" (it will have the instance name: "sublime_main" and if it exist a project named "main" open upon launch, if no such project exist, it will be launched with the last sublime session.
+
+# bind super+s to spawn or activate a sublime
+# window with the profile "main" (it will have the
+# instance name: "sublime_main" and if it exist a
+# project named "main" open upon launch, if no such
+# project exist, it will be launched with the last
+# sublime session.
 
 bindsym Mod4+s exec --no-startup-id sublaunch -p main
 
-# bind super+Shift+s to spawn or activate a sublime window with the profile "slave"
+# bind super+Shift+s to spawn or activate a sublime
+# window with the profile "slave"
 
 bindsym Mod4+s exec --no-startup-id sublaunch -p slave
 
@@ -45,8 +52,11 @@ assign [instance="sublime_main"] 2
 # assign the "slave" sublime window to workspace 3
 assign [instance="sublime_slave"] 3
 
-# remove window decorations from "slave" sublime window when it is created:
+# remove window decorations from "slave" sublime
+# window when it is created:
+
 for_window [instance="sublime_slave"] border none
+
 ```
 
 In the video I also use some scripts from [i3ass], they are not mandatory, but gives you even more customization options.
