@@ -6,6 +6,7 @@ article | author | date | description
 https://www.macstories.net/roundups/sublime-text-2-and-markdown-tips-tricks-and-links/
 https://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-themes-color-schemes-and-cool-features
 https://fosstack.com/setup-sublime-python/
+https://hackernoon.com/super-charge-your-sublime-text-3-to-increase-your-productivity-5d02c2c1b356
 
 # Screencasts
 | cast | description | episodes/duration | year |

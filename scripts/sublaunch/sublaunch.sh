@@ -25,20 +25,19 @@ main(){
     case "$option" in
       v | version ) printinfo version ; exit ;;
       h | help ) printinfo "${2:-}" shift 2 ; exit ;;
-      c|i|class|instance ) 
+      i | instance ) 
         SUBLIME_TITS_CRIT=${option:0:1}
         SUBLIME_TITS_SRCH="$2"
         shift 2
         ;;
-      p|profile ) 
+      p | profile ) 
         SUBLIME_TITS_CRIT=i
         SUBLIME_TITS_SRCH="sublime_$2"
         trg_proj="$2"
         shift 2 
         ;;
-      j|project ) 
-        trg_proj="$2" ; shift 2 ;;
-      o|options ) opts="${2}" ; shift 2 ;;
+      j | project ) trg_proj="$2" ; shift 2 ;;
+      o | options ) opts="${2}"   ; shift 2 ;;
       -- ) shift; break ;;
       * ) break ;;
     esac
@@ -47,24 +46,32 @@ main(){
   __tits+=($(tits -napf))
 
   if [[ -z "${__tits[1]:-}" ]]; then
-
     cmd=(subl)
+    [[ -n $(pidof sublime_text) ]] && cmd+=('--new-window')
+    
     [[ -n ${opts:-} ]] && cmd+=(${opts})
 
     : "${SUBLIME_PROJECTS_DIR:=$HOME/.config/sublime-text-3/Packages/User/Projects/}"
     project_ext="sublime-project"
-    proj_file="${SUBLIME_PROJECTS_DIR}/${trg_proj}.${project_ext}"
-    [[ -n ${trg_proj:-} ]] && [[ -f "$proj_file" ]] \
-      && cmd+=("--project" "$proj_file")
 
+    [[ -n ${trg_proj:-} ]] && {
+      proj_file="${SUBLIME_PROJECTS_DIR}/${trg_proj}.${project_ext}"
+      [[ -f "$proj_file" ]] \
+        && cmd+=("--project" "$proj_file")
+    }
+    
     eval "${cmd[@]}"
+    echo "${cmd[@]}"
 
     while [[ -z "${__tits[1]:-}" ]]; do
-      __tits=($(tits -napf -i sublime_text))
+        __tits=($(tits -napf -i sublime_text))
       sleep .15
     done
 
-    cmd=('xdotool' set_window '--classname' "$SUBLIME_TITS_SRCH" ${__tits[0]})
+    cmd=('xdotool' set_window)
+    cmd+=('--classname' "$SUBLIME_TITS_SRCH")
+    cmd+=(${__tits[0]})
+
     eval "${cmd[@]}"
 
   fi
@@ -98,9 +105,6 @@ Show version and exit.
 
 `-h|--help`
 Show help and exit.
-
-`-c|--class` CLASS
-Set the criterion to be a window with the class CLASS.  
 
 `-i|--instance` INSTANCE  
 Set the criterion to be a window with the instance name 
