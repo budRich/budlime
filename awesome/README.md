@@ -7,6 +7,8 @@ https://www.macstories.net/roundups/sublime-text-2-and-markdown-tips-tricks-and-
 https://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-themes-color-schemes-and-cool-features
 https://fosstack.com/setup-sublime-python/
 https://hackernoon.com/super-charge-your-sublime-text-3-to-increase-your-productivity-5d02c2c1b356
+[vim and sublime](https://gist.github.com/skube/90234f30cf3c17957040) by skube
+https://github.com/gerardroche/sublime-sensible
 
 # Screencasts
 | cast | description | episodes/duration | year |
@@ -14,7 +16,7 @@ https://hackernoon.com/super-charge-your-sublime-text-3-to-increase-your-product
 |[What you need to know]|from budlabs, short intro to the strangeness that is sublime. | 27:22 | 2018
 |[laracst]| Great series about setting up sublime in particular for devloping PHP with laravel. But lots of useful tips for general usage as well. | 11 | 2017
 https://www.youtube.com/watch?v=Sxkrp9iTgZ8&list=PLIM28v8sWGUcz6LKXlxTn0m1OFCKarKM-
-
+https://www.youtube.com/playlist?list=PLLnpHn493BHEYF4EX3sAhVG2rTqCvLnsP | levelUpTuts
 
 [What you need to know]: https://youtu.be/uJrQkzAncZ0
 [laracst]: https://laracasts.com/series/professional-php-workflow-in-sublime-text/
