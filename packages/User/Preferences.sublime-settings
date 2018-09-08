@@ -102,7 +102,6 @@
 	],
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/mondo/mondo.tmTheme",
-	"figlet_font": "3-d",
 	"font_face": "Hack",
 	"font_options":
 	[
@@ -127,12 +126,12 @@
 		"Matlab",
 		"Objective-C",
 		"OCaml",
+		"PackageDev",
 		"Pascal",
 		"R",
 		"Rust",
 		"Scala",
 		"SublimeLinter-contrib-write-good",
-		"SyntaxManager",
 		"TCL",
 		"Textile"
 	],

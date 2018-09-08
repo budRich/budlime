@@ -2,7 +2,8 @@
 	"bootstrapped": true,
 	"ignore_vcs_packages":
 	[
-		"SimpleSyntax"
+		"SimpleSyntax",
+		"iOpener"
 	],
 	"in_process_packages":
 	[
@@ -14,20 +15,14 @@
 		"Chain of Command",
 		"ChannelRepositoryTools",
 		"Color Highlighter",
-		"DA CS",
 		"DA UI",
-		"Dockerfile Syntax Highlighting",
 		"ExpandRegion",
 		"Extract Sublime Package",
-		"Figlet Big ASCII Text",
 		"File Rename",
 		"GitGutter",
-		"Golang Build",
-		"Golang Tools Integration",
 		"Horizontal Scroll",
 		"HTML-CSS-JS Prettify",
-		"iOpener",
-		"LiveReload",
+		"Increment Selection",
 		"Man Page Support",
 		"MarkdownEditing",
 		"MarkdownPreview",
@@ -42,12 +37,12 @@
 		"SublimeLinter-contrib-write-good",
 		"SublimeLinter-pycodestyle",
 		"SublimeLinter-shellcheck",
-		"SyntaxManager",
 		"Table Editor",
 		"Zen Tabs"
 	],
 	"repositories":
 	[
+		"https://github.com/budRich/iOpener.git"
 	],
 	"submit_usage": false
 }
