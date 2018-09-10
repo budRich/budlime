@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 __name="sublaction"
-__version="0.01"
+__version="0.011"
 __author="budRich"
 __contact='robstenklippa@gmail.com'
 __created="2018-08-15"
-__updated="2018-08-23"
+__updated="2018-09-10"
 
 main(){
 
@@ -65,7 +65,7 @@ main(){
 
     cp "${__sblfil}" "${trgfil}"
 
-  elif [[ $__sbldir =~ ^${__gitDir} ]];then
+  elif [[ $__sblbasedir =~ ^${__gitDir} ]];then
     __gfiles=("${__sblbase}")
     commit_to_git
   else # assume dotfile, move to ~/git...
