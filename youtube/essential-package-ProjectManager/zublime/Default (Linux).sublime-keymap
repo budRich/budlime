@@ -1,7 +1,0 @@
-[
-	{ 
-		"keys": ["alt+p"],  
-		"command": "open_file", 
-		"args": {"file": "${project}"} 
-	},
-]

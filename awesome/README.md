@@ -18,6 +18,7 @@ https://github.com/gerardroche/sublime-sensible
 https://www.youtube.com/watch?v=Sxkrp9iTgZ8&list=PLIM28v8sWGUcz6LKXlxTn0m1OFCKarKM-
 https://www.youtube.com/playlist?list=PLLnpHn493BHEYF4EX3sAhVG2rTqCvLnsP | levelUpTuts
 
+[Sublime Text 2](https://www.youtube.com/watch?v=5AV9zJH2n_Y&list=PLmJpVU-TdmVtTLooKvX3jcrOziPjlWrD4) | 33 videos
 [What you need to know]: https://youtu.be/uJrQkzAncZ0
 [laracst]: https://laracasts.com/series/professional-php-workflow-in-sublime-text/
 
@@ -69,6 +70,12 @@ Extract .sublime-package files to the Sublime Text Packages folder.
 [GitStatusBar] | [randy3k] | A more compact git status bar
 https://github.com/mattst/sublime-swap-boolean-polarity
 
+https://packagecontrol.io/packages/SaneSnippets
+https://github.com/math2001/BetterSnippetManager
+https://packagecontrol.io/packages/BetterFindBuffer
+https://github.com/aziz/PlainTasks
+
+[PlainTasks video]: https://www.youtube.com/watch?v=LsfGhjRVJwk
 
 # Documentation
 [official documentation](https://www.sublimetext.com/docs/3/)  
