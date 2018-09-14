@@ -1,0 +1,4 @@
+[
+  { "keys": ["f2"], "command": "side_bar_move" },
+  { "keys": ["ctrl+delete"], "command": "side_bar_delete" },
+]
