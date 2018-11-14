@@ -21,6 +21,7 @@
 				"Package Control.cache",
 				"Projects",
 				"Snippets",
+				"snippets",
 				"Color Highlighter"
 			],
 			"name": "settings - packages",
@@ -35,8 +36,12 @@
 			"path": "."
 		},
 		{
+			"file_include_patterns":
+			[
+				"*.sane-snippet"
+			],
 			"name": "snippets",
-			"path": "/home/bud/.config/sublime-text-3/Packages/User/Snippets"
+			"path": "/home/bud/.config/sublime-text-3/Packages/User/snippets"
 		},
 		{
 			"name": "notes",
@@ -88,15 +93,29 @@
 			"path": "/home/bud/git/lab/budlime/packages"
 		},
 		{
-			"folder_exclude_patterns":
-			[
-				"package"
-			],
-			"path": "/home/bud/git/lab/budlime"
-		},
-		{
 			"name": "scripts",
 			"path": "/home/bud/src/bash/sublime"
+		},
+		{
+			"folder_exclude_patterns":
+			[
+				".*"
+			],
+			"path": "/home/bud/git/lab/budlime/awesome"
+		},
+		{
+			"folder_exclude_patterns":
+			[
+				".*"
+			],
+			"path": "/home/bud/git/dots/odats-yt-subl"
+		},
+		{
+			"folder_exclude_patterns":
+			[
+				".*"
+			],
+			"path": "/home/bud/git/clones/SublimeScraps"
 		}
 	]
 }

@@ -58,7 +58,18 @@
      ------------------------------------------------ */  
   
   // >> expand region
-
+  {
+    "keys": ["alt+t"], 
+    "command": "fast_open", "args": {"file": "~/dox/not/${project_base_name}/todo"} 
+  },
+  {
+    "keys": ["alt+n"], 
+    "command": "fast_open", "args": {"file": "~/dox/not/${project_base_name}/note"} 
+  },
+  {
+    "keys": ["alt+l"], 
+    "command": "fast_open", "args": {"file": "~/dox/not/${project_base_name}/links.md"} 
+  },
   
   // >> C#
   // end with semi and new line (macro)
@@ -78,7 +89,8 @@
   { "keys": ["ctrl+alt+["], "command": "reindent", "args": {"single_line": false}},
 
   // >> File Rename
-  { "keys": ["f2"], "command": "file_rename" },
+  
+  // { "keys": ["f2"], "command": "file_rename" },
 
   // >> TwoFont & TwoFace
   { "keys": ["ctrl+0"], "command": "two_font" },

@@ -12,11 +12,11 @@ main(){
   : "${SUBLIME_TITS_CRIT:=c}"
   : "${SUBLIME_TITS_SRCH:=Sublime_text}"
 
-  while getopts :vhsanpfdlc:i: option; do
+  while getopts :vhsanpfdloc:i: option; do
     case "${option}" in
       s|p|f|d|l|n|a) __ret+=("$option") ;;
       c|i) SUBLIME_TITS_CRIT="${option}" SUBLIME_TITS_SRCH="${OPTARG}" ;;
-
+      o) __follow=1 ;;
       v) printf '%s\n' \
            "$NAME - version: $VERSION" \
            "updated: $UPDATED by $AUTHOR"
@@ -59,6 +59,12 @@ main(){
   ')"
 
   ((${#__ret[@]}==0)) && __ret[0]=f
+
+  if ((__follow==1)); then
+    __tits[f]="$(readlink -f "${__tits[f]}")"
+    __tits[d]="${__tits[f]%/*}"
+    __tits[l]="${__tits[f]/$HOME/'~'}"
+  fi
 
   for r in "${__ret[@]}"; do
     [[ -n ${__tits[$r]} ]] && echo "${__tits[$r]}"

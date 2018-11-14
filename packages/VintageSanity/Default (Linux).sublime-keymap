@@ -31,6 +31,12 @@
     "context": [{"key": "setting.command_mode"}] },
   { "keys": ["[","s"], "command": "prev_misspelling", 
     "context": [{"key": "setting.command_mode"}] },
+
+  // >> Tabclose
+  {
+    "keys": ["Z","Q"], "command": "close",
+    "context": [{"key": "setting.command_mode"}],
+  },
     
   // >> Tabswitching
   { "keys": ["J"], "command": "next_view", 

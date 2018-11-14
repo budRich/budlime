@@ -130,7 +130,8 @@
                             "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", 
                             "*.psd", "*.db", "*.sublime-workspace"],
 
-  "folder_exclude_patterns": [".sass-cache", ".svn", ".git", ".hg", "CVS"],
+  "folder_exclude_patterns": [".sass-cache", ".svn", ".hg", "CVS"],
+  // "folder_exclude_patterns": [".sass-cache", ".svn", ".git", ".hg", "CVS"],
 
   // These files will still show up in the side bar, but won't be included in
   // Goto Anything or Find in Files. By adding "*.sublime-package", 

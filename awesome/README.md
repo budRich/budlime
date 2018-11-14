@@ -17,7 +17,7 @@ https://github.com/gerardroche/sublime-sensible
 |[laracst]| Great series about setting up sublime in particular for devloping PHP with laravel. But lots of useful tips for general usage as well. | 11 | 2017
 https://www.youtube.com/watch?v=Sxkrp9iTgZ8&list=PLIM28v8sWGUcz6LKXlxTn0m1OFCKarKM-
 https://www.youtube.com/playlist?list=PLLnpHn493BHEYF4EX3sAhVG2rTqCvLnsP | levelUpTuts
-
+[Sublime Package Development] | in depth tutorial series on how to create packages for Sublime | 5 | 2018
 [Sublime Text 2](https://www.youtube.com/watch?v=5AV9zJH2n_Y&list=PLmJpVU-TdmVtTLooKvX3jcrOziPjlWrD4) | 33 videos
 [What you need to know]: https://youtu.be/uJrQkzAncZ0
 [laracst]: https://laracasts.com/series/professional-php-workflow-in-sublime-text/
@@ -45,18 +45,16 @@ This package adds file icons to the sidebar. The author, ihodev, has created sev
 Sublime text plugin to run a chain of commands
 [DA UI]             | [ihodev]       |
 Adaptive, Customizable, Elegant UI Theme and Color Schemes for Sublime Text 3
-[File Rename]       | [brianlow]     |
-Rename files from the SublimeText3 command palette. No mouse required.
 [iOpener]           | [rosshemsley]  |
 Open files from path, with completion, listings and history. Similar to Emacs find file.
 [PackageDev]        | [SublimeText]  |
 Tools to ease the creation of snippets, syntax definitions, etc. for Sublime Text.
 [PlainNotes]        | [aziz]         |
 Simple and pleasant note taking for SublimeText
+[BetterFindBuffer] | [aziz] | -
+[PlainTasks] | [aziz] | -
 [ProjectManager]    | [randy3k]      |
 Project Manager for Sublime Text 3
-[SnippetMaker]      | [jugyo]        |
-Makes managing snippets easy in Sublime Text
 [SublimeLinter]     | [SublimeLinter] |
 The code linting framework for Sublime Text 3
 [Zen Tabs]          | [travmik]      |
@@ -68,12 +66,17 @@ Like “Expand Selection to Scope”. But better!
 [Extract Sublime Package] | [SublimeText] |
 Extract .sublime-package files to the Sublime Text Packages folder.
 [GitStatusBar] | [randy3k] | A more compact git status bar
-https://github.com/mattst/sublime-swap-boolean-polarity
+[quick file move] | [wulftone] | -
+[DeleteCurrentFile] | [yaworsw] | -
+[ReadmePlease] | [roadhump] | -
+[swap boolean polarity] | [mattst] | -
+[SaneSnippets] | [bobthecow] | -
+[BetterSnippetManager] | [math2001] | -
+[swap boolean polarity] | [mattst] | -
+[PackageResourceViewer] [skuroda] | -
+[OverrideAudit] | [odatnurd] | -
 
-https://packagecontrol.io/packages/SaneSnippets
-https://github.com/math2001/BetterSnippetManager
-https://packagecontrol.io/packages/BetterFindBuffer
-https://github.com/aziz/PlainTasks
+## [STealthy-and-haSTy]
 
 [PlainTasks video]: https://www.youtube.com/watch?v=LsfGhjRVJwk
 
