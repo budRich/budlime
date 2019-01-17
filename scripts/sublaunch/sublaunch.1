@@ -1,78 +1,101 @@
-.TH SUBLAUNCH 1 2018\-08\-06 Linux "User Manuals"
+.TH SUBLAUNCH 1 2019\-01\-17 Linx "User Manuals"
 .SH NAME
 .PP
-\fB\fCsublaunch\fR \- Run or raise sublime with a specific profile and file
+\fB\fCsublaunch\fR \- Run or raise sublime with a
+specific profile and file
 
 .SH SYNOPSIS
 .PP
-\fB\fCsublaunch\fR [\fB\fC\-v\fR|\fB\fC\-h\fR]
+.RS
+
+.nf
+sublaunch [\-\-instance|\-i INSTANCE] [\-\-options|\-o  OPTIONS] [\-\-project|\-j  PROJECT] [FILE]
+sublaunch [\-\-class|\-c    CLASS] [\-\-options|\-o  OPTIONS] [\-\-project|\-j  PROJECT] [FILE]
+sublaunch [\-\-profile|\-p  PROFILE] [\-\-options|\-o  OPTIONS] [\-\-project|\-j  PROJECT] [FILE]
+sublaunch \-\-help|\-h
+sublaunch \-\-version|\-v
+
+.fi
+.RE
 
 .SH DESCRIPTION
 .PP
-\fB\fCsublaunch\fR takes a number of criterion to identify
-a sublime window. If \fB\fCsublaunch\fR can' find a open window
-matching the criteria. A new sublime window will be opened
-and it's \fBinstance name\fP will be renamed to match the criteria.
+\fB\fCsublaunch\fR takes a number of criterion to
+identify a sublime window. If \fB\fCsublaunch\fR can'
+find a open window matching the criteria. A new
+sublime window will be opened and it's \fBinstance
+name\fP will be renamed to match the criteria.
 
 .SH OPTIONS
 .PP
-\fB\fC\-v|\-\-version\fR
-Show version and exit.
-
-.PP
-\fB\fC\-h|\-\-help\fR
-Show help and exit.
-
-.PP
-\fB\fC\-c|\-\-class\fR CLASS
-Set the criterion to be a window with the class CLASS.
-
-.PP
-\fB\fC\-i|\-\-instance\fR INSTANCE
+\fB\fC\-\-instance\fR|\fB\fC\-i\fR INSTANCE
 .br
-Set the criterion to be a window with the instance name
-INSTANCE. Defaults to the value of SUBLIME\_TITS\_SRCH.
+Set the criterion to be a window with the class
+name CLASS. Defaults to the value of
+SUBLIME\_TITS\_SRCH.
 
 .PP
-\fB\fC\-p|\-\-profile\fR PROFILE
+\fB\fC\-\-options\fR|\fB\fC\-o\fR OPTIONS
+
+.PP
+\fB\fC\-\-project\fR|\fB\fC\-j\fR PROJECT
 .br
-Set the criterion to be a window with the instance name:
-\fB\fCsublime\_PROFILE\fR\&. And if a project in $PROJECT\_DIR with
-the name PROFILE.sublime\-project exist. That project will
+If a project in $PROJECT\_DIR with the name
+PROJECT.sublime\-project exist. That project will
+get opened if the window doesn't exist. If both
+this and \fB\fC\-\-profile\fR is set, \fB\fC\-\-profile\fR will have
+priority.
+
+.PP
+\fB\fC\-\-class\fR|\fB\fC\-c\fR CLASS
+
+.PP
+\fB\fC\-\-profile\fR|\fB\fC\-p\fR PROFILE
+.br
+Set the criterion to be a window with the
+instance name: \fB\fCsublime\_PROFILE\fR\&. And if a project
+in $PROJECT\_DIR with the name
+PROFILE.sublime\-project exist. That project will
 get opened if the window doesn't exist.
 
 .PP
-\fB\fC\-j|\-\-project\fR PROJECT
-If a project in $PROJECT\_DIR with
-the name PROJECT.sublime\-project exist. That project will
-get opened if the window doesn't exist. If both this
-and \fB\fC\-\-profile\fR is set, \fB\fC\-\-profile\fR will have priority.
+\fB\fC\-\-help\fR|\fB\fC\-h\fR
+.br
+Show help and exit.
 
 .PP
-\fB\fC\-o|\-\-otions\fR OTIONS
+\fB\fC\-\-version\fR|\fB\fC\-v\fR
 .br
-Additional commandline otions that will get passed to sublime
-sublime (\fB\fCsubl\fR) when a new window is created.
+Show version and exit
 
 .SH ENVIRONMENT
 .PP
-\fB\fCFOOCONF\fR
-If non\-null the full pathname for an alternate system wide \fI/etc/foo.conf\fP\&.
-Overridden by the \fB\fC\-c\fR option.
+\fB\fCSUBLIME\_TITS\_CRIT\fR
+.br
+Default criteria to use if \fB\fC\-\-class\fR or
+\fB\fC\-\-instance\fR is not set. defaults to: class
+
+.PP
+\fB\fCSUBLIME\_TITS\_SRCH\fR
+.br
+Default search string to use if \fB\fC\-\-class\fR or
+\fB\fC\-\-instance\fR is not set. defaults to: Sublime\_text
+
+.PP
+\fB\fCSUBLIME\_PROJECTS\_DIR\fR
+.br
+Directory where sublime project files are
+located. defaults to:
+$XDG\_CONFIG\_HOME/sublime\-text\-3/Packages/User/Projects
 
 .SH DEPENDENCIES
 .PP
-go\-md2man
-i3get
-Sublime Text
+\fB\fCbash\fR \fB\fCxdotool\fR \fB\fCsublime\_text\fR
 
-.SH AUTHOR
 .PP
 budRich 
-\[la]robstenklippa@gmail.com\[ra]
-
-\[la]https://budrich.github.io\[ra]
+\[la]https://github.com/budlabs\[ra]
 
 .SH SEE ALSO
 .PP
-wmctrl(1)
+bash(1), xdotool(1),
