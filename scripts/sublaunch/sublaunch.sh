@@ -45,6 +45,7 @@ main(){
 
   __tits+=($(tits -napf))
 
+
   if [[ -z "${__tits[1]:-}" ]]; then
     cmd=(subl)
     [[ -n $(pidof sublime_text) ]] && cmd+=('--new-window')
@@ -61,12 +62,12 @@ main(){
     }
     
     eval "${cmd[@]}"
-    echo "${cmd[@]}"
 
     while [[ -z "${__tits[1]:-}" ]]; do
         __tits=($(tits -napf -i sublime_text))
       sleep .15
     done
+
 
     cmd=('xdotool' set_window)
     cmd+=('--classname' "$SUBLIME_TITS_SRCH")
@@ -76,8 +77,16 @@ main(){
 
   fi
 
-  [[ -f ${__lastarg:-} ]] && subl "$__lastarg"
+  echo "${__tits[0]}"
+
   xdotool windowfocus "${__tits[0]}"
+  [[ -f ${__lastarg:-} ]] && {
+    sleep .3
+    xdotool windowfocus "${__tits[0]}"
+    subl "$__lastarg"
+    sleep .1
+  } &
+
 
 }
 
