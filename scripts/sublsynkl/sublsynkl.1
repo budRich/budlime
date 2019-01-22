@@ -1,0 +1,253 @@
+.TH SUBLSYNKL 1 2019\-01\-18 Linx "User Manuals"
+.SH NAME
+.PP
+\fB\fCsublsynkl\fR \- Creates a settings project as an
+alternative to the default sublime settings
+system.
+
+.SH SYNOPSIS
+.PP
+.RS
+
+.nf
+sublsynkl \-\-packages|\-p PACKAGE\_DIRECTORY [\-\-clean|\-c] [\-\-blank|\-d] [\-\-extract|\-e] [\-\-force|\-f] 
+sublsynkl \-\-sync|\-s PACKAGE\_DIRECTORY  [\-\-force|\-f]
+sublsynkl \-\-help|\-h
+sublsynkl \-\-version|\-v
+
+.fi
+.RE
+
+.SH DESCRIPTION
+.PP
+\fB\fCsublsynkl\fR extracts files from installed
+packages and creates a project file that is
+intended to be a better alternative to sublimes
+default settings system.
+
+.PP
+\fB\fCsublsynkl\fR will extract all \fIreadme.md\fP files
+from all installed packages, and move the readme
+to the directory
+\fB$SUBLIME\_DIR/Packages/User/dox/packages\fP,
+where the files will be renamed to:
+\fIpackage\-name.md\fP\&.  Any
+\fIsublime\-settings\fP,\fIsublime\-keymap\fP and
+\fIsublime\-mousemap\fP files found in the archived
+packages will get moved and renamed  (\fIif needed\fP)
+to \fB$SUBLIME\_DIR/Packages/User/dox/packages\fP\&.
+
+.PP
+\fIsublime\-settings\fP will also get copied to
+\fB$SUBLIME\_DIR/Packages/User\fP  if the file
+doesn't already exist there.
+
+.PP
+\fB\fCsublsynkl\fR will also create a directory with the
+package name inside \fB$SUBLIME\_DIR/Packages\fP\&.
+\fB\fCsublsynkl\fR will add blank \fIsublime\-settings\fP, in
+these directories.  (\fIfiles in this directory will
+overwrite the same files in the \fBpacked\fP version
+of the package.\fP).
+
+.PP
+The thought of this is to only have one settings
+file (\fIuser\fP) as opposed to two the default
+behaviour of sublime (read\-only default and user),
+One advantage of this is that it is easier to f.i.
+disable a default keybinding. And all default
+settings are backed up as described above, in case
+something breaks.
+
+.PP
+\fB\fCsublsynkl\fR will also do this with the \fIDefault\fP
+\fBcore\fP package
+(\fB$SUBLIME\_SRC/Packages/Default.sublime\-package\fP),
+and put the \fIuser\fP settings inside the directory:
+\fB$SUBLIME\_DIR/Packages/zublime\fP\&. The reason for
+this is that sublime removes all comments, empty
+lines and  auto sort,
+\fB$SUBLIME\_DIR/Packages/User/default.sublime\-settings\fP,
+when the settings are updated (when f.i. the user
+changes the theme from the command palette.).
+
+.PP
+\fB\fCsublsynkl\fR will also create a
+\fIsublime.sublime\-project\fP file.
+
+.SH OPTIONS
+.PP
+\fB\fC\-\-packages\fR|\fB\fC\-p\fR PACKAGE\_DIRECTORY
+.br
+Copy files withing \fIPACKAGE\_DIRECTORY\fP before any
+other operations.
+
+.PP
+\fB\fC\-\-clean\fR|\fB\fC\-c\fR
+.br
+Clean install. Move the current
+\fB$SUBLIME\_DIR/Packages\fP to \fI$SUBLIME\_DIR/backup\fP
+before any other operations.
+
+.PP
+\fB\fC\-\-blank\fR|\fB\fC\-d\fR
+.br
+Blank extracted default files. (only have effect
+if \fB\fC\-\-extract\fR is used)
+
+.PP
+\fB\fC\-\-extract\fR|\fB\fC\-e\fR
+.br
+Extract packages default setting files to
+\fB$SUBLIME\_DIR/Packages\fP\&.
+
+.PP
+\fB\fC\-\-force\fR|\fB\fC\-f\fR
+.br
+Force files from PACKAGE\_DIRECTORY to overwrite,
+no matter if target file exists (when used with
+\fB\fC\-\-packages\fR)  or is newer (when used with
+\fB\fC\-\-sync\fR).
+
+.PP
+\fB\fC\-\-sync\fR|\fB\fC\-s\fR PACKAGE\_DIRECTORY
+.br
+Sync files in \fIPACKAGE\_DIRECTORY\fP with files in
+\fB$SUBLIME\_DIR/Packages\fP\&. Works both ways, the
+newest file will overwrite the oldest.
+
+.PP
+\fB\fC\-\-help\fR|\fB\fC\-h\fR
+.br
+Show help and exit.
+
+.PP
+\fB\fC\-\-version\fR|\fB\fC\-v\fR
+.br
+Show version and exit.
+
+.SH EXAMPLES
+.PP
+.RS
+
+.nf
+  iOpener
+    iOpener.sublime\-settings
+    Default.sublime\-keymap
+    random.file
+    A\-dir/
+      picture.jpg
+  A File Icon
+    A File Icon.sublime\-settings
+    README.md
+
+.fi
+.RE
+
+.PP
+Executing the following command:
+.br
+\fB\fC$ subextract \-\-packages \~/tmp/MyPacks\fR
+
+.PP
+Will result in this inside \fI$SUBLIME\_DIR\fP
+
+.PP
+.RS
+
+.nf
+\~/.config/sublime\-text\-3/Packages
+  iOpener
+    Default.sublime\-keymap
+    random.file
+    A\-dir/
+      picture.jpg
+  User
+    iOpener.sublime\-settings
+    A File Icon.sublime\-settings
+
+.fi
+.RE
+
+.PP
+Conclusion: all *\&.sublime\-\&settings will get
+copied to  \fB$SUBLIME\_DIR/Packages/User\fP and all
+other files, (\fIwith the exception for files named
+\fB\fCREADME.md\fR\fP), will be copied to
+\fB$SUBLIME\_DIR/Packages\fP  with retained directory
+structure. It will not overwrite any existing
+files.
+
+.SH ENVIRONMENT
+.PP
+\fB\fCSUBLIME\_DIR\fR
+.br
+amani[environ][0][SUBLIME\_DIR][description]
+defaults to: $XDG\_CONFIG\_HOME/sublime\-text\-3
+
+.PP
+\fB\fCSUBLIME\_SRC\fR
+.br
+amani[environ][1][SUBLIME\_SRC][description]
+defaults to: /opt/sublime\_text
+
+.SH FILES
+.PP
+SUBLIME\_DIR \- sublimes config directory.
+.br
+defaults to: \fI$HOME/.config/sublime\-text\-3\fP
+
+.PP
+\_optdir \- core package directory defaults to:
+\fI/opt/sublime\_text/Packages\fP
+
+.PP
+\_tmpdir \- temporary directory where package files
+get extracted to.
+.br
+defaults to: \fI/tmp/subextract\fP
+
+.PP
+\_zipdir \- installed (\fIpacked\fP) packages
+directory.
+.br
+defaults to: \fI$SUBLIME\_DIR/Installed Packages\fP
+
+.PP
+\_pkgdir \- (\fIunpacked\fP) packages directory.
+.br
+defaults to: \fI$SUBLIME\_DIR/Packages\fP
+
+.PP
+\_usrdir \- User package directory.
+.br
+defaults to: \fI$\_pkgdir/User\fP
+
+.PP
+\_docdir \- directory where readmes and wikis are
+stored.
+.br
+defaults to: \fI$\_usrdir/dox\fP
+
+.PP
+\_defdir \- directory where default config files
+are backed up.
+.br
+defaults to: \fI$\_docdir/defaults\fP
+
+.PP
+$\_usrdir/projects/\fIsublime.sublime\-project\fP
+.br
+project file.
+
+.SH DEPENDENCIES
+.PP
+\fB\fCbash\fR \fB\fCunzip\fR \fB\fCsublime\_text\fR
+
+.PP
+budRich 
+\[la]https://github.com/budlabs\[ra]
+
+.SH SEE ALSO
+.PP
+bash(1), unzip(1),

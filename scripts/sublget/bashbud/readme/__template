@@ -14,21 +14,23 @@ wrap:     60
 
 %%readme_install%%
 %%fi%%
-%%if synopsis%%
-
-### usage
-
-```text
-%%synopsis%%
-```
 %%if long_description%%
+
+USAGE
+-----
 
 %%long_description%%
 
 %%fi%%
+%%if synopsis%%
 
 OPTIONS
 -------
+
+```text
+%%synopsis%%
+```
+
 %%for o in options%%
 
 %%printf '`--%s`' 'o'%%
@@ -58,6 +60,7 @@ OPTIONS
 
 EXAMPLES
 --------
+
 %%examples%%
 %%fi%%
 %%if -d releasenotes%%

@@ -68,6 +68,12 @@ ENVIRONMENT
 defaults to: %%s[default]%%
 %%done%%
 %%fi%%
+%%if files%%
+
+FILES
+-----
+%%files%%
+%%fi%%
 %%if dependencies%%
 
 DEPENDENCIES
