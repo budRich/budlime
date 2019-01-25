@@ -1,0 +1,87 @@
+[
+  // Find always opens replace panel.
+  // Auto slurp to find field. If panel is not visible.
+  // Panel stays on enter, but document gets focus.
+
+  { "keys": ["/"], "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", 
+                        "reverse": "false", 
+                        "select_text": "false"}],
+        ["slurp_find_string"]
+      ]
+    },
+    "context": [{"key": "setting.command_mode"}]
+  }, 
+  { "keys": ["?"], "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", 
+                        "reverse": "true", 
+                        "select_text": "false"}],
+        ["slurp_find_string"]
+      ]
+    },
+    "context": [{"key": "setting.command_mode"}]
+  },
+
+  { "keys": ["/"], "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", 
+                        "reverse": "false", 
+                        "select_text": "false"}],
+      ]
+    },
+    "context": [
+      { "key": "setting.command_mode"},
+      { "key": "panel", "operator": "equal", "operand": "replace" }
+    ]
+  }, 
+  
+  { "keys": ["?"], "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", 
+                        "reverse": "true", 
+                        "select_text": "false"}],
+      ]
+    },
+    "context": [
+      { "key": "setting.command_mode"},
+      { "key": "panel", "operator": "equal", "operand": "replace" }
+    ]
+  },
+
+  { "keys": ["enter"], "command": "focus_group", "args": {"group": 0 }, "context":
+      [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+  },
+
+  {
+    "keys": ["f3"], 
+    "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", "reverse": false}],
+        ["focus_group", { "group": 0 }],
+        ["slurp_find_string"]
+      ]
+    },
+    "context":
+    [
+      { "key": "panel", "operator": "equal", "operand": "replace" }
+    ]
+  },
+  {
+    "keys": ["shift+f3"], 
+    "command": "chain", 
+    "args": {
+      "commands": [
+        ["show_panel", {"panel": "replace", "reverse": false}],
+        ["focus_group", { "group": 0 }],
+        ["slurp_replace_string"]
+      ]
+    }
+  },
+]
