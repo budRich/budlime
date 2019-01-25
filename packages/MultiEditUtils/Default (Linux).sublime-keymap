@@ -1,0 +1,78 @@
+[
+  { "keys": ["shift+escape"], "command": "jump_to_last_region" },
+  { "keys": ["ctrl+alt+u"], "command": "add_last_selection" },
+  { "keys": ["ctrl+alt+c"], "command": "cycle_through_regions" },
+  { "keys": ["ctrl+alt+n"], "command": "normalize_region_ends" },
+  { "keys": ["ctrl+alt+,"], "command": "split_selection" },
+  { "keys": ["ctrl+alt+s"], "command": "strip_selection" },
+  { "keys": ["ctrl+alt+r"], "command": "remove_empty_regions", "context":
+    [
+      {"key": "setting.is_widget", "operator": "equal", "operand": false}
+    ]
+  },
+
+  // Multi Find All example keybindings, uncomment to activate
+
+  // // main keybinding, set the search type you're most comfortable with, default is Case+Word
+  // { "keys": ["ctrl+alt+f", "ctrl+alt+f"],       "command": "multi_find_all", "args": {"case": true, "word": true}},
+
+  // { "keys": ["ctrl+alt+f", "ctrl+c"],           "command": "multi_find_all", "args": {"case": false}},
+  // { "keys": ["ctrl+alt+f", "c"],                "command": "multi_find_all", "args": {"case": true}},
+  // { "keys": ["ctrl+alt+f", "ctrl+w"],           "command": "multi_find_all", "args": {"case": false, "word": true}},
+  // { "keys": ["ctrl+alt+f", "w"],                "command": "multi_find_all", "args": {"case": true, "word": true}},
+  // { "keys": ["ctrl+alt+f", "q"],                "command": "multi_find_all", "args": {"case": true, "word": true, "ignore_comments": true}},
+
+  // // find all with regex search, additive(on top of current selection) or subtractive
+  // { "keys": ["ctrl+alt+f", "r"],                "command": "multi_find_all_regex"},
+  // { "keys": ["ctrl+alt+f", "ctrl+alt+r"],       "command": "multi_find_all_regex", "args": {"subtract": true}},
+  // { "keys": ["ctrl+alt+f", "ctrl+r"],           "command": "multi_find_all_regex", "args": {"case": false}},
+  // { "keys": ["ctrl+alt+f", "ctrl+alt+shift+r"], "command": "multi_find_all_regex", "args": {"subtract": true, "case": false}},
+
+
+  { "keys": ["alt+d"], "command": "selection_fields", "args": {"mode": "smart"} },
+  { "keys": ["escape"], "command": "selection_fields",
+    "args": {"mode": "pop"},
+    "context":
+    [
+      { "key": "is_selection_field" },
+      { "key": "selection_fields_escape_enabled" },
+      // set the default precedence to be less than snippet fields
+      { "key": "has_next_field", "operator": "equal", "operand": false },
+      { "key": "has_prev_field", "operator": "equal", "operand": false },
+      { "key": "panel_visible", "operator": "equal", "operand": false },
+      { "key": "overlay_visible", "operator": "equal", "operand": false },
+      // usually we would use popup_visible, but this is ST3 only
+      { "key": "meu_popup_visible_proxy", "operator": "equal", "operand": false },
+      { "key": "auto_complete_visible", "operator": "equal", "operand": false }
+    ]
+  },
+  { "keys": ["shift+escape"], "command": "selection_fields",
+    "args": {"mode": "remove"},
+    "context":
+    [
+      { "key": "is_selection_field" },
+      { "key": "selection_fields_escape_enabled" }
+    ]
+  },
+  { "keys": ["tab"], "command": "selection_fields",
+    "args": {"mode": "smart"},
+    "context":
+    [
+      { "key": "is_selection_field" },
+      { "key": "selection_fields_tab_enabled" },
+      // set the default precedence to be less than snippet fields
+      { "key": "has_next_field", "operator": "equal", "operand": false },
+      { "key": "auto_complete_visible", "operator": "equal", "operand": false }
+    ]
+  },
+  { "keys": ["shift+tab"], "command": "selection_fields",
+    "args": {"mode": "cycle", "jump_forward": false },
+    "context":
+    [
+      { "key": "is_selection_field" },
+      { "key": "selection_fields_tab_enabled" },
+      // set the default precedence to be less than snippet fields
+      { "key": "has_prev_field", "operator": "equal", "operand": false }
+    ]
+  }
+]
