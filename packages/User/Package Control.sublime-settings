@@ -1,0 +1,60 @@
+{
+	"bootstrapped": true,
+	"ignore_vcs_packages":
+	[
+		"SimpleSyntax",
+		"iOpener",
+		"SaneSnippets",
+		"FastOpen",
+		"DisableArrowkeys",
+		"CommandCommander",
+		"VintageFinder",
+		"VintageSanity",
+		"SidebarToggler",
+		"sublime-swap-boolean-polarity",
+		"TwoFont"
+	],
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"ApplySyntax",
+		"Awk",
+		"BetterFindBuffer",
+		"BetterSnippetManager",
+		"Chain of Command",
+		"ChannelRepositoryTools",
+		"Color Highlighter",
+		"Delete Current File",
+		"ExpandRegion",
+		"Horizontal Scroll",
+		"HTML-CSS-JS Prettify",
+		"Increment Selection",
+		"LoremIpsum",
+		"Man Page Support",
+		"MarkdownEditing",
+		"MarkdownPreview",
+		"MoveTab",
+		"MultiEditUtils",
+		"OverrideAudit",
+		"Package Control",
+		"PackageDev",
+		"PackageResourceViewer",
+		"PlainTasks",
+		"ProjectManager",
+		"Quick File Move",
+		"ReadmePlease",
+		"Snippet Destroyer",
+		"SublimeLinter",
+		"SublimeLinter-contrib-write-good",
+		"SublimeLinter-pycodestyle",
+		"SublimeLinter-shellcheck",
+		"Zen Tabs"
+	],
+	"repositories":
+	[
+	],
+	"submit_usage": false
+}
