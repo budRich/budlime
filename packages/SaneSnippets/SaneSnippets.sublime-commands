@@ -1,0 +1,23 @@
+[
+    {
+        "caption": "SaneSnippets: Generate Sublime Snippets",
+        "command": "sane_snippets",
+        "args": {
+            "action": "generate"
+        }
+    },
+    {
+        "caption": "SaneSnippets: Migrate",
+        "command": "sane_snippets",
+        "args": {
+            "action": "migrate"
+        }
+    },
+    {
+        "caption": "SaneSnippets: Clean Snippets",
+        "command": "sane_snippets",
+        "args": {
+            "action": "clean"
+        }
+    }
+]
