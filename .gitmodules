@@ -1,0 +1,9 @@
+[submodule "packages/sublime-swap-boolean-polarity"]
+	path = packages/sublime-swap-boolean-polarity
+	url = git@github.com:mattst/sublime-swap-boolean-polarity.git
+[submodule "packages/iOpener"]
+	path = packages/iOpener
+	url = git@github.com:budRich/iOpener.git
+[submodule "packages/SaneSnippets"]
+	path = packages/SaneSnippets
+	url = git@github.com:math2001/SaneSnippets.git
