@@ -101,7 +101,7 @@
 		"Papis"
 	],
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/mondo/mondo.tmTheme",
+	"color_scheme": "Packages/Mondo/mondo.tmTheme",
 	"font_face": "Hack",
 	"font_options":
 	[

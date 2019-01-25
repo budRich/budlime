@@ -2,18 +2,27 @@
 
 main(){
 
+  # --instance|-i INSTANCE
   if [[ -n ${__o[instance]} ]]; then
     SUBLIME_TITS_CRIT=instance
     SUBLIME_TITS_SRCH="${__o[instance]}"
+
+  # --class|-c    CLASS
   elif [[ -n ${__o[class]} ]]; then
     SUBLIME_TITS_CRIT=class
     SUBLIME_TITS_SRCH="${__o[class]}"
+
+  # --profile|-p  PROFILE
   elif [[ -n ${__o[profile]} ]]; then
     SUBLIME_TITS_CRIT=instance
     SUBLIME_TITS_SRCH="sublime_${__o[profile]}"
+    __o[project]="${__o[profile]}"
   fi
 
-  # [--follow|o] [--file|-f] [--long|-l] [--directory|-d] [--status|-s] [--winid|-n] [--project|-p]
+  # --project|-j  PROJECT
+
+  # export SUBLIME_TITS_CRIT="${SUBLIME_TITS_CRIT}"
+  # export SUBLIME_TITS_SRCH="${SUBLIME_TITS_SRCH}"
 
   __tits+=($(sublget -r npf))
   # for k in "${!__tits[@]}"; do echo "$k - ${__tits[$k]}" ;done && exit
@@ -47,8 +56,11 @@ main(){
 
   fi
 
-  [[ -f ${__lastarg:-} ]] && subl "$__lastarg"
-  xdotool windowfocus "${__tits[0]}"
+  {
+    xdotool windowfocus "${__tits[0]}" 
+    [[ -f ${__lastarg:-} ]] && subl "$__lastarg" 
+  } 
+  
 
 }
 
