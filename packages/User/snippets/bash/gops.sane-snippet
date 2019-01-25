@@ -1,0 +1,15 @@
+---
+tabTrigger: gops
+scope: source.shell.bash, meta.function.shell, keyword.control.while.shell
+description: getopts
+---
+while getopts :vh option; do
+  case "${option}" in
+    v) printf '%s\n' \
+         "$NAME - version: $VERSION" \
+         "updated: $UPDATED by $AUTHOR"
+       exit ;;
+
+    h|*) printinfo && exit ;;
+  esac
+done
