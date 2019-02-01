@@ -5,5 +5,5 @@
 
     // SaneSnippet is a package which allows you to write your snippet
     // with a yaml front matter. Check it out!
-    "use_sane_snippets": false
+    "use_sane_snippets": true
 }

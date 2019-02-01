@@ -1,0 +1,139 @@
+.TH SUBLGET 1 2019\-02\-01 Linx "User Manuals"
+.SH NAME
+.PP
+\fB\fCsublget\fR \- Prints the title of the currently
+open sublime window
+
+.SH SYNOPSIS
+.PP
+.RS
+
+.nf
+sublget [\-\-follow|\-o] [\-\-long|\-l] [\-\-print|\-r OUTPUT]
+sublget \-\-class|\-c CLASS  [\-\-follow|\-o] [\-\-long|\-l] [\-\-print|\-r OUTPUT]
+sublget \-\-instance|\-i INSTANCE [\-\-follow|\-o] [\-\-long|\-l] [\-\-print|\-r OUTPUT] 
+sublget \-\-help|\-h
+sublget \-\-version|\-v
+
+.fi
+.RE
+
+.SH DESCRIPTION
+.PP
+\fB\fCsublget\fR uses \fB\fCwmctrl\fR to get the title of the
+window with the class name \fBSublime\_text\fP\&. The
+title looks different depending on the status of
+the file, if Sublime is registered and if a
+project is open. Below are the different title
+variations:
+
+.PP
+.RS
+
+.nf
+# FILE (PROJECT) \- Sublime Text
+\~/git/lab/budlime/scripts/tits/tits.sh (budlime) \- Sublime Text
+
+# FILE DIRTY (PROJECT) \- Sublime Text
+\~/git/lab/budlime/scripts/tits/tits.sh • (budlime) \- Sublime Text
+
+# FILE \- Sublime Text
+\~/git/lab/budlime/scripts/tits/tits.sh \- Sublime Text
+
+# FILE DIRTY \- Sublime Text
+\~/git/lab/budlime/scripts/tits/tits.sh • \- Sublime Text
+
+.fi
+.RE
+
+.PP
+If \fB\fCsublget\fR is executed without any arguments,
+the filename is printed.
+
+.SH EXAMPLES
+.PP
+Goto the same directory as the currently open
+file:
+.br
+\fB\fC$ cd "$(sublget \-d)"\fR
+
+.PP
+\fB\fC$ alias cds='cd "$(sublget \-d)"'\fR
+
+.SH OPTIONS
+.PP
+\fB\fC\-\-follow\fR|\fB\fC\-o\fR
+.br
+Will print the source of file/directory if it is
+symlinked.
+
+.PP
+\fB\fC\-\-long\fR|\fB\fC\-l\fR
+.br
+Will replace \fB\fC\~\fR with expanded \fB\fC$HOME\fR of file.
+
+.PP
+\fB\fC\-\-print\fR|\fB\fC\-r\fR OUTPUT
+.br
+\fIOUTPUT\fP can be one or more of the following
+characters:
+
+.TS
+allbox;
+l l 
+l l .
+\fB\fCcharacter\fR	\fB\fCprint\fR
+\fB\fCf\fR	File
+\fB\fCd\fR	Directory
+\fB\fCp\fR	Project
+\fB\fCs\fR	Status
+\fB\fCn\fR	Window ID
+\fB\fCw\fR	workspace
+.TE
+
+.PP
+\fB\fC\-\-class\fR|\fB\fC\-c\fR CLASS
+.br
+Sets \fB\fCSUBLIME\_TITS\_CRIT\fR to c and
+\fB\fCSUBLIME\_TITS\_SRCH\fR to \fICLASS\fP
+
+.PP
+\fB\fC\-\-instance\fR|\fB\fC\-i\fR INSTANCE
+.br
+Sets \fB\fCSUBLIME\_TITS\_CRIT\fR to i and
+\fB\fCSUBLIME\_TITS\_SRCH\fR to \fIINSTANCE\fP
+
+.PP
+\fB\fC\-\-help\fR|\fB\fC\-h\fR
+.br
+Show help and exit.
+
+.PP
+\fB\fC\-\-version\fR|\fB\fC\-v\fR
+.br
+Show version and exit
+
+.SH ENVIRONMENT
+.PP
+\fB\fCSUBLIME\_TITS\_CRIT\fR
+.br
+Default criteria to use if \fB\fC\-\-class\fR or
+\fB\fC\-\-instance\fR is not set. defaults to: class
+
+.PP
+\fB\fCSUBLIME\_TITS\_SRCH\fR
+.br
+Default search string to use if \fB\fC\-\-class\fR or
+\fB\fC\-\-instance\fR is not set. defaults to: Sublime\_text
+
+.SH DEPENDENCIES
+.PP
+\fB\fCbash\fR \fB\fCgawk\fR \fB\fCwmctrl\fR \fB\fCsublime\_text\fR
+
+.PP
+budRich 
+\[la]https://github.com/budlabs/budlime\[ra]
+
+.SH SEE ALSO
+.PP
+bash(1), awk(1), wmctrl(1),

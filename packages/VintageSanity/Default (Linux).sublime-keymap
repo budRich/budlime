@@ -34,7 +34,7 @@
 
   // >> Tabclose
   {
-    "keys": ["Z","Q"], "command": "close",
+    "keys": ["Z","X"], "command": "close",
     "context": [{"key": "setting.command_mode"}],
   },
     

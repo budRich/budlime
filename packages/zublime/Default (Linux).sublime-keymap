@@ -57,24 +57,6 @@
      
      ------------------------------------------------ */  
   
-  // >> expand region
-  {
-    "keys": ["alt+t"], 
-    "command": "fast_open", "args": {"file": "~/dox/not/${project_base_name}/todo"} 
-  },
-  {
-    "keys": ["alt+n"], 
-    "command": "fast_open", "args": {"file": "~/dox/not/${project_base_name}/note"} 
-  },
-  {
-    "keys": ["alt+l"], 
-    "command": "fast_open", "args": {"file": "~/dox/not/${project_base_name}/links.md"} 
-  },
-  
-  // >> C#
-  // end with semi and new line (macro)
-  { "keys": ["ctrl+;"], "command": "run_macro_file", "args": 
-    {"file": "Packages/User/Macros/endwithsemi.sublime-macro"} },
 
 
   // >> Projects
@@ -88,15 +70,8 @@
   // select lines before reindent? 
   { "keys": ["ctrl+alt+["], "command": "reindent", "args": {"single_line": false}},
 
-  // >> File Rename
-  
-  // { "keys": ["f2"], "command": "file_rename" },
 
-  // >> TwoFont & TwoFace
-  { "keys": ["ctrl+0"], "command": "two_font" },
-  { "keys": ["ctrl+9"], "command": "two_face" },
-
-  // >> Spellcheck
+  // >> Toggle Spellcheck
   { "keys": ["shift+f6"], "command": "toggle_setting", 
     "args": {"setting": "spell_check"} },
 

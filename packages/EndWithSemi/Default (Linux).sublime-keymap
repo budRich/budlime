@@ -1,0 +1,6 @@
+[
+  // end with semi and new line (macro)
+  { "keys": ["ctrl+;"], "command": "run_macro_file", "args": 
+    {"file": "Packages/EndWithSemi/endwithsemi.sublime-macro"} },
+
+]

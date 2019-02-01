@@ -1,9 +1,7 @@
 [
-  { 
-    "keys": ["Z","X"], 
-    "command": "delete_current_file", 
-    "context": [ 
-      {"key": "setting.command_mode"},
-    ]
+  // >> delete file
+  {
+    "keys": ["Z","Q"], "command": "delete_current_file",
+    "context": [{"key": "setting.command_mode"}],
   },
 ]

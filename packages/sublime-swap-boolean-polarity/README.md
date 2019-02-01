@@ -1,6 +1,7 @@
 # [Swap-boolean-polarity][repo]
 
-This package is not available in pacakge controle, but by adding the repository manually it can be easily installed.
+This package is not available in pacakge controle, but by adding the repository manually , to the repositories list in 
+`Package Control.sublime-settings` it can be easily installed.
 
 I have the function (toggle true/false) bound to <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd>
 

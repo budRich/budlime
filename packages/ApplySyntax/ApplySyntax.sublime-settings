@@ -252,6 +252,10 @@
       "syntax": "SimpleSyntax/ssDquote",
       "rules": [{"contains": "syntax:ssDquote"} ]
     },
+    {
+      "syntax": "AWK",
+      "rules": [{"contains": "syntax:AWK"} ]
+    },
    
 
     {

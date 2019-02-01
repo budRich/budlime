@@ -11,7 +11,7 @@
   // can make them single colored. Just provide your color in #RGB or
   // #RRGGBB format (e.g. "#fff", "#ABABAB", etc.) or leave this
   // option empty if multi colored icons better fit your needs.
-  "color": "#B8B09A",
+  "color": "#9E8961",
 
   // Provide your color in #RGB or #RRGGBB format if you want to use
   // an other color for the hovered icon. Works only when you set
@@ -21,7 +21,7 @@
   // Provide your color in #RRGGBB format if you want to use an other
   // color for the selected icon. Works only when you set a custom
   // color in the `color` option.
-  "color_on_select": "#988d6d",
+  "color_on_select": "#241708",
 
   // The opacity level of the default icon state.
   "opacity": 1.0,

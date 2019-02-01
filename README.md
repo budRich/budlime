@@ -9,19 +9,19 @@ Contains a single readme with sublime related finds: recommended packages, tools
 
 ## [wiki]
 
-Short articles about sublime written by [budRich].
+Short articles about sublime that I have written.
 
 ## [packages]
 
-All my settings can be found in the [packages] directory. They are synced and applied with my custom script [subextract].
+Contains of *package overrides*. Settings, keymaps, and some small custom packages.
 
 I use the official [Vintage] package to get some of the goodies from [VIM] in sublime, and many of the other package specific settings I have done reflect this.  
 
 I try to change all keybindings involving the arrowkeys to something more *VIM-like*, and use <kbd>,</kbd> as **leader** in **command_mode** instead of the annoying <kbd>Ctrl</kbd><kbd>k</kbd> key combinations.
 
-## [install]
+These are not all of my preferred packages, I want this collection to be *language agnostic* so there are more or less no language specific packages included here.
 
-The [install] directory contains a install script that will apply all my personal settings and download some related documentation with [GTFM].
+This repo can also be seen as a template for how you can create your own *package profile* and sync it with subextract.
 
 ## [scripts]  
 
@@ -29,22 +29,53 @@ Some sublime related custom scripts I have created.
 
 | script       | description
 |:-------------|:---------------------------
-| [tits]       | prints information about open sublime windows, by analyzing the window title.
-| [subextract] | extract readme files, blank default settings and apply and sync custom settings.
+| [install]    | Use this script to apply and install all the packages and settings in the **packages** directory of this repo.
+| [sublget]    | prints information about open sublime windows, by analyzing the window title.
+| [subextract] | extract readme files, blank default settings and apply and sync custom settings. (this script is used by the install script)
 | [sublaunch]  | Open a sublime window, with a specific project, file and instance name.          |
-| [subdox]     | uses [GTFM] to download sublime related documentation.
-| [browserpreview] | created to get a great preview of f.i. **markdown** files.
+
+## updates
+
+### 2019.02.01
+
+**scripts removed**:  
+- subdox , external dependencies, might get added back in the future.
+- browserpreview, removed since i removed the markdown preview package
+
+**packages removed**:  
+- Alignment, good package, but a bit too big and i found myself never using it.
+- DA UI, maintainer have removed package. replaced by my own package Mondo (that is much less bloated)
+- Extract Sublime Package, replaced by PackageResourceViewer
+- FastOpen, this package i made myself, and i think it is too specific to my own workflow to keep it public.
+- GitGutter, latest releases of sublime have native git info in gutter
+- MarkdownPreview, syntax specific, never used it myself.
+- PlainNotes, using both PlainNotes and PlainTasks at the same time felt like overkill
+- SublimeLinter, syntax specific, external dependencies
+- Table Editor, syntax specific, and i never used it
+- TwoFont, my own package, will give this some love and release it as a proper package for Package Control instead.
+- Zeal, external dependencies
+
+**packages added**:  
+- BetterFindBuffer, very good enhancement to the *Find In Files* function.
+- Mondo, now includes UI theme and different color schemes.
+- EndWithSemi, small package i made with macros instead of python.
+- PackageResourceViewer, much better alternative to `Extract Sublime Package`
+- ReadMePlease, this is a better solution to read package documentation, then the one i used prior (extract the readmes and store them in the user directory)
+
+**script changes**  
+- renamed tits -> sublget
+- all scripts now use the [bashbud] framework
+- rewrote the install script and subextract to be faster and better.
 
 [GTFM]: https://github.com/budlabs/GTFM
 [install]: https://github.com/budlabs/budlime/tree/master/install
 [VIM]: https://www.vim.org/
 [Vintage]: http://www.sublimetext.com/docs/3/vintage.html
 [Sublime Text]: https://www.sublimetext.com/
-[subextract]: https://github.com/budlabs/budlime/tree/master/scripts/subextract
-[browserpreview]: https://github.com/budlabs/budlime/tree/master/scripts/browserpreview
-[tits]: https://github.com/budlabs/budlime/tree/master/scripts/tits
-[sublaunch]: https://github.com/budlabs/budlime/tree/master/scripts/sublaunch
-[subdox]: https://github.com/budlabs/budlime/tree/master/scripts/subdox
+[subextract]: https://github.com/budlabs/budlime/tree/master/src/subextract
+[sublget]: https://github.com/budlabs/budlime/tree/master/src/sublget
+[install]: https://github.com/budlabs/budlime/tree/master/src/install
+[sublaunch]: https://github.com/budlabs/budlime/tree/master/src/sublaunch
 [awesome]: https://github.com/budlabs/budlime/tree/master/awesome
 [wiki]: https://github.com/budlabs/budlime/tree/master/wiki
 [packages]: https://github.com/budlabs/budlime/tree/master/packages
