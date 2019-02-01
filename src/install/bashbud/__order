@@ -1,0 +1,9 @@
+# order to process templates
+version
+help
+getopt
+envs
+init
+readme
+
+#syntax:ssHash

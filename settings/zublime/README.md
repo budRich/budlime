@@ -1,3 +1,0 @@
-Files in this directory will be evaluated after all other packages, which means they will override any previous files with the same name.  
-
-I exploit this to keep my `Preferences.sublime-settings` file clean, since **Sublime** removes all blank lines and comments when it auto update the settings file (*which it does all the time*). So I keep settings that I know will get automatically written in `Packages/User/Preferences.sublime-settings` and *static* settings in `Packages/zublime/Preferences.sublime-settings`. There is no real reason to keep the keymap file in this location, other then it also is some kind of core setting file and it feels logical to have both the default keymap and setting file in the same directory.

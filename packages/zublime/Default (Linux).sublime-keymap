@@ -57,10 +57,6 @@
      
      ------------------------------------------------ */  
   
-  // >> C#
-  // end with semi and new line (macro)
-  { "keys": ["ctrl+;"], "command": "run_macro_file", "args": 
-    {"file": "Packages/User/Macros/endwithsemi.sublime-macro"} },
 
 
   // >> Projects
@@ -75,7 +71,7 @@
   { "keys": ["ctrl+alt+["], "command": "reindent", "args": {"single_line": false}},
 
 
-  // >> Spellcheck
+  // >> Toggle Spellcheck
   { "keys": ["shift+f6"], "command": "toggle_setting", 
     "args": {"setting": "spell_check"} },
 

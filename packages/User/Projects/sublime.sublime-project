@@ -1,0 +1,84 @@
+{
+  "folders":
+  [
+    {
+      "folder_exclude_patterns":
+      [
+        ".*"
+      ],
+      "path": "/home/bud/.config/sublime-text-3/Packages/zublime"
+    },
+    {
+      "file_exclude_patterns":
+      [
+        "*.last-run",
+        "*ca-bundle",
+        "*.status"
+      ],
+      "folder_exclude_patterns":
+      [
+        "Projects",
+        "*.cache",
+        "Snippets",
+        "snippets",
+        "Color Highlighter",
+        ".*"
+      ],
+      "path": "/home/bud/.config/sublime-text-3/Packages/User"
+    },
+    {
+      "folder_exclude_patterns":
+      [
+        ".*"
+      ],
+      "path": "/home/bud/.config/sublime-text-3/Packages/User/snippets"
+    },
+    {
+      "folder_exclude_patterns":
+      [
+        ".*"
+      ],
+      "path": "/home/bud/.config/sublime-text-3/Packages/User/Projects"
+    },
+    {
+      "folder_exclude_patterns":
+      [
+        ".*",
+        "User",
+        "Theme - Default"
+      ],
+      "folder_include_patterns":
+      [
+        "A*",
+        "B*",
+        "C*",
+        "D*",
+        "E*",
+        "F*",
+        "G*",
+        "H*",
+        "I*",
+        "J*",
+        "K*",
+        "L*",
+        "M*",
+        "N*",
+        "O*",
+        "P*",
+        "Q*",
+        "R*",
+        "S*",
+        "T*",
+        "U*",
+        "V*",
+        "X*",
+        "Y*",
+        "Z*",
+        "iOpener",
+        "ProjectManager/*"
+      ],
+      "name": "extracted",
+      "path": "/home/bud/.config/sublime-text-3/Packages"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+	"bootstrapped": true,
+	"ignore_vcs_packages":
+	[
+		"DisableArrowkeys",
+		"CommandCommander",
+		"VintageFinder",
+		"VintageSanity",
+		"SidebarToggler",
+    "Mondo",
+    "EndWithSemi"
+	],
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"SimpleSyntax",
+    "iOpener",
+    "SaneSnippets",
+    "sublime-swap-boolean-polarity",
+    "A File Icon",
+    "ApplySyntax",
+    "BetterFindBuffer",
+    "BetterSnippetManager",
+    "Chain of Command",
+    "Color Highlighter",
+    "Delete Current File",
+    "ExpandRegion",
+    "Horizontal Scroll",
+    "Increment Selection",
+    "LoremIpsum",
+    "MoveTab",
+    "MultiEditUtils",
+    "Package Control",
+    "PlainTasks",
+    "ProjectManager",
+    "Quick File Move",
+    "ReadmePlease",
+    "Zen Tabs"
+	],
+	"repositories":
+  [
+    "https://github.com/mattst/sublime-swap-boolean-polarity.git",
+    "https://github.com/budRich/iOpener.git",
+    "https://github.com/math2001/SaneSnippets.git"
+  ],
+  "submit_usage": false
+}

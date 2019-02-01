@@ -1,0 +1,41 @@
+{
+	"added_words":
+	[
+		"budlime"
+	],
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/Mondo/mondo.tmTheme",
+	"font_face": "monospace",
+	"font_options":
+	[
+		"gray_antialias"
+	],
+	"font_size": 16,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"ActionScript",
+		"AppleScript",
+		"ASP",
+		"Batch File",
+		"Clojure",
+		"D",
+		"Erlang",
+		"Graphviz",
+		"Groovy",
+		"LaTeX",
+		"Markdown",
+		"Matlab",
+		"Objective-C",
+		"OCaml",
+		"PackageDev",
+		"Pascal",
+		"R",
+		"Rust",
+		"Scala",
+		"TCL",
+		"Textile"
+	],
+	"theme": "mondo.sublime-theme",
+	"translate_tabs_to_spaces": true
+}

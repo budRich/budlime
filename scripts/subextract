@@ -1,0 +1,299 @@
+#!/usr/bin/env bash
+
+___printversion(){
+  
+cat << 'EOB' >&2
+subextract - version: 2019.02.01.2
+updated: 2019-02-01 by budRich
+EOB
+}
+
+
+# environment variables
+: "${SUBLIME_DIR:=$XDG_CONFIG_HOME/sublime-text-3}"
+
+
+main(){
+
+  _sub_dir="$HOME/.config/sublime-text-3"
+  _tmp_dir="/tmp/subextract"
+  _zip_dir="$_sub_dir/Installed Packages"
+  _pkg_dir="$_sub_dir/Packages"
+  _usr_dir="$_pkg_dir/User"
+  _doc_dir="$_usr_dir/dox"
+
+  _pkg_ext="sublime-package"
+  _cnf_ext="sublime-settings"
+
+
+  ((${__o[clean]:-0}==1)) && {
+    _bu_dir="$_sub_dir/backup/$(cat /proc/sys/kernel/random/uuid)"
+    mkdir -p "$_bu_dir"
+    [[ -d $_pkg_dir ]] && mv -f "$_pkg_dir" "$_bu_dir"
+  }
+
+  [[ -d ${__o[sync]:-} ]] && ((${__o[extract]:-0}!=1)) \
+    && synksettings "${__o[sync]%/}"
+  
+  if ((${__o[extract]:-0}==1)); then
+
+    extractinstalled
+
+    [[ -d ${__o[sync]:-} ]] && synksettings "${__o[sync]%/}"
+
+    rm -rf "${_tmp_dir:?}"
+  fi
+  
+}
+
+___printhelp(){
+  
+cat << 'EOB' >&2
+subextract - Sync and extract packages for Sublime Text
+
+
+SYNOPSIS
+--------
+subextract [--clean|-c] [--blank|-d] [--quite|-q] [--extract|-e] [--force|-f] [--sync|-s PACKAGE_DIRECTORY]
+subextract --help|-h
+subextract --version|-v
+
+OPTIONS
+-------
+
+--clean|-c  
+Move the current $PKG_DIR to $SUB_DIR/backup
+before any other operations.  
+
+
+--blank|-d  
+Blank extracted default files. (only in effect
+when --extract is used)
+
+
+--quite|-q  
+Execute without output and messages.
+
+
+
+--extract|-e  
+Extract packages default settingfiles to $PKG_DIR
+
+
+--force|-f  
+Force files from PACKAGE_DIRECTORY to overwrite,
+no matter if target file exists (-p) or is newer
+(-s).
+
+--sync|-s PACKAGE_DIRECTORY  
+Sync files in PACKAGE_DIRECTORY with files in
+$PKG_DIR. Works both ways, the newest file will
+overwrite the oldest.
+
+
+--help|-h  
+Show help and exit.
+
+
+--version|-v  
+Show version and exit.
+
+EOB
+}
+
+
+ERM(){ >&2 echo "$*"; }
+ERR(){ >&2 echo "[WARNING]" "$*"; }
+ERX(){ >&2 echo "[ERROR]" "$*" && exit 1 ; }
+
+extractinstalled(){
+
+  local file nmn xdir
+
+  mkdir -p "$_tmp_dir"
+  rm -rf "${_tmp_dir:?}/"*
+
+  OFS="${IFS}"
+  IFS=$'\n'
+
+  # extract files
+  while read -r file; do
+
+    nmn="${file##*/}"
+    nmn="${nmn%.*}"
+
+    # ignore package control
+    [[ $nmn =~ 0_package_control_loader|(Package Control) ]] && continue
+
+    # only extract setting files, and ignore
+    # subdirectories
+    unzip -qq "$file" \
+      "*.sublime-settings" \
+      "Default.sublime-commands" \
+      "Default (Linux).sublime-keymap" \
+      "Default.sublime-keymap" \
+      -x "*/*" \
+      -d "$_tmp_dir/$nmn" > /dev/null 2>&1
+
+  done <<< "$(
+    # all installed archived packages
+    find "$_zip_dir" -type f -name "*.${_pkg_ext}"
+  )"
+
+  # extract default package
+  unzip -qq "/opt/sublime_text/Packages/Default.sublime-package" \
+    "Distraction Free.sublime-settings" \
+    "Preferences (Linux).sublime-settings" \
+    "Preferences.sublime-settings" \
+    "Default.sublime-commands" \
+    "Default (Linux).sublime-keymap" \
+    "Default.sublime-keymap" \
+    -x "*/*" \
+    -d "$_tmp_dir/Default" > /dev/null 2>&1
+
+  # remove empty tmp dirs
+  rmdir "${_tmp_dir}"/* > /dev/null 2>&1
+
+  # copy files to sublime dir
+  while read -r file; do
+
+    nmn="${file#$_tmp_dir/}"
+    nmn="${nmn%%/*}"
+
+    xdir="$_pkg_dir/$nmn"
+
+    # create xdir
+    mkdir -p "$xdir"
+    # create docdir
+    mkdir -p "$_doc_dir/$nmn"
+
+    # copy files to xdir
+    if ((${__o[blank]:-0}==1)); then
+      cp -f "$file" "$xdir"
+    else
+      cp "$file" "$xdir"
+    fi
+    cp -f "$file" "$_doc_dir/$nmn/${file##*/}X"
+
+    if [[ $file = "*.sublime-settings" ]]; then
+      if ((${__o[blank]:-0}==1)); then
+        cp -f "$file" "$_usr_dir"
+      else
+        cp "$file" "$_usr_dir"
+      fi
+      
+      ((${__o[blank]:-0}==1)) && {
+        echo "[]" > "$file"
+      }
+    fi
+
+  done <<< "$(find "$_tmp_dir" -type f)"
+
+  IFS="${OFS}"
+}
+
+synksettings(){
+
+  local trgdir="$1"
+  local file1 file2 nmn dirname lastdir nmn2
+
+  [[ -d $trgdir ]] || exit 1
+
+  OFS="${IFS}"
+  IFS=$'\n'
+  while read -r file1; do
+    # ignore redme files
+    [[ ${file1,,} =~ readme[.]md$ ]] && continue
+    nmn="${file1#${trgdir}/}"
+    dirname="${nmn%/*}"
+    lastdir="${dirname##*/}"
+
+    if [[ $file1 =~ ${_cnf_ext}$ ]] && [[ $lastdir != zublime ]]; then
+      file2="${_usr_dir}/${file1##*/}"
+    else
+      file2="${_pkg_dir}/$dirname/${file1##*/}"
+    fi
+
+    # copy file from sublime to budlime
+    # only if --force is not set
+    if ((${__o[force]:-0}!=1)) && [[ -f "${file2}" ]] && [[ "${file1}" -ot "${file2}" ]]; then
+      ((${__o[quite]:-0}!=1)) && {
+        nmn2="${file2%${nmn##*/}}"
+        nmn2="${nmn2#${_sub_dir}}"
+
+        if [[ -L $file2 ]]; then
+          printf '%-60s L== %s\n' "$nmn" "$nmn2"
+        else
+          printf '%-60s <== %s\n' "$nmn" "$nmn2"
+        fi
+      } >&2 
+        
+      [[ -L $file2 ]] || cp -f "${file2}" "${file1}"
+
+    # copy file from budlime to sublime
+    else
+      ((${__o[quite]:-0}!=1)) && {
+        nmn2="${file2%${nmn##*/}}"
+        nmn2="${nmn2#${_sub_dir}}"
+        
+        if [[ -L $file2 ]]; then
+          printf '%-60s ==L %s\n' "$nmn" "$nmn2"
+        elif ((${__o[force]:-0}==1)) || [[ ! -f ${file2} ]]; then
+          printf '%-60s ==> %s\n' "$nmn" "$nmn2"
+          mkdir -p "${file2%/*}"
+        else
+          printf '%-60s ==| %s\n' "$nmn" "$nmn2"
+        fi
+      } >&2
+
+      if [[ -L $file2 ]]; then
+        :
+      elif ((${__o[force]:-0}==1)); then
+        cp -f "${file1}" "${file2}"
+      elif [[ ! -f ${file2} ]]; then
+        cp "${file1}" "${file2}"
+      fi
+    fi
+
+  done <<< "$(find "$trgdir" -type f)"
+  IFS="${OFS}"
+
+}
+declare -A __o
+eval set -- "$(getopt --name "subextract" \
+  --options "cdqefs:hv" \
+  --longoptions "clean,blank,quite,extract,force,sync:,help,version," \
+  -- "$@"
+)"
+
+while true; do
+  case "$1" in
+    --clean      | -c ) __o[clean]=1 ;; 
+    --blank      | -d ) __o[blank]=1 ;; 
+    --quite      | -q ) __o[quite]=1 ;; 
+    --extract    | -e ) __o[extract]=1 ;; 
+    --force      | -f ) __o[force]=1 ;; 
+    --sync       | -s ) __o[sync]="${2:-}" ; shift ;;
+    --help       | -h ) __o[help]=1 ;; 
+    --version    | -v ) __o[version]=1 ;; 
+    -- ) shift ; break ;;
+    *  ) break ;;
+  esac
+  shift
+done
+
+if [[ ${__o[help]:-} = 1 ]]; then
+  ___printhelp
+  exit
+elif [[ ${__o[version]:-} = 1 ]]; then
+  ___printversion
+  exit
+fi
+
+[[ ${__lastarg:="${!#:-}"} =~ ^--$|${0}$ ]] \
+  && __lastarg="" 
+
+
+main "${@:-}"
+
+
