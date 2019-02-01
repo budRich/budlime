@@ -39,8 +39,8 @@ Some sublime related custom scripts I have created.
 ### 2019.02.01
 
 **scripts removed**:  
--subdox , external dependencies, might get added back in the future.
--browserpreview, removed since i removed the markdown preview package
+- subdox , external dependencies, might get added back in the future.
+- browserpreview, removed since i removed the markdown preview package
 
 **packages removed**:  
 - Alignment, good package, but a bit too big and i found myself never using it.
