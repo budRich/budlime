@@ -10,6 +10,7 @@ EOB
 
 
 # environment variables
+: "${XDG_CONFIG_HOME:=$HOME/.config}"
 : "${SUBLIME_DIR:=$XDG_CONFIG_HOME/sublime-text-3}"
 
 
