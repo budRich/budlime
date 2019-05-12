@@ -88,7 +88,7 @@ main(){
   rm -f "${sub_dir}/Local/"*.sublime_session
 
   # extract packages
-  "${bud_dir}/scripts/subextract/main.sh" -fed -s "${bud_dir}/packages"
+  "${bud_dir}/scripts/subextract" -fed -s "${bud_dir}/packages"
 
   # open sublime with sublime project
   subl "${usr_dir}/Projects/sublime.sublime-workspace"
