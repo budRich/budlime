@@ -68,5 +68,5 @@
     //         "base_file": "${packages}/ProjectManager/support/Default (${platform}).sublime-keymap",
     //         "default": "[\n\t$0\n]\n"
     //     }
-    }
+    
 ]
