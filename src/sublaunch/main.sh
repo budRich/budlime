@@ -26,8 +26,10 @@ main(){
 
   __tits+=($(sublget -r npf))
   # for k in "${!__tits[@]}"; do echo "$k - ${__tits[$k]}" ;done && exit
+  _currentproject="${__tits[1]:-}"
+  : "${__o[project]:=$_currentproject}"
 
-  if [[ -z "${__tits[1]:-}" ]]; then
+  if [[ -z "${_currentproject}" ]]; then
     cmd=(subl)
     [[ -n $(pidof sublime_text) ]] && cmd+=('--new-window')
     
@@ -53,6 +55,16 @@ main(){
     cmd+=(${__tits[0]})
 
     eval "${cmd[@]}"
+  
+  elif [[ $_currentproject != "${__o[project]}" ]]; then
+    project_ext="sublime-project"
+
+    proj_file="${SUBLIME_PROJECTS_DIR}/${__o[project]}.${project_ext}"
+    [[ -f "$proj_file" ]] && {
+      xdotool windowfocus "${__tits[0]}"
+      subl --command 'close_workspace'
+      subl --project "$proj_file"
+    }
 
   fi
 
