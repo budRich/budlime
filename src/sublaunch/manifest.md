@@ -1,8 +1,8 @@
 ---
 description: >
   Run or raise sublime with a specific profile and file
-updated:       2019-02-01
-version:       2019.02.01.2
+updated:       2019-12-01
+version:       2019.12.01.0
 author:        budRich
 repo:          https://github.com/budlabs
 created:       2018-08-06
