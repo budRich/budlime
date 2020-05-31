@@ -33,8 +33,12 @@ Some sublime related custom scripts I have created.
 | [sublget]    | prints information about open sublime windows, by analyzing the window title.
 | [subextract] | extract readme files, blank default settings and apply and sync custom settings. (this script is used by the install script)
 | [sublaunch]  | Open a sublime window, with a specific project, file and instance name.          |
+| [sublsess]  | Removes unwanted windows from the Session.sublime_session file, useful only if one has issues with multiple unwanted windows are created when the sublime session starts.          |
 
 ## updates
+
+### 2020.05.31
+added sublsess script
 
 ### 2019.02.01
 
