@@ -1,8 +1,8 @@
 ---
 description: >
   Run or raise sublime with a specific profile and file
-updated:       2019-12-01
-version:       2019.12.01.0
+updated:       2019-12-08
+version:       2019.12.08.0
 author:        budRich
 repo:          https://github.com/budlabs
 created:       2018-08-06
@@ -15,7 +15,7 @@ environ:
 synopsis: |
     [--instance|-i INSTANCE] [--options|-o  OPTIONS] [--project|-j  PROJECT] [FILE]
     [--class|-c    CLASS] [--options|-o  OPTIONS] [--project|-j  PROJECT] [FILE]
-    [--profile|-p  PROFILE] [--options|-o  OPTIONS] [--project|-j  PROJECT] [FILE]
+    [--profile|-p  PROFILE] [--options|-o  OPTIONS] [--project|-j  PROJECT] [--wait|-w] [FILE]
     --help|-h
     --version|-v
 ...

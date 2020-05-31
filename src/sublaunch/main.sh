@@ -21,15 +21,14 @@ main(){
 
   # --project|-j  PROJECT
 
-  # export SUBLIME_TITS_CRIT="${SUBLIME_TITS_CRIT}"
-  # export SUBLIME_TITS_SRCH="${SUBLIME_TITS_SRCH}"
-
   __tits+=($(sublget -r npf))
-  # for k in "${!__tits[@]}"; do echo "$k - ${__tits[$k]}" ;done && exit
+  
   _currentproject="${__tits[1]:-}"
   : "${__o[project]:=$_currentproject}"
 
+  # launch new instance
   if [[ -z "${_currentproject}" ]]; then
+    command -v sublsess > /dev/null && sublsess
     cmd=(subl)
     [[ -n $(pidof sublime_text) ]] && cmd+=('--new-window')
     
@@ -70,7 +69,12 @@ main(){
 
   {
     xdotool windowfocus "${__tits[0]}" 
-    [[ -f ${__lastarg:-} ]] && subl "$__lastarg" 
+    if [[ ${__o[wait]} = 1 ]] && [[ -f ${__lastarg:-} ]]; then
+      subl --command 'close_all'
+      subl --wait "$__lastarg"
+    elif [[ -f ${__lastarg:-} ]]; then
+      subl "$__lastarg"
+    fi
   } 
   
 

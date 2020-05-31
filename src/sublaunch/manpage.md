@@ -5,7 +5,7 @@ SYNOPSIS
 ```text
 sublaunch [--instance|-i INSTANCE] [--options|-o  OPTIONS] [--project|-j  PROJECT] [FILE]
 sublaunch [--class|-c    CLASS] [--options|-o  OPTIONS] [--project|-j  PROJECT] [FILE]
-sublaunch [--profile|-p  PROFILE] [--options|-o  OPTIONS] [--project|-j  PROJECT] [FILE]
+sublaunch [--profile|-p  PROFILE] [--options|-o  OPTIONS] [--project|-j  PROJECT] [--wait|-w] [FILE]
 sublaunch --help|-h
 sublaunch --version|-v
 ```
@@ -52,6 +52,8 @@ instance name: `sublime_PROFILE`. And if a project
 in $PROJECT_DIR with the name
 PROFILE.sublime-project exist. That project will
 get opened if the window doesn't exist.
+
+`--wait`|`-w` [FILE]  
 
 `--help`|`-h`  
 Show help and exit.

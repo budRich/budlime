@@ -1,5 +1,5 @@
 .nh
-.TH SUBLAUNCH 1 2019\-12\-01 Linx "User Manuals"
+.TH SUBLAUNCH 1 2019\-12\-08 Linx "User Manuals"
 .SH NAME
 .PP
 \fB\fCsublaunch\fR \- Run or raise sublime with a
@@ -12,7 +12,7 @@ specific profile and file
 .nf
 sublaunch [\-\-instance|\-i INSTANCE] [\-\-options|\-o  OPTIONS] [\-\-project|\-j  PROJECT] [FILE]
 sublaunch [\-\-class|\-c    CLASS] [\-\-options|\-o  OPTIONS] [\-\-project|\-j  PROJECT] [FILE]
-sublaunch [\-\-profile|\-p  PROFILE] [\-\-options|\-o  OPTIONS] [\-\-project|\-j  PROJECT] [FILE]
+sublaunch [\-\-profile|\-p  PROFILE] [\-\-options|\-o  OPTIONS] [\-\-project|\-j  PROJECT] [\-\-wait|\-w] [FILE]
 sublaunch \-\-help|\-h
 sublaunch \-\-version|\-v
 
@@ -66,6 +66,9 @@ instance name: \fB\fCsublime\_PROFILE\fR\&. And if a project
 in $PROJECT\_\&DIR with the name
 PROFILE.sublime\-\&project exist. That project will
 get opened if the window doesn't exist.
+
+.PP
+\fB\fC\-\-wait\fR|\fB\fC\-w\fR [FILE]
 
 .PP
 \fB\fC\-\-help\fR|\fB\fC\-h\fR

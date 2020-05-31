@@ -3,8 +3,8 @@
 ___printversion(){
   
 cat << 'EOB' >&2
-sublaunch - version: 2019.12.01.0
-updated: 2019-12-01 by budRich
+sublaunch - version: 2019.12.08.0
+updated: 2019-12-08 by budRich
 EOB
 }
 
@@ -25,7 +25,7 @@ SYNOPSIS
 --------
 sublaunch [--instance|-i INSTANCE] [--options|-o  OPTIONS] [--project|-j  PROJECT] [FILE]
 sublaunch [--class|-c    CLASS] [--options|-o  OPTIONS] [--project|-j  PROJECT] [FILE]
-sublaunch [--profile|-p  PROFILE] [--options|-o  OPTIONS] [--project|-j  PROJECT] [FILE]
+sublaunch [--profile|-p  PROFILE] [--options|-o  OPTIONS] [--project|-j  PROJECT] [--wait|-w] [FILE]
 sublaunch --help|-h
 sublaunch --version|-v
 
@@ -68,6 +68,8 @@ PROFILE.sublime-project exist. That project will
 get opened if the window doesn't exist.
 
 
+--wait|-w [FILE]  
+
 --help|-h  
 Show help and exit.
 
@@ -84,8 +86,8 @@ done
 
 declare -A __o
 eval set -- "$(getopt --name "sublaunch" \
-  --options "i:o:j:c:p:hv" \
-  --longoptions "instance:,options:,project:,class:,profile:,help,version," \
+  --options "i:o:j:c:p:whv" \
+  --longoptions "instance:,options:,project:,class:,profile:,wait,help,version," \
   -- "$@"
 )"
 
@@ -96,6 +98,7 @@ while true; do
     --project    | -j ) __o[project]="${2:-}" ; shift ;;
     --class      | -c ) __o[class]="${2:-}" ; shift ;;
     --profile    | -p ) __o[profile]="${2:-}" ; shift ;;
+    --wait       | -w ) __o[wait]=1 ;; 
     --help       | -h ) __o[help]=1 ;; 
     --version    | -v ) __o[version]=1 ;; 
     -- ) shift ; break ;;
