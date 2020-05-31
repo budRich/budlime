@@ -1,0 +1,46 @@
+#!/bin/bash
+
+f=~/.config/sublime-text-3/Local/Session.sublime_session
+
+# in the "windows": list, print all entries
+# not containing the line: "project": "not.sublime-project"
+# "workspaces" is the key after "windows":
+
+awk '
+
+  /^\s*"workspaces":/ {
+    print "["
+    for (k in saved) {
+      if (k != bad)
+        print "{" saved[k] "\n},"
+    }
+    print "],"
+    dontprint=0
+  }
+
+  !dontprint {print}
+
+
+  /^\s*"windows":/ {dontprint=1}
+
+  dontprint {
+
+    if (/^\s*"auto_complete":/) 
+      save=1
+
+    if (/^\s*"project": "not.sublime-project".*/) {
+      bad=dontprint
+    }
+
+    
+    if (save==1)
+      saved[dontprint] = saved[dontprint] "\n" $0
+
+    if (/^\s*"workspace_name":/) {
+      dontprint++
+      save=0
+    }
+    
+  }
+  
+' "$f" > "${f}2" && mv -f "${f}2" "$f"
