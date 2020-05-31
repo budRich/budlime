@@ -80,7 +80,7 @@ added sublsess script
 [sublget]: https://github.com/budlabs/budlime/tree/master/src/sublget
 [install]: https://github.com/budlabs/budlime/tree/master/src/install
 [sublaunch]: https://github.com/budlabs/budlime/tree/master/src/sublaunch
-[sublaunch]: https://github.com/budlabs/budlime/tree/master/src/sublsess
+[sublsess]: https://github.com/budlabs/budlime/tree/master/src/sublsess
 [awesome]: https://github.com/budlabs/budlime/tree/master/awesome
 [wiki]: https://github.com/budlabs/budlime/tree/master/wiki
 [packages]: https://github.com/budlabs/budlime/tree/master/packages
