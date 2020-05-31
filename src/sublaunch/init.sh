@@ -3,8 +3,8 @@
 ___printversion(){
   
 cat << 'EOB' >&2
-sublaunch - version: 2019.12.08.0
-updated: 2019-12-08 by budRich
+sublaunch - version: 2020.05.31.0
+updated: 2020-05-31 by budRich
 EOB
 }
 
