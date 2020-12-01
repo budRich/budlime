@@ -11,54 +11,45 @@ main(){
     esac
   done
 
+  # example sublime title
+  # 0x03600007  0 sublime_main.Sublime_text  dellen ~/git/bud/budlime/src/sublget/main.sh (sublime) - Sublime Text
+  # FILE • (PROJECT) - Sublime Text
+  # FILE (PROJECT) - Sublime Text
+  # FILE • - Sublime Text
+  # FILE - Sublime Text
+
+  l=$(wmctrl -lx )
+  re+="([0-9a-fx]{10})\s+([0-9-]+)\s+"
+
+  [[ ${SUBLIME_TITS_CRIT:0:1} = i ]] \
+    && re+="($SUBLIME_TITS_SRCH)" || re+="([^.]+)"
+
+  re+='[.]'
+
+  [[ ${SUBLIME_TITS_CRIT:0:1} = c ]] \
+    && re+="($SUBLIME_TITS_SRCH)" || re+="(\S+)"
+
+  re+='\s+\S+\s'
+  re+='(.+\w)'
+  re+='(\s[•])?'
+  re+='(\s+[(](.+)[)])?'
+  re+=' - Sublime Text'
+
   declare -A _tits
 
-  # example wmctrl -lx output
-  # 0x00c00065  0 tiledterm.URxvt  biglab tiledterm
-  eval "$(wmctrl -lx | awk \
-    -v c="${SUBLIME_TITS_CRIT:0:1}" \
-    -v s="${SUBLIME_TITS_SRCH}" \
-    -v r="$_ret" '
-    match($0,/([0-9a-fx]{10})\s+([0-9-]{1,2})\s+([^.]+)[.](\S+)\s+(\S+)\s+(.+)$/,ma) {
-      # 0x00c00065  0 tiledterm.URxvt       biglab tiledterm
-      wid=ma[1] # id
-      wwd=ma[2] # workspace
-      win=ma[3] # instance
-      wcl=ma[4] # class
-      who=ma[5] # host
-      wti=ma[6] # title
-
-      if ((c == "c" && wcl == s) || (c == "i" && win == s)) {
-        # example sublime title
-        # FILE • (PROJECT) - Sublime Text
-        # FILE (PROJECT) - Sublime Text
-        # FILE • - Sublime Text
-        # FILE - Sublime Text
-
-        match(wti,/^(.+\w)(\s[•])?(\s+[(](.+)[)])? - Sublime Text.*$/,sma)
-        sfil=sma[1] # file
-        ssts=sma[2] # status
-        sprj=sma[4] # project
-
-        if (ssts ~ /./) {ssts=1}
-        else {ssts=0}
-
-        print "_tits[f]=\"" gensub("~",ENVIRON["HOME"],"1",sfil) "\""
-        print "_tits[s]=\"" ssts "\""
-        print "_tits[p]=\"" sprj "\""
-        print "_tits[w]=\"" wwd "\""
-        print "_tits[n]=\"" strtonum(wid) "\""
-
-        exit
-      }
-
-    }'
-  )"
+  [[ $l =~ $re ]] && _tits=(
+    [f]=${BASH_REMATCH[5]}    # filename
+    [s]=${BASH_REMATCH[6]:+1} # saved
+    [p]=${BASH_REMATCH[8]}    # project
+    [w]=${BASH_REMATCH[2]}    # workspace
+    [n]=${BASH_REMATCH[1]}    # windowid
+  )
 
   : "${__o[print]:=f}"
 
-  ((__o[follow]==1)) && _tits[f]="$(readlink -f "${_tits[f]}")"
-  ((__o[long]==1))   || _tits[f]="${_tits[f]/$HOME/'~'}"
+  _tits[f]="${_tits[f]/'~'/~}"
+  ((__o[follow])) && _tits[f]="$(readlink -f "${_tits[f]}")"
+  ((__o[long]))   || _tits[f]="${_tits[f]/~/'~'}"
 
   _tits[d]="${_tits[f]%/*}"
 
