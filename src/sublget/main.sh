@@ -28,19 +28,21 @@ main(){
 
   [[ ${SUBLIME_TITS_CRIT:0:1} = c ]] \
     && re+="($SUBLIME_TITS_SRCH)" || re+="(\S+)"
+# 0x01000007  0 sublime_main.Sublime_text  dellen ~/git/bud/budlime/src/sublget/main.sh (sublime) - Sublime Text
 
   re+='\s+\S+\s'
-  re+='(.+\w)'
-  re+='(\s[•])?'
-  re+='(\s+[(](.+)[)])?'
-  re+=' - Sublime Text'
+  re+='(/?([^/'$'\n'']+/)*[^/'$'\n'']+)\s+'
+  re+='([•]\s)?'
+  re+='([(]([^)]+)[)]\s)'
+  re+='- Sublime Text'
 
   declare -A _tits
 
   [[ $l =~ $re ]] && _tits=(
     [f]=${BASH_REMATCH[5]}    # filename
-    [s]=${BASH_REMATCH[6]:+1} # saved
-    [p]=${BASH_REMATCH[8]}    # project
+    [O]=${BASH_REMATCH[6]}    # filename
+    [s]=${BASH_REMATCH[7]:+1} # saved
+    [p]=${BASH_REMATCH[9]}    # project
     [w]=${BASH_REMATCH[2]}    # workspace
     [n]=${BASH_REMATCH[1]}    # windowid
   )

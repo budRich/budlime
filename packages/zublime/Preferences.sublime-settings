@@ -154,7 +154,7 @@
   "caret_extra_bottom": 1,
   "caret_extra_top": 1,
   "caret_extra_width": 1,
-  "caret_style": "smooth",
+  "caret_style": "solid",
   "fade_fold_buttons": true,
   "find_selected_text": true,
   "show_encoding": true,
