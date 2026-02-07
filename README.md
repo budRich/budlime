@@ -1,3 +1,5 @@
+# MAINTAINED AT https://git.budlabs.xyz/bud/budlime/settings/units
+
 # budlime - [Sublime Text] related settings, scripts and links.
 curated by [budRich] since 2018  
 
